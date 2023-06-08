@@ -1,0 +1,45 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 75px 1fr;
+}
+
+nav {
+    background-color: #3084B4;
+}
+
+.busca {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.busca a {
+    background-color: #3084B4;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+.busca :hover {
+    background-color: #074A71;
+}
+
+@media (max-width: 999px) {
+    .busca {
+        width: 100%;
+    }
+     .busca a {
+        font-size: 1rem;
+    }
+}

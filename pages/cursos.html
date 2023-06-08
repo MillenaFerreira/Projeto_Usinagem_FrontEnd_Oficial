@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LINK DO GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="../img/icon.png" type="image/x-icon">
+
+    <title>CURSOS</title>
+
+    <!-- Link do FontAwesome -->
+    <script src="https://kit.fontawesome.com/30058942d9.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/professor/cursos.css">
+
+
+    <!-- COMPONENTS -->
+    <script src="../components/header.js" defer type="module"></script>
+    <script src="../components/nav.js" defer type="module"></script>
+
+    <!-- <script src="../js/cursos.js" defer type="module"></script> -->
+    <!-- <script src="../js/professorCRUD/modal_cursos.js" defer type="module"></script> -->
+    <!-- <script src="../js/app.js" defer type="module"></script> -->
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header-padrao color_top="#3084B4" color_button="#DA251C" text_button="VOLTAR"
+        link_button="../index.html"></header-padrao>
+
+    <!-- NAV PRINCIPAL -->
+    <nav-professor></nav-professor>
+    <main id="root_aluno">
+        <div class="container container-cursos" id="container-cursos">
+            <div class="container_topo">
+                <div class="nome_buttons">
+                    <p>Cursos</p>
+                    <div class="adicionar_editar_deletar">
+                        <a class="fas fa-plus" href="#modal__adicionar"></a>
+                    </div>
+                </div>
+                <div class="linha"></div>
+
+                <!-- MODAL ADICIONAR CURSOS -->
+                <div id="modal__adicionar" class="modal__adicionar">
+                    <form class="modal__adicionar--content" id="modal__adicionar--content">
+                        <p class="nome__modal">Adicionar um Curso</p>
+                        <div class="input__nome">
+                            <label for="">Nome do Curso:</label>
+                            <input type="text" name="nome" id="myInputNome" maxlength="100" style="width: 100%;"
+                                required>
+                        </div>
+                        <div class="sigla__carga--horaria">
+                            <div class="input__sigla">
+                                <label for="">Sigla :</label>
+                                <input type="text" name="sigla" id="myInputSigla" maxlength="5" required>
+                            </div>
+                            <div class="input__carga--horaria">
+                                <label for="">Carga Horaria :</label>
+                                <input type="number" name="carga_horaria" id="myInputCargaHoraria" min="0" required>
+                            </div>
+                        </div>
+                        <div class='input__file'>
+                            <label for="">URL da Imagem :</label>
+                            <input type="url" name="url" id="myInputUrl" maxlength="2000" style="width: 100%;" required>
+                        </div>
+                        <div class="input__descricao">
+                            <label for="">Descrição :</label>
+                            <textarea tabindex="5" id="myInputDescricao" required></textarea>
+                        </div>
+                        <div class="modal__adicionar--footer">
+                            <a type="submit" id="salvarBtn">Salvar</a>
+                        </div>
+                        <a href="#" class="modal__adicionar--close">&times;</a>
+                    </form>
+                </div>
+
+                <!-- MODAL EDITAR CURSOS -->
+                <div id="modal__editar" class="modal__editar">
+                    <form class="modal__editar--content" id="modal__editar--content">
+                        <p>Editar um Curso</p>
+                        <div class='input__file--valor'>
+                            <label for="">URL da Imagem do Curso:</label>
+                            <input type="url" name="url" id="myInputUrlValor" maxlength="2000" style="width: 100%;"
+                                required>
+                        </div>
+                        <div class="input__nome--valor">
+                            <label for="">Nome do Curso:</label>
+                            <input type="text" name="nome" id="myInputNomeValor" maxlength="100" style="width: 100%;"
+                                required>
+                        </div>
+                        <div class="input__sigla--valor">
+                            <label for="">Sigla do Curso:</label>
+                            <input type="text" name="sigla" id="myInputSiglaValor" maxlength="5" style="width: 100%;"
+                                required>
+                        </div>
+                        <div class="input__descricao--valor">
+                            <label for="">Descrição do Curso:</label>
+                            <input type="text" name="sigla" id="myInputDescricaoValor" style="width: 100%;" required>
+                        </div>
+                        <div class="input__carga--horaria--valor">
+                            <label for="">Carga Horaria do Curso:</label>
+                            <input type="number" name="carga_horaria" id="myInputCargaHorariaValor" min="0"
+                                style="width: 100%;" required>
+                        </div>
+                        <div class="modal__editar--footer">
+                            <a type="submit" id="editar">Salvar</a>
+                        </div>
+                        <a href="#" class="modal__editar--close">&times;</a>
+                    </form>
+                </div>
+
+                <!-- MODAL DELETAR CURSOS -->
+                <div class="modal__deletar" id="modal__deletar">
+                    <div class="modal__deletar--content" id="modal__deletar--content">
+                        <p>Deseja mesmo Deletar?</p>
+                        <div class="modal__deletar--footer">
+                            <a type="submit" id="naoDeletar" href="#">Não</a>
+                            <a type="submit" id="Deletar" href="#">Sim</a>
+                        </div>
+                        <a href="#" class="modal__deletar--close" id="sair">&times;</a>
+                    </div>
+                </div>
+
+                <!-- MODAL ERRO -->
+                <!-- <div class="modal__error" id="modal__error">
+            <div class="modal__error--content " id="error">
+                <p>Salvo com Sucesso</p>
+                <div class="modal__error--footer">
+                    <a type="submit" id="salvarBtn" href="#error__modal" >Salvar</a>
+                </div> 
+                <a href="#" class="modal__error--close">&times;</a>
+            </div>
+        </div> -->
+
+            </div>
+            <div class="cards_cursos">
+                <!-- ONDE VAI FICAR OS CURSOS -->
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
