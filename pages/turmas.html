@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LINK DO GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="../img/icon.png" type="image/x-icon">
+
+    <title>TURMAS</title>
+
+    <!-- Link do FontAwesome -->
+    <script src="https://kit.fontawesome.com/30058942d9.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/professor/turmas.css">
+    <link rel="stylesheet" href="../css/professor/professor.css">
+
+
+    <!-- COMPONENTS -->
+    <script src="../components/header.js" defer type="module"></script>
+    <script src="../components/nav.js" defer type="module"></script>
+    
+    
+    <script src="../js/cursos.js" defer type="module"></script>
+    <script src="../js/professorCRUD/modal_cursos.js" defer type="module"></script>
+    <!-- <script src="../js/app.js" defer type="module"></script> -->
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header-padrao color_top="#3084B4" color_button="#DA251C" text_button="VOLTAR"
+        link_button="../index.html"></header-padrao>
+
+    <!-- NAV PRINCIPAL -->
+    <nav-professor></nav-professor>
+    <main id="root_professor">
+        <div class="container container-turmas" id="container-turmas">
+            <div class="container_topo">
+                <div class="nome_buttons">
+                    <p>Turmas</p>
+                    <div class="adicionar_editar_deletar">
+                        <a class="fas fa-plus" href="#modal__adicionar"></a>
+                    </div>
+                </div>
+                <div class="linha"></div>
+            </div>
+            <div id="modal__adicionar" class="modal__adicionar">
+                <form class="modal__adicionar--content" id="modal__adicionar--content">
+                    <p class="nome__modal">Adicionar um Turma</p>
+                    <div class="input__nome">
+                        <label for="">Nome da Turma:</label>
+                        <input type="text" name="nome" id="" maxlength="45" style="width: 100%;" required>
+                    </div>
+                    <div class="input__sigla">
+                        <label for="">Sigla da Turma:</label>
+                        <input type="text" name="sigla" id="" maxlength="8" style="width: 100%;" required>
+                    </div>
+                    <div class="input__descricao">
+                        <label for="">Descrição da Turma:</label>
+                        <input type="text" name="descricao" id="" style="width: 100%;" required>
+                    </div>
+                    <div class="data_inicio_termino">
+                        <div class="input__data--inicio">
+                            <label for="">Data Inicio:</label>
+                            <input type="date" name="data_inicio" id="" required>
+                        </div>
+                        <div class="input__data--termino">
+                            <label for="">Data Termino:</label>
+                            <input type="date" name="data_termino" id="" required>
+                        </div>
+                    </div>
+                    <div class="semestres">
+                        <label for="">Semestre da Turma:</label>
+                        <input type="radio" id="under_13" value="1" name="user_age">
+                        <label for="1" class="light">1</label>
+                        <input type="radio" id="under_13" value="2" name="user_age">
+                        <label for="2" class="light">2</label>
+                        <input type="radio" id="under_13" value="3" name="user_age">
+                        <label for="3" class="light">3</label>
+                        <input type="radio" id="under_13" value="4" name="user_age">
+                        <label for="4" class="light">4</label>
+                    </div>
+                    <div class="modal__adicionar--footer">
+                        <a type="submit" id="salvarBtn">Salvar</a>
+                    </div>
+                    <a href="#" class="modal__adicionar--close">&times;</a>
+                </form>
+            </div>
+            <div class="cards_turmas">
+                <div class="card_turmas">
+                    <h1>DS2T</h1>
+                    <span>2º Semestre</span>
+                    <span>06/2023</span>
+                </div>
+            </div>  
+        </div>
+    </main>
+</body>
+
+</html>
