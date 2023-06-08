@@ -9,6 +9,8 @@ nav {
     background-color: #3084B4;
 }
 
+
+
 .busca {
     height: 100%;
     width: 50%;
@@ -162,6 +164,11 @@ nav {
     color: rgba(0, 0, 0, 0.5);
     padding: 1% 0% 1% 0%;
     border-bottom: 2px solid rgba(48, 132, 180, 0.5);
+}
+
+.linkCriterioTarefa{
+    display:grid;
+    place-self: end;
 }
 
 .dados {
@@ -579,11 +586,8 @@ label {
     gap: 2vw;
 }
 .linkHorario{
-    position: absolute;
-    margin-right: 4vw;
-    right: 0;
-    font-size: clamp(1.3125rem, -0.0569rem + 2.95vw, 1.9rem);
-
+    display: grid;
+    place-self: end;
 }
 .desejaEnviarButtons button {
     padding: 0px 20px 0px 20px;
