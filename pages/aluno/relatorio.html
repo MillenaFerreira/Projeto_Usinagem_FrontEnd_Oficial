@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Link do FontAwesome -->
+    <script src="https://kit.fontawesome.com/30058942d9.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/aluno/reset.css">
+    <link rel="stylesheet" href="/css/aluno/aluno.css">
+
+
+    <!-- COMPONENTS -->
+    <script src="/components/header.js" defer type="module"></script>
+
+    <!-- <script src="../js/materia.js" defer type="module"></script>
+<script src="../js/areaAluno.js" defer type="module"></script>
+<script src="../js/relatorio.js" defer type="module"></script> -->
+
+    <script src="/js/adicionar.js" defer type="module"></script>
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header-padrao color_top="#3084B4" color_button="#DA251C" text_button="VOLTAR"
+        link_button="../index.html"></header-padrao>
+    <nav>
+        <ul class="busca">
+            <a href="/pages/aluno/materia.html"  class="materia">
+                Matéria
+            </a>
+            <a href="/pages/aluno/areaAluno.html"  class="areaAluno">
+                Área do Aluno
+            </a>
+            <a href="/pages/aluno/horario.html" class="horario">
+                Horário
+            </a>
+        </ul>
+    </nav>
+    <main id="root_aluno">
+        <div class="container container-relatorio" id="container-relatorio">
+            <div class="container_topo">
+                <a href="/horario"  class="linkHorario">Horário</a>
+                <div class="nome_buttons">
+                    <p>Relatório</p>
+                </div>
+                <div class="linha"></div>
+                <div class="criterios">
+                    <li>Descrição do critério</li>
+                    <li>Desejado</li>
+                    <li>Obtido</li>
+                    <li>Avaliação</li>
+                    <li>Observação</li>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
+
+
+
