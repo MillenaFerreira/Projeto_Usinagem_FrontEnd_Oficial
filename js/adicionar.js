@@ -662,7 +662,7 @@ const criarDadosHorario = () => {
         criarDadosHorario()
     })
 
-    //fetchAPI()
+    fetchAPI()
 }
 
 

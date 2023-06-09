@@ -29,7 +29,7 @@ const criarDadosTarefa = async ()  => {
         imgPeca.src = tarefa.foto_peca
 
         const nomeTarefa = document.createElement('p')
-        nomeTarefa.textContent =  tarefa.nome
+        nomeTarefa.textContent =  tarefa.nome_tarefa
 
         card.append(aLinkCard,imgPeca,spanTipoTarefa,nomeTarefa)
        
@@ -40,3 +40,4 @@ const criarDadosTarefa = async ()  => {
  
 }
 
+criarDadosTarefa()
