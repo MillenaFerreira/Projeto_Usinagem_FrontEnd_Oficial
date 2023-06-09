@@ -1,6 +1,6 @@
 'use strict'
 
-import { pesquisarTarefas } from './apiTarefas.js';
+import { pesquisarTarefas, } from './apiTarefas.js';
 //import "./router.js"
 
 const criarDadosTarefa = async ()  => {

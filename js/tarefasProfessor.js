@@ -1,6 +1,80 @@
 'use strict'
 
-import { createTarefa } from './apiTarefas.js'
+import { createTarefa , deleteTarefa} from './apiTarefas.js'
+
+
+
+import { pesquisarTarefas } from './apiTarefas.js';
+//import "./router.js"
+
+const criarDadosTarefa = async () => {
+    const tarefasDados = await pesquisarTarefas();
+
+    const containerTarefa = document.querySelector('.cards_turma')
+
+    tarefasDados.forEach((tarefa) => {
+
+        const aLinkCard = document.createElement('a')
+        // aLinkCard.classList.add('cardLink')
+
+
+        const card = document.createElement('div')
+        card.classList.add('card')
+
+        const spanTipoTarefa = document.createElement('span')
+        spanTipoTarefa.textContent = 'Tipo: ' + tarefa.nome_tipo_tarefa
+
+        const imgPeca = document.createElement('img')
+        imgPeca.src = tarefa.foto_peca
+
+        const nomeTarefa = document.createElement('p')
+        nomeTarefa.classList.add('nomeTarefa')
+        nomeTarefa.textContent = tarefa.nome_tarefa
+
+        // const idTarefa = document.createElement('span')
+        // idTarefa.textContent = 'id: ' + tarefa.id
+        // idTarefa.classList.add('idTarefa')
+
+        // const divTeste = document.createElement('div')
+        // divTeste.classList.add('divteste2')
+
+        const button_excluir = document.createElement('button')
+        button_excluir.classList.add('fa-solid')
+        button_excluir.classList.add('fa-trash')
+        button_excluir.id = 'excluir2'
+
+
+        card.append(imgPeca, spanTipoTarefa, nomeTarefa, button_excluir)
+
+        containerTarefa.append(card)
+
+        // button_excluir.addEventListener('click', (event) => {
+        //     event.preventDefault();
+        //     
+        // })
+
+        // delet 
+
+        const idTarefa = tarefa.id;
+
+
+        button_excluir.addEventListener('click', async (event) => {
+            event.preventDefault();
+            console.log(idTarefa);
+            await deleteTarefa(idTarefa);
+        
+            location.reload();
+        });
+        
+
+    })
+
+}
+
+
+
+
+criarDadosTarefa()
 
 const buttonAdcTarefa = document.getElementById('adicionarTarefa')
 const modalTarefaAdc = document.getElementById('modal__adicionar__tarefa')
@@ -68,14 +142,14 @@ buttonSendTarefa.addEventListener('click', (event) => {
 
     const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
-    if(selectedValue == 'Somativa'){
+    if (selectedValue == 'Somativa') {
         valorTipoTarefa = 2
     }
-    if(selectedValue == 'Formativa'){
+    if (selectedValue == 'Formativa') {
         valorTipoTarefa = 1
     }
 
-    if(selectedValue != "na"){
+    if (selectedValue != "na") {
         if (urlRegex.test(valorUrl)) {
             console.log("A URL é válida.");
             const tarefa = {
@@ -87,8 +161,13 @@ buttonSendTarefa.addEventListener('click', (event) => {
             }
             console.log(tarefa);
             createTarefa(tarefa)
-        } 
+
+            modalTarefaAdc.classList.add('d-none')
+            modalTarefaAdc.classList.remove('d-flex')
+        }
     }
+
+
 
 
 })

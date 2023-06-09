@@ -20,3 +20,12 @@ export const pesquisarTarefas = async () => {
   
     fetch(url, options)
   }
+
+  export const deleteTarefa = async (tarefa) => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/tarefa/${tarefa}`;
+    const options = {
+      method: 'DELETE'
+    };
+  
+    fetch(url, options)
+  }

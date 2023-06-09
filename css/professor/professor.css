@@ -160,6 +160,38 @@ nav {
     scale: 0.9;
 }
 
+.nomeTarefa{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 8vw;
+}
+
+#excluir2{
+    color: white;
+    background-color: #3084B4;
+    padding: 10px;
+    border-radius: 50%;
+    border: 0;
+    position: absolute;
+    float: left;
+    right: 0;
+    display: none;
+    bottom: 0;
+    cursor: pointer;
+    font-size: clamp(0.8125rem, -0.0469rem + 2.75vw, 1.5rem);
+}
+
+.card:hover #excluir2{
+    display: block;
+}
+.idTarefa{
+   display: grid;
+   place-self: start;
+    font-size: 1rem;
+}
+
 @media (max-width: 999px) {
     .busca {
         width: 100%;
