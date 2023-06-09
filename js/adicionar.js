@@ -302,8 +302,8 @@ const fetchAPI = async () => {
                     "desconto": `${time_input_desconto_edit.value.substring(0, 2) + ':' + time_input_desconto_edit.value.substring(3, 5)}`,
                     "liquido": `${valorTotalLiquid}`,
                     "tempo_geral": `${valorTotal}`,
-                    "id_tarefa": 2,
-                    "id_matricula": 1
+                    "id_tarefa": tempo.id_tarefa,
+                    "id_matricula": tempo.id_matricula
                 }
                  console.log(horarioUpdate);
                 updateHorario(tempo.id, horarioUpdate)
@@ -320,11 +320,6 @@ const fetchAPI = async () => {
 
             })
         })
-
-
-
-
-
 
 
         btnBack.addEventListener('click', (event) => {
