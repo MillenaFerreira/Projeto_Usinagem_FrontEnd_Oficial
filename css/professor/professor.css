@@ -44,9 +44,8 @@ nav {
     background-color: var(--primary-color);
 }
 .modal__adicionar__tarefa form{
-  height: 50%;
+  height: auto;
   width: 80%;
-  margin-top: 10%;
   margin-left: 10%;
   display: flex;
   flex-direction: column;
@@ -77,6 +76,37 @@ form #sair:hover{
     align-items: center;
     color: #666666;
 }
+
+.imgTarefa input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .imgTarefa input[type="file"]::before {
+    content: 'Selecione uma imagem';
+    display: inline-block;
+    background: #f1f1f1;
+    padding: 5px 10px;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .imgTarefa{
+    display: flex;
+  }
+  .imgTarefa input[type="file"]:hover::before {
+    background: #e0e0e0;
+  }
+  .imgTarefa #visualizacao {
+    width: 500px;
+    background: url(https://img.freepik.com/vetores-premium/os-arquivos-png-fundo-vector-transparente-fundo-png_302321-1276.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    content: " ";
+    height: 300px;
+    background-size: contain;
+  }
+  
+  
 @media (max-width: 999px) {
     .busca {
         width: 100%;
