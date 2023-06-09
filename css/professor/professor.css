@@ -35,30 +35,34 @@ nav {
     background-color: #074A71;
 }
 
-.modal__adicionar__tarefa{
-   width: 100%;
-   height: 100%;
-   z-index: 1;
-   opacity: .9;
-   position: absolute;
+.modal__adicionar__tarefa {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: .9;
+    position: absolute;
     background-color: var(--primary-color);
 }
-.modal__adicionar__tarefa form{
-  height: auto;
-  width: 80%;
-  margin-left: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 4%;
-  opacity: 1;
-  z-index: 2;
-  background-color: #C4D9E5;
-  font-size: clamp(1.3rem, -0.0469rem + 2.75vw, 1.5rem);
+
+.modal__adicionar__tarefa form {
+    height: auto;
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4%;
+    opacity: 2;
+    z-index: 2;
+    background-color: #C4D9E5;
+    font-size: clamp(1.3rem, -0.0469rem + 2.75vw, 1.5rem);
 }
 
-form #sair{
+#sair {
     padding: 10px 40px;
+    margin-left: 3vw;
+    display: grid;
+    place-self: start;
     border-radius: 4px;
     background-color: var(--secondary-color);
     border: 2px solid #fff;
@@ -66,12 +70,13 @@ form #sair{
     cursor: pointer;
     transition: .4s ease-in-out;
 }
-form #sair:hover{
-  scale: 0.9;
+
+#sair:hover {
+    scale: 0.9;
 }
 
 
-.titleForm{
+.titleForm {
     gap: 5vw;
     align-items: center;
     color: #666666;
@@ -79,8 +84,9 @@ form #sair:hover{
 
 .imgTarefa input[type="file"]::-webkit-file-upload-button {
     visibility: hidden;
-  }
-  .imgTarefa input[type="file"]::before {
+}
+
+.imgTarefa input[type="file"]::before {
     content: 'Selecione uma imagem';
     display: inline-block;
     background: #f1f1f1;
@@ -88,49 +94,92 @@ form #sair:hover{
     outline: none;
     white-space: nowrap;
     cursor: pointer;
-  }
+}
 
-  .imgTarefa{
+.imgTarefa {
     display: flex;
     align-items: center;
     width: auto;
     justify-content: center;
     height: auto;
     background-color: #666666;
-  }
-  .imgTarefa input[type="file"]:hover::before {
+}
+
+.imgTarefa input[type="file"]:hover::before {
     background: #e0e0e0;
-  }
-  .imgTarefa #visualizacao {
+}
+
+.imgTarefa #visualizacao {
     width: 40vw;
     height: 40vh;
     display: grid;
     place-content: center;
     background-color: #3084B4;
-  }
+}
 
-  #imgVisu{
+#imgVisu {
     height: 40vh;
     display: grid;
     place-self: center;
     width: 40vw;
     background-color: #666666;
-  }
-  
-  
+}
+
+.inputsTarefa {
+    width: 90%;
+    margin-top: 10%;
+    gap: 4vh;
+}
+
+.inputsTarefa textarea {
+    resize: none;
+    height: 10vh;
+    padding: 5px;
+}
+
+.inputsTarefa input {
+    height: 5vh;
+    padding: 5px;
+}
+
+#sendTarefa {
+    width: 25%;
+    display: grid;
+    margin-top: 5vh;
+    place-self: center;
+    border-radius: 5px;
+    padding: 10px 0;
+    background-color: #3084B4;
+    border: 2px solid #fff;
+    color: #ffff;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+
+#sendTarefa:hover {
+    scale: 0.9;
+}
+
 @media (max-width: 999px) {
     .busca {
         width: 100%;
     }
-     .busca a {
+
+    .busca a {
         font-size: 1rem;
     }
 }
 
 @media (max-width:600px) {
-    .modal__adicionar__tarefa form{
+    .modal__adicionar__tarefa form {
         height: 90%;
         width: 90%;
         margin-left: 5%;
-      }
+        margin-top: 10%;
+        gap: 5vh;
+    }
+
+    #sendTarefa{
+        width: 45%;
+    }
 }
