@@ -35,6 +35,28 @@ nav {
     background-color: #074A71;
 }
 
+.modal__adicionar__tarefa{
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+   opacity: .9;
+   position: absolute;
+    background-color: var(--primary-color);
+}
+.modal__adicionar__tarefa form{
+  height: 50%;
+  width: 80%;
+  margin-top: 10%;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  z-index: 2;
+  background-color: beige;
+}
+
 @media (max-width: 999px) {
     .busca {
         width: 100%;

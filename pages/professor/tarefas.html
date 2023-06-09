@@ -8,11 +8,13 @@
     <script src="https://kit.fontawesome.com/30058942d9.js" crossorigin="anonymous"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="/css/aluno/reset.css">
-    <link rel="stylesheet" href="/css/aluno/professor.css">
+    <link rel="stylesheet" href="/css/professor/professor.css">
     <link rel="stylesheet" href="/css/aluno/aluno.css">
+    <link rel="stylesheet" href="/css/reset.css">
 
     <script src="/components/header.js" defer type="module"></script>
     <script src="/components/nav.js" defer type="module"></script>
+    <script src="/js/tarefasProfessor.js" defer type="module"></script>
     <title>Document</title>
 </head>
 
@@ -35,8 +37,19 @@
 
                     </div>
                 </div>
+
             </div>
+            
     </main>
+    <div id="modal__adicionar__tarefa" class="modal__adicionar__tarefa d-none">
+        <form  id="adcTarefa">
+            <div class="titleForm">
+                <h3>Adicione uma tarefa</h3>
+                <button id="sair">Sair</button>
+            </div>
+        </form>
+     
+    </div>
 </body>
 
 </html>
