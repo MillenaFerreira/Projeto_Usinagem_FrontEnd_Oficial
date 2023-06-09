@@ -1,9 +1,9 @@
 'use strict'
 
 import { pesquisarTarefas } from './apiTarefas.js';
-import "./router.js"
+//import "./router.js"
 
-export const criarDadosTarefa = async ()  => {
+const criarDadosTarefa = async ()  => {
     const tarefasDados = await pesquisarTarefas();
 
     const containerTarefa = document.querySelector('.cards_turma')
