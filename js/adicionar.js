@@ -296,14 +296,14 @@ const fetchAPI = async () => {
                 event.preventDefault();
                 const horarioUpdate = {
                     "id": `${tempo.id}`,
-                    "data_projeto": `${date_input_edit.value}`,
+                    "data_inicio": `${date_input_edit.value}`,
                     "duracao_inicio": `${time_input_inicio_edit.value.substring(0, 2) + ':' + time_input_inicio_edit.value.substring(3, 5)}`,
                     "duracao_termino": `${time_input_termino_edit.value.substring(0, 2) + ':' + time_input_termino_edit.value.substring(3, 5)}`,
                     "desconto": `${time_input_desconto_edit.value.substring(0, 2) + ':' + time_input_desconto_edit.value.substring(3, 5)}`,
                     "liquido": `${valorTotalLiquid}`,
-                    "total_geral": `${valorTotal}`,
-                    "id_tarefa": 3,
-                    "id_aluno": 1
+                    "tempo_geral": `${valorTotal}`,
+                    "id_tarefa": 2,
+                    "id_matricula": 1
                 }
                  console.log(horarioUpdate);
                 updateHorario(tempo.id, horarioUpdate)
@@ -615,14 +615,14 @@ const criarDadosHorario = () => {
                 valor_liquido.textContent = valorTotalLiquid.replace('-', ' ')
 
                 const horario = {
-                    "data_projeto": `${date_input.value}`,
+                    "data_inicio": `${date_input.value}`,
                     "duracao_inicio": `${time_input_inicio.value.substring(0, 2) + ':' + time_input_inicio.value.substring(3, 5)}`,
                     "duracao_termino": `${time_input_termino.value.substring(0, 2) + ':' + time_input_termino.value.substring(3, 5)}`,
                     "desconto": `${time_input_desconto.value.substring(0, 2) + ':' + time_input_desconto.value.substring(3, 5)}`,
                     "liquido": `${valorTotalLiquid.replace('-', '')}`,
-                    "total_geral": `${valorTotal.replace('-', '')}`,
-                    "id_tarefa": 3,
-                    "id_aluno": 1
+                    "tempo_geral": `${valorTotal.replace('-', '')}`,
+                    "id_tarefa": 2,
+                    "id_matricula": 1
                 }
                 console.log(horario);
                 createHorario(horario)
