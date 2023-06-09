@@ -51,12 +51,32 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding-top: 4%;
   opacity: 1;
   z-index: 2;
-  background-color: beige;
+  background-color: #C4D9E5;
+  font-size: clamp(1.3rem, -0.0469rem + 2.75vw, 1.5rem);
 }
 
+form #sair{
+    padding: 10px 40px;
+    border-radius: 4px;
+    background-color: var(--secondary-color);
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+form #sair:hover{
+  scale: 0.9;
+}
+
+
+.titleForm{
+    gap: 5vw;
+    align-items: center;
+    color: #666666;
+}
 @media (max-width: 999px) {
     .busca {
         width: 100%;
@@ -64,4 +84,12 @@ nav {
      .busca a {
         font-size: 1rem;
     }
+}
+
+@media (max-width:600px) {
+    .modal__adicionar__tarefa form{
+        height: 90%;
+        width: 90%;
+        margin-left: 5%;
+      }
 }
