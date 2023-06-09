@@ -15,6 +15,7 @@
     <script src="/components/header.js" defer type="module"></script>
     <script src="/components/nav.js" defer type="module"></script>
     <script src="/js/tarefasProfessor.js" defer type="module"></script>
+    <script src="/js/tarefas.js" defer type="module"></script>
     <title>Document</title>
 </head>
 
@@ -32,8 +33,7 @@
                     </div>
                 </div>
                 <div class="linha"></div>
-                <div class="card_tarefas_turma">
-                    <div class="card_tarefa" id="1">
+                    <div class="cards_turma">
 
                     </div>
                 </div>
@@ -47,12 +47,13 @@
             <button id="sair">Sair</button>
             <div class="titleForm d-flex font-family-Montserrat">
                 <h3>Adicione uma tarefa</h3>
-     
             </div>
             <div class="inputsTarefa d-flex flex-column">
-                <input type="text" placeholder="Digite o nome da tarefa" required>
-                <input type="text" placeholder="Digite a URL de uma imagem" required>
-                <textarea name="" id="" placeholder="Descrição tarefa"></textarea>
+                <input type="text" placeholder="Digite o nome da tarefa" required id="nomeTarefa">
+                <input type="text" placeholder="Digite a URL de uma imagem" required id="urlTarefa">
+                <label for="tempoPrevisto">Digite o tempo previsto:</label>
+                <input type="time" id="tempoPrevisto">
+                <textarea name=""  placeholder="Descrição tarefa" id="descricaoTarefa"></textarea>
                 <!-- <div class="imgTarefa">
                     <input type="file" id="imagem" name="imagem">
                     <div id="visualizacao">
@@ -63,8 +64,8 @@
                     <label for="tipo-atividade">Tipo de Atividade:</label>
                     <select id="tipo-atividade">
                         <option value="na"></option>
-                      <option value="somativa">Somativa</option>
-                      <option value="formativa">Formativa</option>
+                      <option value="Somativa">Somativa</option>
+                      <option value="Formativa">Formativa</option>
                     </select>
                   </div>
                   <button id="sendTarefa">Send</button>
