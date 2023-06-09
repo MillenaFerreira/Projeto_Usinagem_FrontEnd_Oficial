@@ -15,6 +15,7 @@ buttonSairMNodal.addEventListener('click', () => {
 })
 var input = document.getElementById('imagem');
 var visualizacao = document.getElementById('visualizacao');
+var imgVisu = document.getElementById('imgVisu');
 
 const exibirImagem = (event) => {
     console.log('2');
@@ -26,8 +27,9 @@ const exibirImagem = (event) => {
         console.log('3');
         reader.onload = function (e) {
             console.log('4');
-            visualizacao.style.background = "url('" + e.target.result + "')";
-            visualizacao.style.backgroundRepea = "no-repeat";
+            imgVisu.src = e.target.result
+            //visualizacao.style.background = "url('" + e.target.result + "')";
+            //visualizacao.style.backgroundRepea = "no-repeat";
             console.log(e.target.result);
         };
 
