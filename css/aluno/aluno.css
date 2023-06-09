@@ -115,6 +115,22 @@ nav {
     overflow: hidden;
     transition: .4s ease-in-out;
 }
+.card3 {
+    width: 350px;
+    height: 350px;
+    background: #D9D9D9;
+    border: 1px solid #3084B4;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .4s ease-in-out;
+}
 .card2 {
     width: 350px;
     height: auto;
@@ -133,7 +149,7 @@ nav {
     transition: .4s ease-in-out;
 }
 
-.card2:hover, .card:hover{
+.card2:hover, .card:hover, .card3:hover{
     scale: .9;
 }
 
