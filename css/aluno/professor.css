@@ -1,0 +1,249 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 75px 1fr;
+}
+
+nav {
+    background-color: #3084B4;
+}
+
+.busca {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    background-color: aqua;
+}
+
+.busca a {
+    background-color: #3084B4;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+.busca :hover {
+    background-color: #074A71;
+}
+
+#root {
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 5vw 8.4vh;
+    background-color: #eeeeee;
+}
+
+.container_topo {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.container_topo p {
+    color: #074A71;
+}
+
+.nome_buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.adicionar_editar_deletar button {
+    color: white;
+    background-color: #3084B4;
+    padding: 10px;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.container-cursos {
+    display: flex;
+    flex-direction: column;
+    gap: 7.2vh;
+}
+
+.container-turmas {
+    display: flex;
+    flex-direction: column;
+    gap: 7.2vh;
+}
+
+.linha {
+    background-color: #3084B4;
+    width: 100%;
+    height: 2px;
+}
+
+/* CURSOS */
+.cards_cursos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    grid-gap: 46px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+.card_curso {
+    background-color: #D9D9D9;
+    width: 285px;
+    height: 269px;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    border: 1px solid #3084B4;
+    border-radius: 5px;
+    box-shadow: 8px 8px 5px 2px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.nome {
+    text-align: center;
+}
+
+.nome h2 {
+    font-size: 32px;
+    line-height: 39px;
+}
+
+.nome span {
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.carga_horaria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: #074A71;
+}
+
+/* TURMAS */
+.cards_turmas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    grid-gap: 46px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+
+.card_turmas {
+    background-color: #D9D9D9;
+    width: 295px;
+    height: 238px;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    border: 1px solid #3084B4;
+    border-radius: 5px;
+    box-shadow: 8px 8px 5px 2px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.card_turmas h1 {
+    font-size: 64px;
+    line-height: 78px;
+}
+
+.card_turmas span {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+/* ALUNOS */
+.pesquisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search {
+    width: 300px;
+    height: 50px;
+    padding: 12px 0;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #575756;
+    border-radius: 0;
+    background-position: 100% center;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95% center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 2px solid #000;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+@media (max-width: 999px) {
+    .busca {
+        width: 100%;
+    }
+
+    .cards_cursos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .cards_turmas {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+@media (max-width: 640px) {
+    .busca a {
+        font-size: 1rem;
+    }
+
+    .container_topo {
+        text-align: center;
+    }
+
+    .container {
+        padding: 5vw 20px;
+    }
+
+    .card {
+        width: 270px;
+        height: 270px;
+    }
+}

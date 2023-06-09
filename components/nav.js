@@ -95,15 +95,15 @@ class nav extends HTMLElement {
 
         const cursos = document.createElement('a')
         cursos.textContent = 'Cursos'
-        cursos.href = './cursos.html'
+        cursos.href = '/pages/professor/cursos.html'
 
         const turmas = document.createElement('a')
         turmas.textContent = 'Turmas'
-        turmas.href = './turmas.html'
+        turmas.href = '/pages/professor/turmas.html'
 
         const alunos = document.createElement('a')
         alunos.textContent = 'Alunos'
-        alunos.href = './alunos.html'
+        alunos.href = '/pages/professor/alunos.html'
         
         nav.append(ul)
         ul.append(cursos, turmas, alunos)
