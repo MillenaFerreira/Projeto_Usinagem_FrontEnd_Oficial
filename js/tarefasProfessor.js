@@ -87,8 +87,13 @@ buttonSendTarefa.addEventListener('click', (event) => {
             }
             console.log(tarefa);
             createTarefa(tarefa)
+
+            modalTarefaAdc.classList.add('d-none')
+            modalTarefaAdc.classList.remove('d-flex')
         } 
     }
+
+
 
 
 })
