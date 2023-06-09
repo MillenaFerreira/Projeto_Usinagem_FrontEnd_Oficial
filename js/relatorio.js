@@ -3,7 +3,7 @@
 import { pesquisarCriterios } from './apiCriterios.js'
 import { updateCriterio } from './apiCriterios.js'
 
-export const criterioForEach = async () => {
+const criterioForEach = async () => {
 
     const criterios = await pesquisarCriterios();
 
@@ -12,6 +12,7 @@ export const criterioForEach = async () => {
     //console.log(registroCriterios);
 
     registroCriterios.forEach((criterio) => {
+        console.log(criterio);
 
         const container_relatorio = document.getElementById('container-relatorio')
 
@@ -53,18 +54,18 @@ export const criterioForEach = async () => {
         const margemMaximo2 = document.createElement('span')
 
 
-        if (criterio.margem_erro.resultados != null) {
+        // if (criterio.margem_erro.resultados != null) {
 
-            if (criterio.margem_erro.resultados[0] != null) {
-                margemMinimo.textContent = criterio.margem_erro.resultados[0].descricao;
-            }
+        //     if (criterio.margem_erro.resultados[0] != null) {
+        //         margemMinimo.textContent = criterio.margem_erro.resultados[0].descricao;
+        //     }
 
-            if (criterio.margem_erro.resultados[1] != null) {
-                margemMaximo.textContent = criterio.margem_erro.resultados[1].descricao;
-            }
+        //     if (criterio.margem_erro.resultados[1] != null) {
+        //         margemMaximo.textContent = criterio.margem_erro.resultados[1].descricao;
+        //     }
 
 
-        }
+        // }
 
 
 
@@ -91,7 +92,7 @@ export const criterioForEach = async () => {
         const spanCheck = document.createElement('span')
         spanCheck.classList.add('checkmark')
 
-        if (criterio.tipo_critico_criterio == 1) {
+        if (criterio.tipo_critico == 1) {
             checkbox.checked = true;
         }
 
@@ -307,3 +308,4 @@ export const criterioForEach = async () => {
     });
 }
 
+criterioForEach()

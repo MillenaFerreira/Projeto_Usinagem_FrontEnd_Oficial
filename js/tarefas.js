@@ -1,9 +1,9 @@
 'use strict'
 
 import { pesquisarTarefas } from './apiTarefas.js';
-import "./router.js"
+//import "./router.js"
 
-export const criarDadosTarefa = async ()  => {
+const criarDadosTarefa = async ()  => {
     const tarefasDados = await pesquisarTarefas();
 
     const containerTarefa = document.querySelector('.cards_turma')
@@ -12,12 +12,7 @@ export const criarDadosTarefa = async ()  => {
 
         const aLinkCard = document.createElement('a')
         aLinkCard.classList.add('cardLink')
-        aLinkCard.href = '/relatorio'
-        aLinkCard.id = 'aLinkCard'
 
-        aLinkCard.addEventListener('click', () => {
-           route()
-        })
 
         const card = document.createElement('div')
         card.classList.add('card')
@@ -29,7 +24,7 @@ export const criarDadosTarefa = async ()  => {
         imgPeca.src = tarefa.foto_peca
 
         const nomeTarefa = document.createElement('p')
-        nomeTarefa.textContent =  tarefa.nome
+        nomeTarefa.textContent =  tarefa.nome_tarefa
 
         card.append(aLinkCard,imgPeca,spanTipoTarefa,nomeTarefa)
        
@@ -40,3 +35,4 @@ export const criarDadosTarefa = async ()  => {
  
 }
 
+criarDadosTarefa()

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/30058942d9.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/aluno/reset.css">
+    <link rel="stylesheet" href="/css/professor/professor.css">
+    <link rel="stylesheet" href="/css/aluno/aluno.css">
+    <link rel="stylesheet" href="/css/reset.css">
+
+    <script src="/components/header.js" defer type="module"></script>
+    <script src="/components/nav.js" defer type="module"></script>
+    <script src="/js/tarefasProfessor.js" defer type="module"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header-padrao color_top="#3084B4" color_button="#DA251C" text_button="VOLTAR"
+        link_button="../index.html"></header-padrao>
+    <nav-professor></nav-professor>
+    <main id="root_aluno">
+        <div class="container container-tarefas" id="container-tarefas">
+            <div class="container_topo">
+                <div class="nome_buttons">
+                    <p id="nomeTurma">Tarefas da turma de tal</p>
+                    <div class="adicionar_editar_deletar">
+                        <button class="fas fa-plus" id="adicionarTarefa"></button>
+                    </div>
+                </div>
+                <div class="linha"></div>
+                <div class="card_tarefas_turma">
+                    <div class="card_tarefa" id="1">
+
+                    </div>
+                </div>
+
+            </div>
+            
+    </main>
+    <div id="modal__adicionar__tarefa" class="modal__adicionar__tarefa d-none">
+        
+        <form  id="adcTarefa">
+            <button id="sair">Sair</button>
+            <div class="titleForm d-flex font-family-Montserrat">
+                <h3>Adicione uma tarefa</h3>
+     
+            </div>
+            <div class="inputsTarefa d-flex flex-column">
+                <input type="text" placeholder="Digite o nome da tarefa" required>
+                <input type="text" placeholder="Digite a URL de uma imagem" required>
+                <textarea name="" id="" placeholder="Descrição tarefa"></textarea>
+                <!-- <div class="imgTarefa">
+                    <input type="file" id="imagem" name="imagem">
+                    <div id="visualizacao">
+                        <img id="imgVisu">
+                    </div>
+                  </div> -->
+                  <div class="containerTipoAtividade font-family-Montserrat">
+                    <label for="tipo-atividade">Tipo de Atividade:</label>
+                    <select id="tipo-atividade">
+                        <option value="na"></option>
+                      <option value="somativa">Somativa</option>
+                      <option value="formativa">Formativa</option>
+                    </select>
+                  </div>
+                  <button id="sendTarefa">Send</button>
+            </div>
+        </form>
+   
+    </div>
+</body>
+
+</html>

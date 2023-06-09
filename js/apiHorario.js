@@ -1,14 +1,14 @@
 'use strict'
 
 export const pesquisarHorario = async () => {
-    const url = `https://usinagem-senai.cyclic.app/v1/projeto-usinagem/registro-tempo`;
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/registro-tempo`;
     const response = await fetch(url);
     const data = await response.json();
     return data.registro_tempos;
   }
 
   export const createHorario = async (horario) => {
-    const url = `https://usinagem-senai.cyclic.app/v1/projeto-usinagem/registro-tempo`;
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/registro-tempo`;
     const options = {
       method: 'POST',
       headers: {
@@ -22,7 +22,7 @@ export const pesquisarHorario = async () => {
 
 
   export const updateHorario = async (idHorario, bodyUpdate) => {
-    const url = `https://usinagem-senai.cyclic.app/v1/projeto-usinagem/registro-tempo/${idHorario}`;
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/registro-tempo/${idHorario}`;
     const options = {
       method: 'PUT',
       headers: {
@@ -47,7 +47,7 @@ export const pesquisarHorario = async () => {
   
 
   export const deleteHorario = async (idHorario) => {
-    const url = `https://usinagem-senai.cyclic.app/v1/projeto-usinagem/registro-tempo/${idHorario}`;
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/registro-tempo/${idHorario}`;
     const options = {
       method: 'DELETE'
     };
