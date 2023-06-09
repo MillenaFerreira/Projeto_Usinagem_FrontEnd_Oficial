@@ -1,5 +1,7 @@
 'use strict'
 
+import { createTarefa } from './apiTarefas.js'
+
 const buttonAdcTarefa = document.getElementById('adicionarTarefa')
 const modalTarefaAdc = document.getElementById('modal__adicionar__tarefa')
 const buttonSairMNodal = document.getElementById('sair')
@@ -29,17 +31,64 @@ buttonSairMNodal.addEventListener('click', () => {
 //             console.log('4');
 //             imgVisu.src = e.target.result
 //             console.log(e.target.result);
-            
+
 //         };
 
 //         reader.readAsDataURL(input.files[0]);
 //     } else {
 //         visualizacao.style.background = 'none';
 //     }
-    
+
 // };
 
 // input.addEventListener('change', (event) => {
 //     console.log('1');
 //     exibirImagem(event);
 // });
+
+const buttonSendTarefa = document.getElementById('sendTarefa')
+const nomeTarefa = document.getElementById('nomeTarefa')
+const urlTarefa = document.getElementById('urlTarefa')
+const tempoPrevisto = document.getElementById('tempoPrevisto')
+const descricaoTarefa = document.getElementById('descricaoTarefa')
+const selectElement = document.getElementById("tipo-atividade");
+
+
+
+
+buttonSendTarefa.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const selectedValue = selectElement.value;
+    const valorNomeTarefa = nomeTarefa.value
+    const valorUrl = urlTarefa.value
+    const valorTempo = tempoPrevisto.value
+    const valorValorDescricao = descricaoTarefa.value
+    let valorTipoTarefa = ''
+
+    const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+
+    if(selectedValue == 'Somativa'){
+        valorTipoTarefa = 2
+    }
+    if(selectedValue == 'Formativa'){
+        valorTipoTarefa = 1
+    }
+
+    if(selectedValue != "na"){
+        if (urlRegex.test(valorUrl)) {
+            console.log("A URL é válida.");
+            const tarefa = {
+                "nome": `${valorNomeTarefa}`,
+                "tempo_previsto": `${valorTempo.substring(0, 2) + ':' + valorTempo.substring(3, 5) + ':00'}`,
+                "numero": 12,
+                "foto_peca": `${valorUrl}`,
+                "id_tipo_tarefa": valorTipoTarefa
+            }
+            console.log(tarefa);
+            createTarefa(tarefa)
+        } 
+    }
+
+
+})

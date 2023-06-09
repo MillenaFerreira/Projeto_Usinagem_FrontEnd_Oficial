@@ -7,3 +7,16 @@ export const pesquisarTarefas = async () => {
     return data.tarefas;
   }
 
+
+  export const createTarefa= async (tarefa) => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/tarefa`;
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(tarefa)
+    };
+  
+    fetch(url, options)
+  }
