@@ -49,6 +49,7 @@
             </div>
             <div class="inputsTarefa d-flex flex-column">
                 <input type="text" placeholder="Digite o nome da tarefa" required>
+                <input type="text" placeholder="Digite a URL de uma imagem" required>
                 <textarea name="" id="" cols="30" rows="10" placeholder="Descrição tarefa"></textarea>
                 <!-- <div class="imgTarefa">
                     <input type="file" id="imagem" name="imagem">
@@ -56,10 +57,31 @@
                         <img id="imgVisu">
                     </div>
                   </div> -->
-                  
-
+                  <div class="containerTipoAtividade">
+                    <label for="tipo-atividade">Tipo de Atividade:</label>
+                    <select id="tipo-atividade">
+                        <option value="na"></option>
+                      <option value="somativa">Somativa</option>
+                      <option value="formativa">Formativa</option>
+                    </select>
+                  </div>
+              
+            </div>
+            <div class="nome_buttons">
+                <p id="nomeTurma">Critérios</p>
+                <div class="adicionar_editar_deletar">
+                    <button class="fas fa-plus" id="adicionarCriterio"></button>
+                </div>
+            </div>
+            <div class="listaCriterrios">
+               <button><div class="criterio">1 criterio</div></button> 
+               <button><div class="criterio">1 criterio</div></button> 
+               <button><div class="criterio">1 criterio</div></button> 
+               <button><div class="criterio">1 criterio</div></button> 
+               <button><div class="criterio">1 criterio</div></button> 
             </div>
         </form>
+   
     </div>
 </body>
 
