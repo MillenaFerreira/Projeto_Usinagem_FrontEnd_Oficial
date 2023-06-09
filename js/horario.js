@@ -1,6 +1,6 @@
 'use strict'
 
-//import {pesquisarHorario} from './apiRelatorio.js'
+import {pesquisarHorario} from './apiHorario.js'
 
 export const getValuesOfInputTimeDate = () => {
 

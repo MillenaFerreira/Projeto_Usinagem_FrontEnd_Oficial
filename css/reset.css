@@ -3,13 +3,30 @@
     margin: 0;
     box-sizing: border-box;
 }
-ul, ol, li {
-    list-style: none;
+
+:root{
+    --primary-color: #3084B4;
+    --background-color: #EEEEEE;
+    --light-primary-color: #4FB3DD;
+    --secondary-color: #DA251C;
+    --dark-primary-color: #074A71;
+    --font-light-gray-color: #A1A0AC;
+    --font-dark-gray-color: #666666;
+    --color-input: #ecf8f4;
+    --background-card-gray-color: #D9D9D9;
+    --background-statistic-color: #C4D9E5;
+
+    --card-student-primary-color: #C4D9E5;
+    --card-student-secondary-color: #00008BB2;
 }
-a{
-    text-decoration: none;
-    color: inherit;
-}
-html, body{
-    scroll-behavior: smooth;
-}
+
+a{text-decoration: none;}
+ul,li,ol{list-style: none;}
+
+
+.d-flex{display: flex;}
+.flex-column{flex-direction: column;}
+
+.font-family-jaldi{font-family: 'Jaldi', sans-serif;}
+
+.font-family-Montserrat{font-family: 'Montserrat', sans-serif;}

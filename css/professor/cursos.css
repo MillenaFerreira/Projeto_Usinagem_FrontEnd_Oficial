@@ -5,6 +5,57 @@ body {
     grid-template-rows: auto 75px 1fr;
 }
 
+#root_aluno {
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 5vw 8.4vh;
+    background-color: #eeeeee;
+}
+
+.container_topo {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.container_topo p {
+    color: #074A71;
+}
+
+.nome_buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.adicionar_editar_deletar a {
+    color: white;
+    background-color: #3084B4;
+    padding: 10px;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.linha {
+    background-color: #3084B4;
+    width: 100%;
+    height: 2px;
+}
+
+.pre__recarga {
+    width: 100px;
+    height: 100px;
+}
 
 /* MODEL ADICIONAR */
 .modal__adicionar {
@@ -23,7 +74,6 @@ body {
 }
 
 .nome__modal{
-    font-size: 2rem;
     text-align: center;
 }
 
@@ -41,7 +91,7 @@ body {
     padding: 1em 2em;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .modal__adicionar--footer {
@@ -59,11 +109,10 @@ body {
 
 .modal__adicionar--close {
     position: absolute;
-    top: 0px;
+    top: 10px;
     right: 10px;
     color: #585858;
     text-decoration: none;
-    font-size: 2.5rem;
 }
 
 .sigla__carga--horaria{
@@ -158,11 +207,10 @@ body {
 
 .modal__error--close {
     position: absolute;
-    top: 0px;
+    top: 10px;
     right: 10px;
     color: #585858;
     text-decoration: none;
-    font-size: 2.5rem;
 }
 
 /* MODEL EDITAR */
@@ -195,7 +243,7 @@ body {
     padding: 1em 2em;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .modal__editar--footer {
@@ -204,11 +252,10 @@ body {
 
 .modal__editar--close {
     position: absolute;
-    top: 0px;
+    top: 10px;
     right: 10px;
     color: #585858;
     text-decoration: none;
-    font-size: 2.5rem;
 }
 
 #editar {
@@ -292,22 +339,14 @@ body {
 
 .modal__deletar--close {
     position: absolute;
-    top: 0px;
+    top: 10px;
     right: 10px;
     color: #585858;
     text-decoration: none;
-    font-size: 2.5rem;
 }
 
 
 /* CURSOS */
-
-.container-cursos {
-    display: flex;
-    flex-direction: column;
-    gap: 7.2vh;
-}
-
 .cards_cursos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

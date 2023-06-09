@@ -24,7 +24,7 @@ const fetchAPI = async () => {
         data.classList.add('data')
 
         const valorData = document.createElement('i')
-        valorData.textContent = tempo.data_projeto;
+        valorData.textContent = tempo.data_inicio;
 
         const date_input = document.createElement('input')
         date_input.type = 'date'
@@ -94,7 +94,7 @@ const fetchAPI = async () => {
         total_geral.classList.add('total_geral')
 
         const valor_total = document.createElement('i')
-        valor_total.textContent = tempo.total_geral;
+        valor_total.textContent = tempo.tempo_geral;
 
         const dados_botoes = document.createElement('div')
         dados_botoes.classList.add('dados_botoes')
@@ -662,7 +662,7 @@ const criarDadosHorario = () => {
         criarDadosHorario()
     })
 
-    //fetchAPI()
+    fetchAPI()
 }
 
 

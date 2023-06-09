@@ -12,17 +12,18 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/css/aluno/reset.css">
-    <link rel="stylesheet" href="/css/aluno/aluno.css">
+    <link rel="stylesheet" href="/css/aluno/professor.css">
 
 
     <!-- COMPONENTS -->
     <script src="/components/header.js" defer type="module"></script>
-    <script src="/js/materias.js" defer type="module"></script>
 
-    <!-- <script src="../js/materia.js" defer type="module"></script>
-<script src="../js/areaAluno.js" defer type="module"></script>
-<script src="../js/relatorio.js" defer type="module"></script> -->
 
+    <script src="/js/horario.js" defer type="module"></script>
+    <script src="/js/tarefas.js" defer type="module"></script>
+    <script src="/js/app.js" defer type="module"></script>
+    <script src="/js/adicionar.js" defer type="module"></script>
+    <script src="/js/relatorio.js" defer type="module"></script>
 
     <title>Document</title>
 </head>
@@ -32,30 +33,28 @@
         link_button="../index.html"></header-padrao>
     <nav>
         <ul class="busca">
-            <a href="/pages/aluno/materia.html"  class="materia">
-                Matéria
+            <a href="/pages/professor/cursos.html"  class="materia">
+                Cursos
             </a>
-            <a href="/pages/aluno/areaAluno.html"  class="areaAluno">
-                Área do Aluno
+            <a href="/pages/professor/turmas.html"  class="areaAluno">
+                Turmas
             </a>
-            <a href="/pages/aluno/horario.html" class="horario">
-                Horário
+            <a href="/pages/professor/alunos.html" class="horario">
+                Alunos
             </a>
         </ul>
     </nav>
     <main id="root_aluno">
         <div class="container container-areaAluno" id="container-areaAluno">
             <div class="container_topo">
-                <p>Matéria</p>
+                <p>Lista de turmas</p>
                 <div class="linha"></div>
-                <div class="cards_turma">
-
-                </div> 
-            </div>
+            </div>  
+            <div class="cards_turma_professor">
+                
+            </div>  
         </div>
-
     </main>
-
 </body>
 
 </html>
