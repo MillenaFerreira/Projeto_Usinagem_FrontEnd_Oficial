@@ -12,12 +12,7 @@ const criarDadosTarefa = async ()  => {
 
         const aLinkCard = document.createElement('a')
         aLinkCard.classList.add('cardLink')
-        aLinkCard.href = '/relatorio'
-        aLinkCard.id = 'aLinkCard'
 
-        aLinkCard.addEventListener('click', () => {
-           route()
-        })
 
         const card = document.createElement('div')
         card.classList.add('card')
