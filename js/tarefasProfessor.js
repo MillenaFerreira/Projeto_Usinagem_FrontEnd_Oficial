@@ -108,6 +108,8 @@ const criarDadosTarefa = async () => {
 
                 updateTarefa(tarefa.id,tarefaUpdate)
 
+            
+
                 editarTarefaModal.classList.remove('d-flex')
                 editarTarefaModal.classList.add('d-none')
 
@@ -115,7 +117,11 @@ const criarDadosTarefa = async () => {
                 modalMensgaem.classList.add('d-none')
                 modalMensgaem.classList.remove('d-flex')
 
+                
+
             })
+
+            
 
         });
 
