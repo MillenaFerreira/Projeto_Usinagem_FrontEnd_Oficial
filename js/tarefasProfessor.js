@@ -1,6 +1,6 @@
 'use strict'
 
-import { createTarefa , deleteTarefa} from './apiTarefas.js'
+import { createTarefa, deleteTarefa, updateTarefa } from './apiTarefas.js'
 
 
 
@@ -51,8 +51,15 @@ const criarDadosTarefa = async () => {
         const urlTarefa2 = document.getElementById('urlTarefa2')
         const tempoPrevisto2 = document.getElementById('tempoPrevisto2')
         const tipo_atividade2 = document.getElementById('tipo-atividade2')
- 
-        
+
+        const tarefaEditada = document.getElementById('sendTarefaEditada')
+
+
+
+
+
+
+
 
         card.append(imgPeca, spanTipoTarefa, nomeTarefa, button_excluir, button_editar)
 
@@ -66,9 +73,10 @@ const criarDadosTarefa = async () => {
             event.preventDefault();
             console.log(idTarefa);
             await deleteTarefa(idTarefa);
-        
+
             location.reload();
         });
+
         button_editar.addEventListener('click', async (event) => {
             event.preventDefault();
             const editarTarefaModal = document.getElementById('modal__editar__tarefa')
@@ -78,20 +86,40 @@ const criarDadosTarefa = async () => {
             nomeTarefa2.value = tarefa.nome_tarefa
             urlTarefa2.value = tarefa.foto_peca
             tempoPrevisto2.value = tarefa.tempo_previsto_tarefa
-            tipo_atividade2.value = tarefa.nome_tipo_tarefa
+            tipo_atividade2.value = tarefa.id_tipo_tarefa
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
+
+            tarefaEditada.addEventListener('click', (event) => {
+                event.preventDefault();
+                const tarefaUpdate = {
+                    "id": tarefa.id,
+                    "nome": `${nomeTarefa2.value}`,
+                    "tempo_previsto": `${tempoPrevisto2.value.substring(0, 2) + ':' + tempoPrevisto2.value.substring(3, 5) + ':00'}`,
+                    "numero": 12,
+                    "foto_peca": `${urlTarefa2.value}`,
+                    "id_tipo_tarefa": parseInt(tipo_atividade2.value)
+                }
+                console.log(tarefaUpdate);
+
+                updateTarefa(tarefaUpdate)
+
+                editarTarefaModal.classList.remove('d-flex')
+                editarTarefaModal.classList.add('d-none')
+
+            })
         });
 
         buttonCard.addEventListener('click', async (event) => {
             event.preventDefault();
-            console.log(idTarefa);
+            //console.log(idTarefa);
         });
-        
+
 
     })
+
 
 }
 
@@ -148,7 +176,7 @@ const buttonSendTarefa = document.getElementById('sendTarefa')
 const nomeTarefa = document.getElementById('nomeTarefa')
 const urlTarefa = document.getElementById('urlTarefa')
 const tempoPrevisto = document.getElementById('tempoPrevisto')
-const descricaoTarefa = document.getElementById('descricaoTarefa')
+//const descricaoTarefa = document.getElementById('descricaoTarefa')
 const selectElement = document.getElementById("tipo-atividade");
 
 
@@ -161,17 +189,17 @@ buttonSendTarefa.addEventListener('click', (event) => {
     const valorNomeTarefa = nomeTarefa.value
     const valorUrl = urlTarefa.value
     const valorTempo = tempoPrevisto.value
-    const valorValorDescricao = descricaoTarefa.value
-    let valorTipoTarefa = ''
+    //const valorValorDescricao = descricaoTarefa.value
+    //let valorTipoTarefa = ''
 
     const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
-    if (selectedValue == 'Somativa') {
-        valorTipoTarefa = 2
-    }
-    if (selectedValue == 'Formativa') {
-        valorTipoTarefa = 1
-    }
+    // if (selectedValue == 'Somativa') {
+    //     valorTipoTarefa = 2
+    // }
+    // if (selectedValue == 'Formativa') {
+    //     valorTipoTarefa = 1
+    // }
 
     if (selectedValue != "na") {
         if (urlRegex.test(valorUrl)) {
@@ -181,7 +209,7 @@ buttonSendTarefa.addEventListener('click', (event) => {
                 "tempo_previsto": `${valorTempo.substring(0, 2) + ':' + valorTempo.substring(3, 5) + ':00'}`,
                 "numero": 12,
                 "foto_peca": `${valorUrl}`,
-                "id_tipo_tarefa": valorTipoTarefa
+                "id_tipo_tarefa": parseInt(selectedValue)
             }
             console.log(tarefa);
             createTarefa(tarefa)
