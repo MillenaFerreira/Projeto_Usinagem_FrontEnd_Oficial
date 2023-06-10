@@ -14,9 +14,12 @@ const criarDadosTarefa = async () => {
 
     tarefasDados.forEach((tarefa) => {
 
-        const aLinkCard = document.createElement('a')
+        // const aLinkCard = document.createElement('a')
         // aLinkCard.classList.add('cardLink')
 
+        const buttonCard = document.createElement('button')
+        buttonCard.classList.add('buttonCard')
+        buttonCard.title = "Clique para mais informações da tarefa."
 
         const card = document.createElement('div')
         card.classList.add('card')
@@ -31,29 +34,24 @@ const criarDadosTarefa = async () => {
         nomeTarefa.classList.add('nomeTarefa')
         nomeTarefa.textContent = tarefa.nome_tarefa
 
-        // const idTarefa = document.createElement('span')
-        // idTarefa.textContent = 'id: ' + tarefa.id
-        // idTarefa.classList.add('idTarefa')
-
-        // const divTeste = document.createElement('div')
-        // divTeste.classList.add('divteste2')
 
         const button_excluir = document.createElement('button')
         button_excluir.classList.add('fa-solid')
         button_excluir.classList.add('fa-trash')
         button_excluir.id = 'excluir2'
+        button_excluir.title = "Excluir tarefa"
 
+        const button_editar = document.createElement('button')
+        button_editar.classList.add('far')
+        button_editar.classList.add('fa-edit')
+        button_editar.id = 'editar2'
+        button_editar.title = "Editar tarefa"
+        
 
-        card.append(imgPeca, spanTipoTarefa, nomeTarefa, button_excluir)
+        card.append(imgPeca, spanTipoTarefa, nomeTarefa, button_excluir, button_editar)
 
-        containerTarefa.append(card)
-
-        // button_excluir.addEventListener('click', (event) => {
-        //     event.preventDefault();
-        //     
-        // })
-
-        // delet 
+        buttonCard.append(card)
+        containerTarefa.append(buttonCard)
 
         const idTarefa = tarefa.id;
 
@@ -64,6 +62,17 @@ const criarDadosTarefa = async () => {
             await deleteTarefa(idTarefa);
         
             location.reload();
+        });
+        button_editar.addEventListener('click', async (event) => {
+            event.preventDefault();
+            const editarTarefaModal = document.getElementById('modal__editar__tarefa')
+            editarTarefaModal.classList.remove('d-none')
+            editarTarefaModal.classList.add('d-flex')
+        });
+
+        buttonCard.addEventListener('click', async (event) => {
+            event.preventDefault();
+            console.log(idTarefa);
         });
         
 
