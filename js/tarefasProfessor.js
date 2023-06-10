@@ -46,6 +46,12 @@ const criarDadosTarefa = async () => {
         button_editar.classList.add('fa-edit')
         button_editar.id = 'editar2'
         button_editar.title = "Editar tarefa"
+
+        const nomeTarefa2 = document.getElementById('nomeTarefa2')
+        const urlTarefa2 = document.getElementById('urlTarefa2')
+        const tempoPrevisto2 = document.getElementById('tempoPrevisto2')
+        const tipo_atividade2 = document.getElementById('tipo-atividade2')
+ 
         
 
         card.append(imgPeca, spanTipoTarefa, nomeTarefa, button_excluir, button_editar)
@@ -68,6 +74,11 @@ const criarDadosTarefa = async () => {
             const editarTarefaModal = document.getElementById('modal__editar__tarefa')
             editarTarefaModal.classList.remove('d-none')
             editarTarefaModal.classList.add('d-flex')
+            console.log(tarefa);
+            nomeTarefa2.value = tarefa.nome_tarefa
+            urlTarefa2.value = tarefa.foto_peca
+            tempoPrevisto2.value = tarefa.tempo_previsto_tarefa
+            tipo_atividade2.value = tarefa.nome_tipo_tarefa
         });
 
         buttonCard.addEventListener('click', async (event) => {
