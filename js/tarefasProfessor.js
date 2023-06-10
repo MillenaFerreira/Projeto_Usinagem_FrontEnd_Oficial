@@ -1,6 +1,6 @@
 'use strict'
 
-import { createTarefa , deleteTarefa} from './apiTarefas.js'
+import { createTarefa, deleteTarefa, updateTarefa } from './apiTarefas.js'
 
 
 
@@ -14,9 +14,12 @@ const criarDadosTarefa = async () => {
 
     tarefasDados.forEach((tarefa) => {
 
-        const aLinkCard = document.createElement('a')
+        // const aLinkCard = document.createElement('a')
         // aLinkCard.classList.add('cardLink')
 
+        const buttonCard = document.createElement('button')
+        buttonCard.classList.add('buttonCard')
+        buttonCard.title = "Clique para mais informações da tarefa."
 
         const card = document.createElement('div')
         card.classList.add('card')
@@ -31,29 +34,37 @@ const criarDadosTarefa = async () => {
         nomeTarefa.classList.add('nomeTarefa')
         nomeTarefa.textContent = tarefa.nome_tarefa
 
-        // const idTarefa = document.createElement('span')
-        // idTarefa.textContent = 'id: ' + tarefa.id
-        // idTarefa.classList.add('idTarefa')
-
-        // const divTeste = document.createElement('div')
-        // divTeste.classList.add('divteste2')
 
         const button_excluir = document.createElement('button')
         button_excluir.classList.add('fa-solid')
         button_excluir.classList.add('fa-trash')
         button_excluir.id = 'excluir2'
+        button_excluir.title = "Excluir tarefa"
+
+        const button_editar = document.createElement('button')
+        button_editar.classList.add('far')
+        button_editar.classList.add('fa-edit')
+        button_editar.id = 'editar2'
+        button_editar.title = "Editar tarefa"
+
+        const nomeTarefa2 = document.getElementById('nomeTarefa2')
+        const urlTarefa2 = document.getElementById('urlTarefa2')
+        const tempoPrevisto2 = document.getElementById('tempoPrevisto2')
+        const tipo_atividade2 = document.getElementById('tipo-atividade2')
+
+        const tarefaEditada = document.getElementById('sendTarefaEditada')
 
 
-        card.append(imgPeca, spanTipoTarefa, nomeTarefa, button_excluir)
 
-        containerTarefa.append(card)
 
-        // button_excluir.addEventListener('click', (event) => {
-        //     event.preventDefault();
-        //     
-        // })
 
-        // delet 
+
+
+
+        card.append(imgPeca, spanTipoTarefa, nomeTarefa, button_excluir, button_editar)
+
+        buttonCard.append(card)
+        containerTarefa.append(buttonCard)
 
         const idTarefa = tarefa.id;
 
@@ -62,12 +73,53 @@ const criarDadosTarefa = async () => {
             event.preventDefault();
             console.log(idTarefa);
             await deleteTarefa(idTarefa);
-        
+
             location.reload();
         });
-        
+
+        button_editar.addEventListener('click', async (event) => {
+            event.preventDefault();
+            const editarTarefaModal = document.getElementById('modal__editar__tarefa')
+            editarTarefaModal.classList.remove('d-none')
+            editarTarefaModal.classList.add('d-flex')
+            console.log(tarefa);
+            nomeTarefa2.value = tarefa.nome_tarefa
+            urlTarefa2.value = tarefa.foto_peca
+            tempoPrevisto2.value = tarefa.tempo_previsto_tarefa
+            tipo_atividade2.value = tarefa.id_tipo_tarefa
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            tarefaEditada.addEventListener('click', (event) => {
+                event.preventDefault();
+                const tarefaUpdate = {
+                    "id": tarefa.id,
+                    "nome": `${nomeTarefa2.value}`,
+                    "tempo_previsto": `${tempoPrevisto2.value.substring(0, 2) + ':' + tempoPrevisto2.value.substring(3, 5) + ':00'}`,
+                    "numero": 12,
+                    "foto_peca": `${urlTarefa2.value}`,
+                    "id_tipo_tarefa": parseInt(tipo_atividade2.value)
+                }
+                console.log(tarefaUpdate);
+
+                updateTarefa(tarefaUpdate)
+
+                editarTarefaModal.classList.remove('d-flex')
+                editarTarefaModal.classList.add('d-none')
+
+            })
+        });
+
+        buttonCard.addEventListener('click', async (event) => {
+            event.preventDefault();
+            //console.log(idTarefa);
+        });
+
 
     })
+
 
 }
 
@@ -124,7 +176,7 @@ const buttonSendTarefa = document.getElementById('sendTarefa')
 const nomeTarefa = document.getElementById('nomeTarefa')
 const urlTarefa = document.getElementById('urlTarefa')
 const tempoPrevisto = document.getElementById('tempoPrevisto')
-const descricaoTarefa = document.getElementById('descricaoTarefa')
+//const descricaoTarefa = document.getElementById('descricaoTarefa')
 const selectElement = document.getElementById("tipo-atividade");
 
 
@@ -137,17 +189,17 @@ buttonSendTarefa.addEventListener('click', (event) => {
     const valorNomeTarefa = nomeTarefa.value
     const valorUrl = urlTarefa.value
     const valorTempo = tempoPrevisto.value
-    const valorValorDescricao = descricaoTarefa.value
-    let valorTipoTarefa = ''
+    //const valorValorDescricao = descricaoTarefa.value
+    //let valorTipoTarefa = ''
 
     const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
-    if (selectedValue == 'Somativa') {
-        valorTipoTarefa = 2
-    }
-    if (selectedValue == 'Formativa') {
-        valorTipoTarefa = 1
-    }
+    // if (selectedValue == 'Somativa') {
+    //     valorTipoTarefa = 2
+    // }
+    // if (selectedValue == 'Formativa') {
+    //     valorTipoTarefa = 1
+    // }
 
     if (selectedValue != "na") {
         if (urlRegex.test(valorUrl)) {
@@ -157,7 +209,7 @@ buttonSendTarefa.addEventListener('click', (event) => {
                 "tempo_previsto": `${valorTempo.substring(0, 2) + ':' + valorTempo.substring(3, 5) + ':00'}`,
                 "numero": 12,
                 "foto_peca": `${valorUrl}`,
-                "id_tipo_tarefa": valorTipoTarefa
+                "id_tipo_tarefa": parseInt(selectedValue)
             }
             console.log(tarefa);
             createTarefa(tarefa)

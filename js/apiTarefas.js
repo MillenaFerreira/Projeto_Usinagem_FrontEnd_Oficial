@@ -29,3 +29,27 @@ export const pesquisarTarefas = async () => {
   
     fetch(url, options)
   }
+
+  export const updateTarefa = async (idTarefa, bodyUpdate) => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/tarefa/${idTarefa}`;
+    const options = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(bodyUpdate)
+    };
+  
+    fetch(url, options)
+      .then(response => {
+        if (response.ok) {
+          console.log('tarefa atualizada com sucesso!');
+          
+        } else {
+          console.log('Erro ao atualizar a tarefa.');
+        }
+      })
+      .catch(error => {
+        console.log('Ocorreu um erro na requisição:', error);
+      });
+  }

@@ -53,7 +53,7 @@
                 <input type="text" placeholder="Digite a URL de uma imagem" id="urlTarefa">
                 <label for="tempoPrevisto">Digite o tempo previsto:</label>
                 <input type="time" id="tempoPrevisto">
-                <textarea name=""  placeholder="Descrição tarefa" id="descricaoTarefa"></textarea>
+                <!-- <textarea name=""  placeholder="Descrição tarefa" id="descricaoTarefa"></textarea> -->
                 <!-- <div class="imgTarefa">
                     <input type="file" id="imagem" name="imagem">
                     <div id="visualizacao">
@@ -64,11 +64,42 @@
                     <label for="tipo-atividade">Tipo de Atividade:</label>
                     <select id="tipo-atividade">
                         <option value="na"></option>
-                      <option value="Somativa">Somativa</option>
-                      <option value="Formativa">Formativa</option>
+                      <option value="2">Somativa</option>
+                      <option value="1">Formativa</option>
                     </select>
                   </div>
                   <button id="sendTarefa">Send</button>
+            </div>
+        </form>
+   
+    </div>
+    <div id="modal__editar__tarefa" class="modal__editar__tarefa d-none">
+        
+        <form  id="adcTarefa">
+            <button id="sair">Sair</button>
+            <div class="titleForm d-flex font-family-Montserrat">
+                <h3>Edite uma tarefa</h3>
+            </div>
+            <div class="inputsTarefa d-flex flex-column">
+                <input type="text" placeholder="Digite o nome da tarefa"  id="nomeTarefa2">
+                <input type="text" placeholder="Digite a URL de uma imagem" id="urlTarefa2">
+                <label for="tempoPrevisto">Digite o tempo previsto:</label>
+                <input type="time" id="tempoPrevisto2">
+                <!-- <textarea name=""  placeholder="Descrição tarefa" id="descricaoTarefa"></textarea> -->
+                <!-- <div class="imgTarefa">
+                    <input type="file" id="imagem" name="imagem">
+                    <div id="visualizacao">
+                        <img id="imgVisu">
+                    </div>
+                  </div> -->
+                  <div class="containerTipoAtividade font-family-Montserrat">
+                    <label for="tipo-atividade">Tipo de Atividade:</label>
+                    <select id="tipo-atividade2">
+                      <option value="2">Somativa</option>
+                      <option value="1">Formativa</option>
+                    </select>
+                  </div>
+                  <button id="sendTarefaEditada">Send</button>
             </div>
         </form>
    
