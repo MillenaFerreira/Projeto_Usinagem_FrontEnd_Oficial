@@ -115,6 +115,22 @@ const criarDadosTarefa = async () => {
         buttonCard.addEventListener('click', async (event) => {
             event.preventDefault();
             //console.log(idTarefa);
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            const modalMensgaem = document.querySelector('.modal_mensagem')
+            modalMensgaem.classList.add('d-flex')
+            modalMensgaem.classList.remove('d-none')
+           const nomeTarefaMensagem = document.getElementById('nomeTarefaMensagem')
+           nomeTarefaMensagem.textContent = 'Deseja ver os critérios da tarefa '+ tarefa.nome_tarefa + '?'
+
+           const sairModalMensagem = document.getElementById('sairModalMensagem')
+           sairModalMensagem.addEventListener('click', (event) => {
+            event.preventDefault();
+            modalMensgaem.classList.add('d-none')
+            modalMensgaem.classList.remove('d-flex')
+           })
         });
 
 
