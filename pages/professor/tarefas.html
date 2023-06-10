@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/professor/professor.css">
     <link rel="stylesheet" href="/css/aluno/aluno.css">
     <link rel="stylesheet" href="/css/reset.css">
+    
 
     <script src="/components/header.js" defer type="module"></script>
     <script src="/components/nav.js" defer type="module"></script>
@@ -33,11 +34,19 @@
                 </div>
                 <div class="linha"></div>
                     <div class="cards_turma">
+                        <div class="modal_mensagem d-none">
+                            <p id="nomeTarefaMensagem">Deseja ver os critérios da tarefa</p>
+                            <div class="botoes">
+                                <a><button>Sim</button></a>
+                                <button id="sairModalMensagem">Não</button>
+                            </div>
 
+                        </div>
                     </div>
                 </div>
 
             </div>
+
             
     </main>
     
@@ -70,6 +79,7 @@
                   </div>
                   <button id="sendTarefa">Send</button>
             </div>
+        
         </form>
    
     </div>
@@ -104,6 +114,9 @@
         </form>
    
     </div>
+
+
+
 </body>
 
 </html>

@@ -44,6 +44,7 @@ export const pesquisarTarefas = async () => {
       .then(response => {
         if (response.ok) {
           console.log('tarefa atualizada com sucesso!');
+          location.reload();
           
         } else {
           console.log('Erro ao atualizar a tarefa.');

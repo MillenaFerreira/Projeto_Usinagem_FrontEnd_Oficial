@@ -57,6 +57,7 @@ nav {
     background-color: #C4D9E5;
     font-size: clamp(1.3rem, -0.0469rem + 2.75vw, 1.5rem);
 }
+
 .modal__editar__tarefa {
     width: 100%;
     height: 100%;
@@ -164,7 +165,8 @@ nav {
     padding: 5px;
 }
 
-#sendTarefa, #sendTarefaEditada {
+#sendTarefa,
+#sendTarefaEditada {
     width: 25%;
     display: grid;
     margin-top: 5vh;
@@ -178,11 +180,12 @@ nav {
     transition: .4s ease-in-out;
 }
 
-#sendTarefa:hover , #sendTarefaEditada:hover{
+#sendTarefa:hover,
+#sendTarefaEditada:hover {
     scale: 0.9;
 }
 
-.nomeTarefa{
+.nomeTarefa {
     display: flex;
     width: 100%;
     align-items: center;
@@ -190,7 +193,7 @@ nav {
     gap: 8vw;
 }
 
-#excluir2{
+#excluir2 {
     color: white;
     background-color: #3084B4;
     padding: 10px;
@@ -204,7 +207,8 @@ nav {
     cursor: pointer;
     font-size: clamp(0.8125rem, -0.0469rem + 2.75vw, 1.5rem);
 }
-#editar2{
+
+#editar2 {
     color: white;
     background-color: #3084B4;
     padding: 10px;
@@ -219,7 +223,7 @@ nav {
     font-size: clamp(0.8125rem, -0.0469rem + 2.75vw, 1.5rem);
 }
 
-.buttonCard{
+.buttonCard {
     width: auto;
     height: auto;
     border-radius: 5px;
@@ -227,13 +231,73 @@ nav {
     background-color: #3084B4;
 }
 
-.card:hover #excluir2, .card:hover #editar2{
+.card:hover #excluir2,
+.card:hover #editar2 {
     display: block;
 }
-.idTarefa{
-   display: grid;
-   place-self: start;
+
+.idTarefa {
+    display: grid;
+    place-self: start;
     font-size: 1rem;
+}
+
+.modalQuestion {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal_mensagem {
+    position: absolute;
+    z-index: 1;
+    background-color: #ffff;
+    float: top;
+    border: 5px double #074A71;
+    bottom: 0;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    gap: 5vh;
+    flex-direction: column;
+    height: 40vh;
+}
+
+.modal_mensagem p{
+    text-align: center;
+    width: 90%;
+}
+
+.botoes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.botoes a {
+    height: auto;
+    width: auto;
+}
+
+.botoes button {
+    width: 10vw;
+    color: #fff;
+    background-color: #074A71;
+    border: 1px solid transparent;
+    cursor: pointer;
+    height: 5vh;
+    transition: .5s ease-in-out;
+}
+
+.botoes button:hover {
+    scale: 0.9;
+
 }
 
 @media (max-width: 999px) {
@@ -247,7 +311,9 @@ nav {
 }
 
 @media (max-width:600px) {
-    .modal__adicionar__tarefa form , .modal__editar__tarefa form {
+
+    .modal__adicionar__tarefa form,
+    .modal__editar__tarefa form {
         height: 90%;
         width: 90%;
         margin-left: 5%;
@@ -255,8 +321,13 @@ nav {
         gap: 5vh;
     }
 
-    #sendTarefa, #sendTarefaEditada{
+    #sendTarefa,
+    #sendTarefaEditada {
         margin-top: 0;
         width: 45%;
+    }
+
+    .botoes button {
+        width: 25vw;
     }
 }
