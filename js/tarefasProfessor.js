@@ -79,6 +79,10 @@ const criarDadosTarefa = async () => {
             urlTarefa2.value = tarefa.foto_peca
             tempoPrevisto2.value = tarefa.tempo_previsto_tarefa
             tipo_atividade2.value = tarefa.nome_tipo_tarefa
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
         buttonCard.addEventListener('click', async (event) => {
