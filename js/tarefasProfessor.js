@@ -79,6 +79,9 @@ const criarDadosTarefa = async () => {
 
         button_editar.addEventListener('click', async (event) => {
             event.preventDefault();
+            const modalMensgaem = document.querySelector('.modal_mensagem')
+            modalMensgaem.classList.add('d-none')
+            modalMensgaem.classList.remove('d-flex')
             const editarTarefaModal = document.getElementById('modal__editar__tarefa')
             editarTarefaModal.classList.remove('d-none')
             editarTarefaModal.classList.add('d-flex')
@@ -95,7 +98,6 @@ const criarDadosTarefa = async () => {
             tarefaEditada.addEventListener('click', (event) => {
                 event.preventDefault();
                 const tarefaUpdate = {
-                    "id": tarefa.id,
                     "nome": `${nomeTarefa2.value}`,
                     "tempo_previsto": `${tempoPrevisto2.value.substring(0, 2) + ':' + tempoPrevisto2.value.substring(3, 5) + ':00'}`,
                     "numero": 12,
@@ -104,12 +106,17 @@ const criarDadosTarefa = async () => {
                 }
                 console.log(tarefaUpdate);
 
-                updateTarefa(tarefaUpdate)
+                updateTarefa(tarefa.id,tarefaUpdate)
 
                 editarTarefaModal.classList.remove('d-flex')
                 editarTarefaModal.classList.add('d-none')
 
+                const modalMensgaem = document.querySelector('.modal_mensagem')
+                modalMensgaem.classList.add('d-none')
+                modalMensgaem.classList.remove('d-flex')
+
             })
+
         });
 
         buttonCard.addEventListener('click', async (event) => {
