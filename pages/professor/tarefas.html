@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
 
     <script src="https://kit.fontawesome.com/30058942d9.js" crossorigin="anonymous"></script>
@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="/css/professor/professor.css">
     <link rel="stylesheet" href="/css/aluno/aluno.css">
     <link rel="stylesheet" href="/css/reset.css">
-    
+    <link rel="stylesheet" href="/css/professor/tarefas.css">
+
 
     <script src="/components/header.js" defer type="module"></script>
     <script src="/components/nav.js" defer type="module"></script>
@@ -41,86 +42,120 @@
                     </div>
                 </div>
                 <div class="linha"></div>
-                    <div class="cards_turma">
-                        <div class="modal_mensagem d-none">
-                            <p id="nomeTarefaMensagem">Deseja ver os critérios da tarefa</p>
+                <div class="cards_turma">
+                    <div class="modal_mensagem  d-none font-family-Montserrat">
+                        <button id="sairModalMensagem">Sair</button>
+                        <div class="apresentacaoModal">
+                            <h3 id="nomeTarefaMensagem">Área de configurações da tarefa + </h3>
+                            <span>Aqui você pode editar, excluir e seguir para a página de critérios dessa
+                                tarefa.</span>
+                        </div>
+
+                        <div class="buttoesFuncoes">
+                            <button id="excluirTarefaButton">Excluir</button>
+                            <button>Editar</button>
+                            <button>Ir para critérios</button>
+                        </div>
+                        <!-- <p id="nomeTarefaMensagem">Deseja ver os critérios da tarefa</p>
                             <div class="botoes">
                                 <a href="./criterios.html"><button>Sim</button></a>
                                 <button id="sairModalMensagem">Não</button>
-                            </div>
+                            </div> -->
 
+                        <div class="modal_excluir">
+                            <h3>Aviso!</h3>
+                            <span>
+                                <p>Ao confirmar a exclusão, esta ação não poderá ser desfeita.</p>
+                                <p>Você tem certeza de que deseja excluir?</p>
+                            </span>
+                            <div class="confirmacao">
+                                <button id="excluirTarefaButton2">sim</button>
+                                <button class="naoExcluir">não</button>
+                            </div>
                         </div>
+
                     </div>
                 </div>
-
             </div>
 
-            
+        </div>
+
+        <!-- <div class="modal__deletar d-none" id="modal__deletar">
+                <div class="modal__deletar--content" id="modal__deletar--content">
+                    <p>Deseja mesmo Deletar?</p>
+                    <div class="modal__deletar--footer">
+                        <a type="submit" id="naoDeletar" href="#">Não</a>
+                        <a type="submit" id="Deletar" href="#">Sim</a>
+                    </div>
+                    <a href="#" class="modal__deletar--close" id="sair">&times;</a>
+                </div>
+            </div> -->
+
     </main>
-    
+
     <div id="modal__adicionar__tarefa" class="modal__adicionar__tarefa d-none">
-        
-        <form  id="adcTarefa">
+
+        <form id="adcTarefa">
             <button id="sair">Sair</button>
             <div class="titleForm d-flex font-family-Montserrat">
                 <h3>Adicione uma tarefa</h3>
             </div>
             <div class="inputsTarefa d-flex flex-column">
-                <input type="text" placeholder="Digite o nome da tarefa"  id="nomeTarefa">
+                <input type="text" placeholder="Digite o nome da tarefa" id="nomeTarefa">
                 <input type="text" placeholder="Digite a URL de uma imagem" id="urlTarefa">
                 <label for="tempoPrevisto">Digite o tempo previsto:</label>
                 <input type="time" id="tempoPrevisto">
-                <textarea name=""  placeholder="Descrição tarefa" id="descricaoTarefa"></textarea>
+                <textarea name="" placeholder="Descrição tarefa" id="descricaoTarefa"></textarea>
                 <!-- <div class="imgTarefa">
                     <input type="file" id="imagem" name="imagem">
                     <div id="visualizacao">
                         <img id="imgVisu">
                     </div>
                   </div> -->
-                  <div class="containerTipoAtividade font-family-Montserrat">
+                <div class="containerTipoAtividade font-family-Montserrat">
                     <label for="tipo-atividade">Tipo de Atividade:</label>
                     <select id="tipo-atividade">
                         <option value="na"></option>
-                      <option value="2">Somativa</option>
-                      <option value="1">Formativa</option>
+                        <option value="2">Somativa</option>
+                        <option value="1">Formativa</option>
                     </select>
-                  </div>
-                  <button id="sendTarefa">Send</button>
+                </div>
+                <button id="sendTarefa">Send</button>
             </div>
-        
+
         </form>
-   
+
     </div>
     <div id="modal__editar__tarefa" class="modal__editar__tarefa d-none">
-        
-        <form  id="adcTarefa">
+
+        <form id="adcTarefa">
             <button id="sair">Sair</button>
             <div class="titleForm d-flex font-family-Montserrat">
                 <h3>Edite uma tarefa</h3>
             </div>
             <div class="inputsTarefa d-flex flex-column">
-                <input type="text" placeholder="Digite o nome da tarefa"  id="nomeTarefa2">
+                <input type="text" placeholder="Digite o nome da tarefa" id="nomeTarefa2">
                 <input type="text" placeholder="Digite a URL de uma imagem" id="urlTarefa2">
                 <label for="tempoPrevisto">Digite o tempo previsto:</label>
                 <input type="time" id="tempoPrevisto2">
-                <textarea name=""  placeholder="Descrição tarefa" id="descricaoTarefa2"></textarea>
+                <textarea name="" placeholder="Descrição tarefa" id="descricaoTarefa2"></textarea>
                 <!-- <div class="imgTarefa">
                     <input type="file" id="imagem" name="imagem">
                     <div id="visualizacao">
                         <img id="imgVisu">
                     </div>
                   </div> -->
-                  <div class="containerTipoAtividade font-family-Montserrat">
+                <div class="containerTipoAtividade font-family-Montserrat">
                     <label for="tipo-atividade">Tipo de Atividade:</label>
                     <select id="tipo-atividade2">
-                      <option value="2">Somativa</option>
-                      <option value="1">Formativa</option>
+                        <option value="2">Somativa</option>
+                        <option value="1">Formativa</option>
                     </select>
-                  </div>
-                  <button id="sendTarefaEditada">Send</button>
+                </div>
+                <button id="sendTarefaEditada">Send</button>
             </div>
         </form>
-   
+
     </div>
 
 
