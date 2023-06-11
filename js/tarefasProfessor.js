@@ -35,11 +35,11 @@ const criarDadosTarefa = async () => {
         nomeTarefa.textContent = tarefa.nome_tarefa
 
 
-        const button_excluir = document.createElement('button')
-        button_excluir.classList.add('fa-solid')
-        button_excluir.classList.add('fa-trash')
-        button_excluir.id = 'excluir2'
-        button_excluir.title = "Excluir tarefa"
+        // const button_excluir = document.createElement('button')
+        // button_excluir.classList.add('fa-solid')
+        // button_excluir.classList.add('fa-trash')
+        // button_excluir.id = 'excluir2'
+        // button_excluir.title = "Excluir tarefa"
 
         const button_editar = document.createElement('button')
         button_editar.classList.add('far')
@@ -70,7 +70,7 @@ const criarDadosTarefa = async () => {
             event.preventDefault();
 
             localStorage.setItem('tarefaNome', tarefa.nome_tarefa)
-            console.log('clique',tarefa.nome_tarefa);
+            console.log('clique', tarefa.nome_tarefa);
             //console.log(idTarefa);
             window.scrollTo({
                 top: 0,
@@ -79,16 +79,31 @@ const criarDadosTarefa = async () => {
             const modalMensgaem = document.querySelector('.modal_mensagem')
             modalMensgaem.classList.add('d-flex2')
             modalMensgaem.classList.remove('d-none')
-           const nomeTarefaMensagem = document.getElementById('nomeTarefaMensagem')
-           nomeTarefaMensagem.textContent = 'Área de configurações da tarefa '+ tarefa.nome_tarefa
+            const nomeTarefaMensagem = document.getElementById('nomeTarefaMensagem')
+            nomeTarefaMensagem.textContent = 'Área de configurações da tarefa ' + tarefa.nome_tarefa
 
-           const sairModalMensagem = document.getElementById('sairModalMensagem')
-           sairModalMensagem.addEventListener('click', (event) => {
-            event.preventDefault();
-            modalMensgaem.classList.add('d-none')
-            modalMensgaem.classList.remove('d-flex')
-            location.reload();
-           })
+            const sairModalMensagem = document.getElementById('sairModalMensagem')
+            sairModalMensagem.addEventListener('click', (event) => {
+                event.preventDefault();
+                modalMensgaem.classList.add('d-none')
+                modalMensgaem.classList.remove('d-flex')
+            })
+
+
+            const excluirTarefaButton2 = document.getElementById('excluirTarefaButton2')
+            console.log(excluirTarefaButton2);
+
+
+            const idTarefa = tarefa.id;
+
+            //const modal__deletar = document.querySelector('.modal__deletar')
+
+            excluirTarefaButton2.addEventListener('click', (event) => {
+                event.preventDefault();
+                console.log('teste');
+                console.log(idTarefa);
+
+            });
         });
 
 
@@ -124,9 +139,9 @@ const criarDadosTarefa = async () => {
                 }
                 console.log(tarefaUpdate);
 
-                updateTarefa(tarefa.id,tarefaUpdate)
+                updateTarefa(tarefa.id, tarefaUpdate)
 
-            
+
 
                 editarTarefaModal.classList.remove('d-flex')
                 editarTarefaModal.classList.add('d-none')
@@ -135,7 +150,7 @@ const criarDadosTarefa = async () => {
                 modalMensgaem.classList.add('d-none')
                 modalMensgaem.classList.remove('d-flex')
 
-                
+
 
             })
         });
@@ -143,23 +158,6 @@ const criarDadosTarefa = async () => {
 
 
 
-        const idTarefa = tarefa.id;
-
-        const modal__deletar = document.querySelector('.modal__deletar')
-
-        button_excluir.addEventListener('click',  (event) => {
-            event.preventDefault();
-            console.log(idTarefa);
-            //deleteTarefa(idTarefa);
-            modal__deletar.classList.add('d-flex')
-            modal__deletar.classList.remove('d-none')
-
-            const modalMensgaem = document.querySelector('.modal_mensagem')
-
-            modalMensgaem.classList.add('d-none')
-            modalMensgaem.classList.remove('d-flex')
-            
-        });
 
     })
 
