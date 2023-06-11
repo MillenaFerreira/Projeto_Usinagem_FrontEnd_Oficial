@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/css/professor/professor.css">
     <link rel="stylesheet" href="/css/aluno/aluno.css">
     <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/professor/tarefas.css">
     
 
     <script src="/components/header.js" defer type="module"></script>
@@ -42,12 +43,23 @@
                 </div>
                 <div class="linha"></div>
                     <div class="cards_turma">
-                        <div class="modal_mensagem d-none">
-                            <p id="nomeTarefaMensagem">Deseja ver os critérios da tarefa</p>
+                        <div class="modal_mensagem  d-none font-family-Montserrat">
+                            <button id="sairModalMensagem">Sair</button>
+                            <div class="apresentacaoModal">
+                                <h3 id="nomeTarefaMensagem">Área de configurações da tarefa + </h3>
+                                <span>Aqui você pode editar, excluir e seguir para a página de critérios dessa tarefa.</span>
+                            </div>
+
+                            <div class="buttoesFuncoes">
+                                <button>Excluir</button>
+                                <button>Editar</button>
+                                <button>Ir para critérios</button>
+                            </div>
+                            <!-- <p id="nomeTarefaMensagem">Deseja ver os critérios da tarefa</p>
                             <div class="botoes">
                                 <a href="./criterios.html"><button>Sim</button></a>
                                 <button id="sairModalMensagem">Não</button>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
@@ -55,6 +67,16 @@
 
             </div>
 
+            <!-- <div class="modal__deletar d-none" id="modal__deletar">
+                <div class="modal__deletar--content" id="modal__deletar--content">
+                    <p>Deseja mesmo Deletar?</p>
+                    <div class="modal__deletar--footer">
+                        <a type="submit" id="naoDeletar" href="#">Não</a>
+                        <a type="submit" id="Deletar" href="#">Sim</a>
+                    </div>
+                    <a href="#" class="modal__deletar--close" id="sair">&times;</a>
+                </div>
+            </div> -->
             
     </main>
     

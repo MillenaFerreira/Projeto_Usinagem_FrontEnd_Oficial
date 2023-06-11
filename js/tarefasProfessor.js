@@ -58,24 +58,40 @@ const criarDadosTarefa = async () => {
 
 
 
-
-
-
-        card.append(imgPeca, spanTipoTarefa, nomeTarefa, button_excluir, button_editar)
+        card.append(imgPeca, spanTipoTarefa, nomeTarefa)
 
         buttonCard.append(card)
         containerTarefa.append(buttonCard)
 
-        const idTarefa = tarefa.id;
 
+        // Evento que aparece o modal em que se tem links para editar, excluir e ver critérios
 
-        button_excluir.addEventListener('click',  (event) => {
+        buttonCard.addEventListener('click', async (event) => {
             event.preventDefault();
-            console.log(idTarefa);
-            deleteTarefa(idTarefa);
 
-            
+            localStorage.setItem('tarefaNome', tarefa.nome_tarefa)
+            console.log('clique',tarefa.nome_tarefa);
+            //console.log(idTarefa);
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            const modalMensgaem = document.querySelector('.modal_mensagem')
+            modalMensgaem.classList.add('d-flex2')
+            modalMensgaem.classList.remove('d-none')
+           const nomeTarefaMensagem = document.getElementById('nomeTarefaMensagem')
+           nomeTarefaMensagem.textContent = 'Área de configurações da tarefa '+ tarefa.nome_tarefa
+
+           const sairModalMensagem = document.getElementById('sairModalMensagem')
+           sairModalMensagem.addEventListener('click', (event) => {
+            event.preventDefault();
+            modalMensgaem.classList.add('d-none')
+            modalMensgaem.classList.remove('d-flex')
+            location.reload();
+           })
         });
+
+
 
         button_editar.addEventListener('click', async (event) => {
             event.preventDefault();
@@ -122,36 +138,28 @@ const criarDadosTarefa = async () => {
                 
 
             })
-
-            
-
         });
 
-        buttonCard.addEventListener('click', async (event) => {
-            event.preventDefault();
 
-            localStorage.setItem('tarefaNome', tarefa.nome_tarefa)
-            console.log('clique',tarefa.nome_tarefa);
-            //console.log(idTarefa);
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+
+
+        const idTarefa = tarefa.id;
+
+        const modal__deletar = document.querySelector('.modal__deletar')
+
+        button_excluir.addEventListener('click',  (event) => {
+            event.preventDefault();
+            console.log(idTarefa);
+            //deleteTarefa(idTarefa);
+            modal__deletar.classList.add('d-flex')
+            modal__deletar.classList.remove('d-none')
+
             const modalMensgaem = document.querySelector('.modal_mensagem')
-            modalMensgaem.classList.add('d-flex')
-            modalMensgaem.classList.remove('d-none')
-           const nomeTarefaMensagem = document.getElementById('nomeTarefaMensagem')
-           nomeTarefaMensagem.textContent = 'Deseja ver os critérios da tarefa '+ tarefa.nome_tarefa + '?'
 
-           const sairModalMensagem = document.getElementById('sairModalMensagem')
-           sairModalMensagem.addEventListener('click', (event) => {
-            event.preventDefault();
             modalMensgaem.classList.add('d-none')
             modalMensgaem.classList.remove('d-flex')
-            location.reload();
-           })
+            
         });
-
 
     })
 
@@ -159,9 +167,9 @@ const criarDadosTarefa = async () => {
 }
 
 
-
-
 criarDadosTarefa()
+
+
 
 const buttonAdcTarefa = document.getElementById('adicionarTarefa')
 const modalTarefaAdc = document.getElementById('modal__adicionar__tarefa')
