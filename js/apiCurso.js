@@ -20,6 +20,16 @@ export const createCurso = async (curso) => {
   };
 
   fetch(url, options)
+  .then(response => {
+    if (response.ok) {
+      location.reload();
+    } else {
+      console.log('Erro ao criar o curso.');
+    }
+  })
+  .catch(error => {
+    console.log('Ocorreu um erro na requisição:', error);
+  });
 }
 
 export const updateCurso = async (curso) => {
@@ -33,6 +43,16 @@ export const updateCurso = async (curso) => {
   };
 
   fetch(url, options)
+  .then(response => {
+    if (response.ok) {
+      location.reload();
+    } else {
+      console.log('Erro ao criar o curso.');
+    }
+  })
+  .catch(error => {
+    console.log('Ocorreu um erro na requisição:', error);
+  });
 
 }
 
@@ -43,4 +63,14 @@ export const deleteCurso = async (idAluno) => {
   };
 
   fetch(url, options)
+  .then(response => {
+    if (response.ok) {
+      location.reload();
+    } else {
+      console.log('Erro ao criar o curso.');
+    }
+  })
+  .catch(error => {
+    console.log('Ocorreu um erro na requisição:', error);
+  });
 }
