@@ -1,7 +1,6 @@
 'use strict'
 
 import { createCurso, updateCurso, deleteCurso } from "../apiCurso.js";
-import { carregarCardCursos } from "../cursos.js";
 
 const idCurso = localStorage.getItem('id')
 console.log('logo' + idCurso);
@@ -98,5 +97,4 @@ updateCardCurso()
 deleteCardCurso()
 
 
-carregarCardCursos()
 //window.location.reload();

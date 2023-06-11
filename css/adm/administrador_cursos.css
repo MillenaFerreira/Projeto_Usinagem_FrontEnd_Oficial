@@ -20,16 +20,27 @@ main {
     background-color: #3084B4;
 }
 
-.containerTitulo--displayGrid {
-    display: grid;
+.containerTitulo--icon {
+    color: #ffff;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.containerTitulo--displayFlex {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    padding: 0 2vh;
 }
 
 .containerTitulo__tituloPagina {
     color: white;
     font-size: 1.2rem;
     font-weight: 500;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .menuLateral {
@@ -45,6 +56,18 @@ main {
     justify-content: start;
     gap: 60px;
     padding-top: 50px;
+}
+
+.menuLateral--menuBar {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.menuLateral--close {
+    display: none;
 }
 
 .menuLateral__anchor {
@@ -99,7 +122,7 @@ main {
     height: 100%;
     max-height: 4.5vh;
     width: 100%;
-    max-width: 15vw;
+    max-width: 20vw;
     font-size: 1.1rem;
     transition: ease-in-out 100ms;
 }
@@ -131,10 +154,14 @@ main {
     gap: 5px;
 }
 
-.listaLinks__icone {
-    display: grid;
+.containerLinks__listaLinks a {
     justify-content: center;
-    align-content: center;
+    align-items: center;
+}
+
+.containerLinks__listaLinks a {
+    display: grid;
+    place-items: center;
     background-color: #3084B4;
     width: 50px;
     height: 50px;
@@ -144,7 +171,7 @@ main {
     transition: ease-in-out 200ms;
 }
 
-.listaLinks__icone:hover {
+.containerLinks__listaLinks a:hover {
     background-color: #286c94;
     transform: scale(1.1);
 }
@@ -173,14 +200,12 @@ main {
 }
 
 .menuConteudo__titulosConteudo {
-    height: 12vh;
+    height: 10vh;
 }
 
 .menuConteudo__titulosConteudo--displayFlex {
     display: flex;
-    justify-content: space-evenly;
-    gap: 40px;
-    align-items: center;  
+    align-items: center;
 }
 
 .containerCursos__containerTabela {
@@ -198,16 +223,25 @@ main {
 .titulosConteudo__cursos {
     color: #074A71;
     font-weight: 600;
+    width: 35%;
+    padding: 10px;
+    text-align: center;
 }
 
 .titulosConteudo__sigla {
     color: #074A71;
     font-weight: 600;
+    width: 19%;
+    padding: 10px;
+    text-align: center;
 }
 
 .titulosConteudo__carga {
     color: #074A71;
     font-weight: 600;
+    width: 42%;
+    padding: 10px;
+    text-align: center;
 }
 
 
@@ -216,12 +250,12 @@ main {
     text-align: center;
 }
 
-.dataSigla {  
+.dataSigla {
     width: 20%;
     text-align: center;
 }
 
-.dataCargaHoraria{
+.dataCargaHoraria {
     width: 42%;
     text-align: center;
 }
@@ -239,4 +273,331 @@ tr:hover {
 
 td {
     padding: 10px;
+}
+
+
+/* MODEL ADICIONAR */
+.modal__adicionar {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, .7);
+    transition: all .4s;
+    line-height: 2.5rem;
+}
+
+.nome__modal{
+    color: #074A71;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.modal__adicionar:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal__adicionar--content {
+    font-family: 'Montserrat';
+    border-radius: 4px;
+    position: relative;
+    max-width: 90%;
+    background: #fff;
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal__adicionar--footer {
+    text-align: right;
+}
+
+#salvarBtn {
+    font-size: 1.3rem;
+    padding: 10px;
+    background-color: #3084B4;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal__adicionar--close {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+.sigla__carga--horaria{
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.input__file {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input__nome {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input__sigla {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.input__carga--horaria {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.input__descricao {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#myInputDescricao{
+    height: 100px;
+    resize: none;
+}
+
+/* MODEL EDITAR */
+.modal__editar {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, .7);
+    transition: all .4s;
+    line-height: 2rem;
+}
+
+.modal__editar:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal__editar--content {
+    font-family: 'Montserrat';
+    border-radius: 4px;
+    position: relative;
+    max-width: 90%;
+    background: #fff;
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal__editar--footer {
+    text-align: right;
+}
+
+.modal__editar--close {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+#editar {
+    font-size: 1.3rem;
+    padding: 10px;
+    background-color: #3084B4;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input__file--valor {
+    font-size: 1rem;
+}
+
+.input__nome--valor {
+    font-size: 1rem;
+}
+
+.input__sigla--valor {
+    font-size: 1rem;
+}
+
+.input__carga--horaria--valor {
+    font-size: 1rem;
+}
+
+.input__descricao--valor {
+    font-size: 1rem;
+}
+
+
+
+/* MODEL DELETAR */
+.modal__deletar {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, .7);
+    transition: all .4s;
+    line-height: 2.5rem;
+}
+
+.modal__deletar:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal__deletar--content {
+    font-family: 'Montserrat';
+    border-radius: 4px;
+    position: relative;
+    max-width: 90%;
+    background: #fff;
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.modal__deletar--footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.modal__deletar--footer a {
+    font-size: 1.3rem;
+    padding: 10px 25px;
+    background-color: #3084B4;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal__deletar--close {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+@media (max-width: 999px) {
+    .menuLateral {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all .4s;
+        width: 50%;
+    }
+
+    .menuLateral:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .menuLateral--close {
+        display: block;
+        color: #ffff;
+        font-size: 3rem;
+    }
+
+    .containerCursos__menuSuperior {
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 20px;
+    }
+
+    .menuSuperior__inputCursos {
+        max-width: 40vw;
+        height: 100px;
+    }
+
+    .containerLinks__listaLinks {
+        padding-bottom: 20px;
+    }
+
+}
+
+@media (max-width: 640px) {
+    .containerTitulo {
+        height: 10vh;
+    }
+
+    .menuSuperior__inputCursos {
+        max-width: 60vw;
+    }
+
+    /* MODAL ADICIONAR */
+    .modal__adicionar--content {
+        text-align: center;
+        padding: 1em 1em;
+        gap: 15px;
+    }
+
+    #myInputSigla{
+        width: 100%;
+    }
+
+    #myInputCargaHoraria{
+        width: 100%;
+    }
+
+    .sigla__carga--horaria{
+        flex-direction: column;
+    }
+
+    .input__sigla {
+        flex-direction: column;
+    }
+    
+    .input__carga--horaria {
+        flex-direction: column;
+    }
 }

@@ -13,33 +13,6 @@ const criarCard = (curso) => {
     const segura_tudo = document.createElement('div')
     segura_tudo.classList.add('segura_tudo')
 
-    const editar_excluir = document.createElement('div')
-    editar_excluir.classList.add('editar_excluir_cursos')
-
-    //dentro do editar_excluir terá:
-    const editar = document.createElement('a')
-    editar.classList.add('far')
-    editar.classList.add('fa-edit')
-    editar.href = "#modal__editar"
-    editar.addEventListener('click', function () {
-        localStorage.setItem('id_update', curso.id)
-
-        document.getElementById("myInputNomeValor").value = curso.nome;
-        document.getElementById("myInputCargaHorariaValor").value = curso.carga_horaria;
-        document.getElementById("myInputDescricaoValor").value = curso.descricao;
-        document.getElementById("myInputSiglaValor").value = curso.sigla;
-        document.getElementById("myInputUrlValor").value = curso.foto;
-        
-    })
-
-    const excluir = document.createElement('a')
-    excluir.classList.add('fas')
-    excluir.classList.add('fa-trash')
-    excluir.href = "#modal__deletar"
-    excluir.addEventListener('click', function () {
-        localStorage.setItem('id', curso.id)
-    })
-
     //dentro do segura_tudo terá:
     const imagem = document.createElement('img')
     imagem.src = curso.foto
@@ -71,8 +44,8 @@ const criarCard = (curso) => {
     hora_curso.textContent = `${curso.carga_horaria}h`
 
 
-    card.append(segura_tudo, editar_excluir)
-    editar_excluir.append(editar, excluir)
+    card.append(segura_tudo)
+    //editar_excluir.append(editar, excluir)
     segura_tudo.append(imagem, nome_carga)
     nome_carga.append(nome, carga_horaria)
     nome.append(nomeSigla, nomeCompleto)
@@ -83,7 +56,7 @@ const criarCard = (curso) => {
 
 }
 
-export const carregarCardCursos = () => {
+const carregarCardCursos = () => {
     const cards = document.querySelector('.cards_cursos')
     const cardsJSON = cursos.cursos.map(criarCard)
 

@@ -20,7 +20,7 @@
     --card-student-secondary-color: #00008BB2;
 }
 
-a{text-decoration: none;}
+a{text-decoration: none; color: inherit;}
 ul,li,ol{list-style: none;}
 
 
