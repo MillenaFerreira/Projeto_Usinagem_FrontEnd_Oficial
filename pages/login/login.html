@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../js/md5.min.js"></script>
+    <script src="../../js/login.js" defer type="module"></script>
+    <meta name="description"
+        content="Tela de login da plataforma de Acompanhamento de Atividades do curso de Mecânica do Senai PROFº. VICENTE AMATO">
+    <link rel="stylesheet" href="../../css/login/login.css">
+    <link rel="stylesheet" href="../../css/login/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jaldi&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <main>
+
+        <div class="containerLogin containerLogin--borderRadius containerLogin--displayFLex" id="containerLogin">
+            
+            <img class="containerLogin__image" src="../../img/imagemLogin.svg" alt="Imagem de uma pesso configurando as telas de um celular, ao redor contém um vaso com uma planta, engrenagens flutuantes e e outras telas de celular.">
+            
+            <div class="containerLogin__telaLogin containerLogin__telaLogin--borderRadius containerLogin__telaLogin--displayFlex" id="containerLogin__telaLogin">
+
+                <img class="tela__login__imageLogo" src="/img/logoSenai.svg" alt="">
+
+                <div class="telaLogin__inputDados telaLogin__inputDados--displayFlex">
+
+                    <div class="inputDados__containerLogin">
+                        <span class="inputDados__tituloLogin ">
+                            LOGIN
+                        </span>
+                        <input type="text" class="inputDados__inputLogin inputDados__inputLogin--formatacao" id="inputLogin" >
+                    </div>
+                        
+                    <div class="inputDados__containerSenha">
+                        <span class="inputDados__tituloSenha">
+                            SENHA
+                        </span>
+                        
+                        <input type="password" class="inputDados__inputSenha inputDados__inputSenha--formatacao" id="inputSenha">
+                    
+                        <a href="/pages/login/passwordrecovery.html" class="ancoraEsqueciSenha">
+                            Esqueceu a senha?
+                        </a>
+
+                        <ion-icon name="eye" class="iconeOlho"></ion-icon>
+
+                    </div>
+                   
+
+                    
+                </div>
+
+                <a class="telaLogin__butaoEntrar telaLogin__butaoEntrar--formatacao" id="botaoEntrar">
+                    ENTRAR
+                </a>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
