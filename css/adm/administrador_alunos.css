@@ -75,7 +75,7 @@ main {
     transform: scaleX(1);
 }
 
-.containerProfessor {
+.containerAluno {
     height: 80vh;
     width: 100%;
     display: flex;
@@ -84,18 +84,18 @@ main {
     align-items: center;
 }
 
-.containerProfessor__menuSuperior {
+.containerAluno__menuSuperior {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
 }
 
-.menuSuperior__tituloProfessor {
+.menuSuperior__tituloAluno {
     color: #3084B4;
 }
 
-.menuSuperior__inputProfessor {
+.menuSuperior__inputAluno {
     height: 100%;
     max-height: 4.5vh;
     width: 100%;
@@ -104,13 +104,13 @@ main {
     transition: ease-in-out 100ms;
 }
 
-.menuSuperior__inputProfessor--format {
+.menuSuperior__inputAluno--format {
     border: 1px solid #3084B4;
     background-color: #E0E0E0;
     border-radius: 10px;
 }
 
-.menuSuperior__inputProfessor:hover {
+.menuSuperior__inputAluno:hover {
     border: 2px solid #286c94;
 }
 
@@ -164,6 +164,12 @@ main {
     height: 40px;
 }
 
+.iconeEditar {
+    display: none;
+    width: 40px;
+    height: 40px;
+}
+
 .iconeApagar:hover {
     transform: scaleX(1.1);
 }
@@ -172,58 +178,46 @@ main {
     transform: scaleX(1.1);
 }
 
-.iconeEditar {
-    display: none;
-    width: 40px;
-    height: 40px;
-}
-
-.professorLista {
+.alunoLista {
     position: relative;
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
-.professorLista:hover .iconeApagar{
+.alunoLista:hover .dataName{
+    width: 40%;
+}
+.alunoLista:hover .dataEmail{
+    width: 40%;
+}
+
+.alunoLista:hover .dataRegistro{
+    position: relative;
+    padding-left: 100px;
+}
+
+.alunoLista:hover .iconeApagar{
     display: block;
     padding-top: 5px;
     width: 45px;
 }
 
-.professorLista:hover .iconeEditar{
+.alunoLista:hover .iconeEditar{
     display: block;
     padding-top: 5px;
     width: 45px;
+
 }
 
-.professorLista:hover .icone {
+.alunoLista:hover .icone {
     height: 30px;
     width: 30px;
-    
+
 }
 
-.professorLista:hover .dataTelefone{
-    position: relative;
-    padding-left: 12%;
-}
 
-.professorLista:hover .dataUsuario{
-    position: relative;
-    padding-left: 9%;
-}
-
-.professorLista:hover .dataRegistro{
-    position: relative;
-    padding-left: 5%;
-}
-
-.professorLista:hover .dataName{
-    position: relative;
-    padding-left: 2%;
-}
-
-.containerProfessor__menuConteudo {
+.containerAluno__menuConteudo {
     height: 80%;
     width: 90%;
     background-color: #E0E0E0;
@@ -231,7 +225,7 @@ main {
     border-radius: 10px;
 }
 
-.containerProfessor__menuConteudo--displayFlex {
+.containerAluno__menuConteudo--displayFlex {
     display: flex;
     flex-direction: column;
     justify-content: center;   
@@ -247,7 +241,7 @@ main {
     align-items: center;  
 }
 
-.containerProfessor__containerTabela {
+.containerAluno__containerTabela {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -270,31 +264,25 @@ main {
     font-weight: 600;
 }
 
-.titulosConteudo__usuario {
+.titulosConteudo__email {
     color: #074A71;
     font-weight: 600;
 }
 
-.titulosConteudo__telefone {
-    color: #074A71;
-    font-weight: 600;
-}
 
 .dataName {
-    width: 23%;
+    width: 33%;
 }
 
 .dataRegistro {  
-    width: 25%;
+    width: 33%;
 }
 
-.dataUsuario{
-    width: 27%;
+.dataEmail{
+    width: 33%;
 }
 
-.dataTelefone {
-    width: 25%;
-}
+
 
 tr {
     width: 100%;
@@ -308,4 +296,5 @@ tr:hover {
 
 td {
     padding: 10px;
+    
 }
