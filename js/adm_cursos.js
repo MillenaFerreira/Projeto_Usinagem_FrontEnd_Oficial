@@ -22,12 +22,15 @@ const criarTable = (curso) => {
     const td_carga = document.createElement('td')
     td_carga.classList.add('dataCargaHoraria')
     td_carga.dataset.title = 'Usuario'
-    td_carga.textContent = curso.carga_horaria + 'h'
+    // td_carga.textContent = curso.carga_horaria + 'H'
 
     //dentro td_carga terá:
     const iconHora = document.createElement('i')
     iconHora.classList.add('fa-solid')
     iconHora.classList.add('fa-clock')
+
+    const carga_horaria = document.createElement('span')
+    carga_horaria.textContent = ' ' + curso.carga_horaria + 'H'
 
     const td_icon_editar = document.createElement('td')
     td_icon_editar.classList.add('IconEditar')
@@ -62,7 +65,7 @@ const criarTable = (curso) => {
     
 
     tr.append(td_nome, td_sigla, td_carga, td_icon_editar, td_icon_deletar)
-    td_carga.append(iconHora)
+    td_carga.append(iconHora, carga_horaria)
     td_icon_editar.append(iconEditar)
     td_icon_deletar.append(iconDeletar)
 
