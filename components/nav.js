@@ -7,15 +7,18 @@ class nav extends HTMLElement {
     constructor() {
         super()
         this.shadow = this.attachShadow({ mode: 'open' })
-        this.imagem_logo = '../img/logo.png'
-        this.text_button = 'Login'
-        this.color_button = 'black'
-        this.link_button = '#'
-        this.color_top = 'black'
+        this.nome1 = 'Nome'
+        this.nome2 = 'Nome'
+        this.nome3 = 'Nome'
+        this.nome4 = 'Nome'
+        this.link1 = '#'
+        this.link2 = '#'
+        this.link3 = '#'
+        this.link4 = '#'
     }
 
     static get observedAttributes() {
-        return ['imagem_logo', 'text_button', 'color_button', 'link_button', 'color_top' ]
+        return ['nome1', 'nome2', 'nome3', 'nome4', 'link1', 'link2' , 'link3', 'link4']
     }
 
     attributeChangedCallback(nameAttr, oldValue, newValue) {
@@ -94,19 +97,23 @@ class nav extends HTMLElement {
         ul.classList.add('busca')
 
         const cursos = document.createElement('a')
-        cursos.textContent = 'Cursos'
-        cursos.href = '/pages/professor/cursos.html'
+        cursos.textContent = this.nome1
+        cursos.href = this.link1
 
         const turmas = document.createElement('a')
-        turmas.textContent = 'Turmas'
-        turmas.href = '/pages/professor/turmas.html'
+        turmas.textContent = this.nome2
+        turmas.href = this.link2
+
+        const disciplinas = document.createElement('a')
+        disciplinas.textContent = this.nome3
+        disciplinas.href = this.link3
 
         const alunos = document.createElement('a')
-        alunos.textContent = 'Alunos'
-        alunos.href = '/pages/professor/alunos.html'
+        alunos.textContent = this.nome4
+        alunos.href = this.link4
         
         nav.append(ul)
-        ul.append(cursos, turmas, alunos)
+        ul.append(cursos, turmas, disciplinas, alunos)
 
         return nav
 

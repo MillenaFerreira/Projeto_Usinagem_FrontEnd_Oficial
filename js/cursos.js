@@ -9,10 +9,6 @@ const criarCard = (curso) => {
     const card = document.createElement('div')
     card.classList.add('card_curso')
 
-    //dentro do card_curso terá:
-    const segura_tudo = document.createElement('div')
-    segura_tudo.classList.add('segura_tudo')
-
     //dentro do segura_tudo terá:
     const imagem = document.createElement('img')
     imagem.src = curso.foto
@@ -41,12 +37,9 @@ const criarCard = (curso) => {
     icone.classList.add('fa-clock')
 
     const hora_curso = document.createElement('div')
-    hora_curso.textContent = `${curso.carga_horaria}h`
+    hora_curso.textContent = `${curso.carga_horaria}H` 
 
-
-    card.append(segura_tudo)
-    //editar_excluir.append(editar, excluir)
-    segura_tudo.append(imagem, nome_carga)
+    card.append(imagem, nome_carga)
     nome_carga.append(nome, carga_horaria)
     nome.append(nomeSigla, nomeCompleto)
     carga_horaria.append(icone, hora_curso)

@@ -5,7 +5,7 @@ body {
     grid-template-rows: auto 75px 1fr;
 }
 
-#root_aluno {
+#root_professor {
     height: 100%;
 }
 
@@ -52,11 +52,6 @@ body {
     height: 2px;
 }
 
-.pre__recarga {
-    width: 100px;
-    height: 100px;
-}
-
 /* CURSOS */
 .cards_cursos {
     display: grid;
@@ -70,14 +65,13 @@ body {
 
 .card_curso {
     background-color: #D9D9D9;
-    width: 350px;
-    height: 269px;
+    width: 300px;
+    height: 300px;
     display: grid;
     place-items: center;
     padding: 20px;
     border: 1px solid #3084B4;
     border-radius: 5px;
-    box-shadow: 8px 8px 5px 2px rgba(0, 0, 0, 0.25);
     cursor: pointer;
 }
 
@@ -87,14 +81,9 @@ body {
 }
 
 .card_curso:hover {
+    box-shadow: 8px 8px 5px 2px rgba(0, 0, 0, 0.25);
     border: 4px solid #3084B4;
-    transition: all .1s;
-}
-
-.segura_tudo {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+    transition: all .2s;
 }
 
 .nome_carga {

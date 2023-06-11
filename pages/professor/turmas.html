@@ -23,6 +23,7 @@
 
     <!-- COMPONENTS -->
     <script src="/components/header.js" defer type="module"></script>
+    <script src="/components/nav.js" defer type="module"></script>
 
 
     <script src="/js/horario.js" defer type="module"></script>
@@ -37,19 +38,14 @@
 <body>
     <header-padrao color_top="#3084B4" color_button="#DA251C" text_button="VOLTAR"
         link_button="../index.html"></header-padrao>
-    <nav>
-        <ul class="busca">
-            <a href="/pages/professor/cursos.html"  class="materia">
-                Cursos
-            </a>
-            <a href="/pages/professor/turmas.html"  class="areaAluno">
-                Turmas
-            </a>
-            <a href="/pages/professor/alunos.html" class="horario">
-                Alunos
-            </a>
-        </ul>
-    </nav>
+    <!-- NAV PRINCIPAL -->
+    <nav-professor 
+        nome1="Cursos" link1="/pages/professor/cursos.html"
+        nome2="Turmas" link2="/pages/professor/turmas.html"
+        nome3="Disciplinas" link3="/pages/professor/disciplinas.html"
+        nome4="Alunos" link4="/pages/professor/alunos.html">
+    </nav-professor>
+
     <main id="root_aluno">
         <div class="container container-areaAluno" id="container-areaAluno">
             <div class="container_topo">
