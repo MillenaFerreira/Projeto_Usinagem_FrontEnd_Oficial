@@ -53,7 +53,7 @@ const criarDadosTarefa = async () => {
         const tipo_atividade2 = document.getElementById('tipo-atividade2')
 
         const tarefaEditada = document.getElementById('sendTarefaEditada')
-
+        const descricaoTarefa2 = document.getElementById('descricaoTarefa2')
 
 
 
@@ -69,12 +69,12 @@ const criarDadosTarefa = async () => {
         const idTarefa = tarefa.id;
 
 
-        button_excluir.addEventListener('click', async (event) => {
+        button_excluir.addEventListener('click',  (event) => {
             event.preventDefault();
             console.log(idTarefa);
-            await deleteTarefa(idTarefa);
+            deleteTarefa(idTarefa);
 
-            location.reload();
+            
         });
 
         button_editar.addEventListener('click', async (event) => {
@@ -89,6 +89,7 @@ const criarDadosTarefa = async () => {
             nomeTarefa2.value = tarefa.nome_tarefa
             urlTarefa2.value = tarefa.foto_peca
             tempoPrevisto2.value = tarefa.tempo_previsto_tarefa
+            descricaoTarefa2.value = tarefa.descricao_tarefa
             tipo_atividade2.value = tarefa.id_tipo_tarefa
             window.scrollTo({
                 top: 0,
@@ -102,6 +103,7 @@ const criarDadosTarefa = async () => {
                     "tempo_previsto": `${tempoPrevisto2.value.substring(0, 2) + ':' + tempoPrevisto2.value.substring(3, 5) + ':00'}`,
                     "numero": 12,
                     "foto_peca": `${urlTarefa2.value}`,
+                    "descricao": descricaoTarefa2.value,
                     "id_tipo_tarefa": parseInt(tipo_atividade2.value)
                 }
                 console.log(tarefaUpdate);
@@ -127,6 +129,9 @@ const criarDadosTarefa = async () => {
 
         buttonCard.addEventListener('click', async (event) => {
             event.preventDefault();
+
+            localStorage.setItem('tarefaNome', tarefa.nome_tarefa)
+            console.log('clique',tarefa.nome_tarefa);
             //console.log(idTarefa);
             window.scrollTo({
                 top: 0,
@@ -143,6 +148,7 @@ const criarDadosTarefa = async () => {
             event.preventDefault();
             modalMensgaem.classList.add('d-none')
             modalMensgaem.classList.remove('d-flex')
+            location.reload();
            })
         });
 
@@ -164,42 +170,18 @@ const buttonSairMNodal = document.getElementById('sair')
 buttonAdcTarefa.addEventListener('click', () => {
     modalTarefaAdc.classList.remove('d-none')
     modalTarefaAdc.classList.add('d-flex')
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 })
 
 buttonSairMNodal.addEventListener('click', () => {
     modalTarefaAdc.classList.add('d-none')
     modalTarefaAdc.classList.remove('d-flex')
 })
-// var input = document.getElementById('imagem');
-// var visualizacao = document.getElementById('visualizacao');
-// var imgVisu = document.getElementById('imgVisu');
 
-// const exibirImagem = (event) => {
-//     console.log('2');
-//     var input = event.target;
-//     var visualizacao = document.getElementById('visualizacao');
 
-//     if (input.files && input.files[0]) {
-//         var reader = new FileReader();
-//         console.log('3');
-//         reader.onload = function (e) {
-//             console.log('4');
-//             imgVisu.src = e.target.result
-//             console.log(e.target.result);
-
-//         };
-
-//         reader.readAsDataURL(input.files[0]);
-//     } else {
-//         visualizacao.style.background = 'none';
-//     }
-
-// };
-
-// input.addEventListener('change', (event) => {
-//     console.log('1');
-//     exibirImagem(event);
-// });
 
 const buttonSendTarefa = document.getElementById('sendTarefa')
 const nomeTarefa = document.getElementById('nomeTarefa')
@@ -218,17 +200,11 @@ buttonSendTarefa.addEventListener('click', (event) => {
     const valorNomeTarefa = nomeTarefa.value
     const valorUrl = urlTarefa.value
     const valorTempo = tempoPrevisto.value
-    //const valorValorDescricao = descricaoTarefa.value
+    const valorValorDescricao = descricaoTarefa.value
     //let valorTipoTarefa = ''
 
     const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
-    // if (selectedValue == 'Somativa') {
-    //     valorTipoTarefa = 2
-    // }
-    // if (selectedValue == 'Formativa') {
-    //     valorTipoTarefa = 1
-    // }
 
     if (selectedValue != "na") {
         if (urlRegex.test(valorUrl)) {
@@ -238,6 +214,7 @@ buttonSendTarefa.addEventListener('click', (event) => {
                 "tempo_previsto": `${valorTempo.substring(0, 2) + ':' + valorTempo.substring(3, 5) + ':00'}`,
                 "numero": 12,
                 "foto_peca": `${valorUrl}`,
+                "descricao": `${valorValorDescricao}`,
                 "id_tipo_tarefa": parseInt(selectedValue)
             }
             console.log(tarefa);

@@ -149,7 +149,7 @@ nav {
     transition: .4s ease-in-out;
 }
 
-.card2:hover, .card:hover, .card3:hover{
+.card2:hover, .card3:hover{
     scale: .9;
 }
 
