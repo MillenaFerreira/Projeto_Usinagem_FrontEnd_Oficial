@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css_marcelo/reset.css">
-    <link rel="stylesheet" href="../../css_marcelo/professor.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/adm/administrador_alunos.css">
+
     <script src="../../components/header.js"></script>
-    <script src="../../js/administrador.js" type="module" defer></script>
+    <script src="../../js/administradorAlunos.js" type="module" defer></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
-    <title>ADMINISTRADOR</title>
+    
+    <title>ADMINISTRADOR - Alunos</title>
 </head>
 <body>
-    <header-padrao color_button = '#DA251C' color_top = '#3084B4'>
+    <header-padrao color_button = '#DA251C' color_top = '#3084B4' text_button = 'SAIR' link_button = '../../index.html'>
         
     </header-padrao>
 
@@ -41,14 +44,62 @@
             </a>
         </div>
 
-        <div class="teste">
+        <div class="containerAluno">
+            <section class="containerAluno__menuSuperior">
+                <h2 class="menuSuperior__tituloAluno">
+                    GERENCIAR ALUNOS
+                </h2>
 
+                <input type="text" class="menuSuperior__inputAluno menuSuperior__inputAluno--format" id="pesquisaAluno" placeholder=" Pesquise por um aluno...">
+
+                <div class="menuSuperior__containerLinks">
+
+                    <li class="containerLinks__listaLinks containerLinks__listaLinks--displayFlex">
+                       
+                        <ul class="listaLinks__icone iconeAdicionar">
+                            <ion-icon name="add-outline" class="icone"></ion-icon>
+                        </ul>
+                        
+                    </li>
+                    
+                </div>
+            </section>
+
+            <section class="containerAluno__menuConteudo containerAluno__menuConteudo--displayFlex">
+                
+                <div class="menuConteudo__titulosConteudo menuConteudo__titulosConteudo--displayFlex">
+                    <span class="titulosConteudo__nome">
+                        NOME
+                    </span>
+                    <span class="titulosConteudo__email">
+                        EMAIL
+                    </span>
+                    <span class="titulosConteudo__registro">
+                        REGISTRO
+                    </span>
+                </div>
+
+                <div class="containerAluno__containerTabela">
+                    <table>
+                       
+                        <tbody id="tabelaItemsAlunos">
+
+                           
+                            
+                            
+                           
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
     </main>
   
         
     
-
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
        
     

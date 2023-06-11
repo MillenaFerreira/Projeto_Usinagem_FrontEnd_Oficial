@@ -1,29 +1,24 @@
 'use strict'
 
-import { pegarProfessoresApi } from "./apiAdmProfessores.js"
+import { pegarAlunosApi } from "./apiAdmAlunos.js"
 
+const alunosLista = await pegarAlunosApi()
 
-const professoresLista = await pegarProfessoresApi()
-
-const criarLista = (card) => {
+const criarListaAlunos = (card) => {
     const itemLista = document.createElement('tr')
-    itemLista.classList.add('professorLista')
+    itemLista.classList.add('alunoLista')
 
     const dadosListaNome = document.createElement('td')
     dadosListaNome.classList.add('dataName')
-    dadosListaNome.textContent = card.nome
+    dadosListaNome.textContent = card.nome_aluno
 
-    const dadosListaRegistro = document.createElement('td')
-    dadosListaRegistro.classList.add('dataRegistro')
-    dadosListaRegistro.textContent = card.nif
+    const dadosEmail = document.createElement('td')
+    dadosEmail.classList.add('dataEmail')
+    dadosEmail.textContent = card.email_aluno
 
-    const dadosListaUsuario = document.createElement('td')
-    dadosListaUsuario.classList.add('dataUsuario')
-    dadosListaUsuario.textContent = card.email_usuario
-
-    const dadosListaTelefone = document.createElement('td')
-    dadosListaTelefone.classList.add('dataTelefone')
-    dadosListaTelefone.textContent = card.telefone
+    const dadosRegistro = document.createElement('td')
+    dadosRegistro.classList.add('dataRegistro')
+    dadosRegistro.textContent = card.cpf
 
     const itemEditar = document.createElement('div') 
     itemEditar.classList.add('listaLinks__icone')
@@ -51,15 +46,14 @@ const criarLista = (card) => {
 
 
     itemEditar.addEventListener('click', () => {
-        window.localStorage.setItem('dadosProfessor', (card.id).toString())
+        window.localStorage.setItem('dadosAluno', (card.id).toString())
         window.location = `./editar/editarAdministrador.html`
     })
 
     itemLista.append (
         dadosListaNome,
-        dadosListaRegistro,
-        dadosListaUsuario,
-        dadosListaTelefone,
+        dadosEmail,
+        dadosRegistro,
         itemEditar,
         itemApagar
     )
@@ -67,12 +61,10 @@ const criarLista = (card) => {
     return itemLista
 }
 
+const carregarItems = () => {
+    const container = document.getElementById('tabelaItemsAlunos')
 
-
-const carregarItems = async () => {
-    const container = document.getElementById('tabelaItems')
-
-    const gerarItems = professoresLista.professores.map(criarLista)
+    const gerarItems = alunosLista.alunos.map(criarListaAlunos)
 
     container.replaceChildren(...gerarItems)
 
