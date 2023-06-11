@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/adm/administrador_cursos.css">
+
+    <script src="../../components/header.js"></script>
+    <script src="../../js/administrador.js" type="module" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    
+    <title>ADMINISTRADOR</title>
+</head>
+<body>
+    <header-padrao color_button = '#DA251C' color_top = '#3084B4'>
+        
+    </header-padrao>
+
+    <section class="containerTitulo containerTitulo--displayGrid">
+
+        <h1 class="containerTitulo__tituloPagina">
+            ADMINISTRAÇÃO
+        </h1>
+        
+    </section>
+
+    <main>
+        <div class="menuLateral menuLateral--displayFlex  menuLateral--anchor">
+            <a class="menuLateral__anchor" href="administrador.html">
+                PROFESSORES
+            </a>
+            <a class="menuLateral__anchor" href="cursos.html">
+                CURSOS
+            </a>
+            <a class="menuLateral__anchor" href="alunos.html">
+                ALUNOS
+            </a>
+            <a class="menuLateral__anchor" href="materias.html">
+                MATÉRIAS
+            </a>
+        </div>
+
+        <div class="containerCursos">
+            <section class="containerCursos__menuSuperior">
+
+                <h2 class="menuSuperior__tituloCursos">
+                    GERENCIAR CURSOS
+                </h2>
+
+                <input type="text" class="menuSuperior__inputCursos menuSuperior__inputCursos--format" id="pesquisaCursos" placeholder=" Pesquise por um Curso...">
+
+                <div class="menuSuperior__containerLinks">
+
+                    <li class="containerLinks__listaLinks containerLinks__listaLinks--displayFlex">
+                        <ul class="listaLinks__icone iconeEditar">
+                            <ion-icon name="create-outline" class="icone"></ion-icon>
+                        </ul>
+                        <ul class="listaLinks__icone iconeAdicionar">
+                            <ion-icon name="add-outline" class="icone"></ion-icon>
+                        </ul>
+                        <ul class="listaLinks__icone iconeApagar">
+                            <ion-icon name="trash-outline" class="icone"></ion-icon>
+                        </ul>
+                    </li>
+                    
+                </div>
+            </section>
+
+            <section class="containerCursos__menuConteudo containerCursos__menuConteudo--displayFlex">
+                <div class="menuConteudo__titulosConteudo menuConteudo__titulosConteudo--displayFlex">
+                    <span class="titulosConteudo__cursos">
+                        CURSOS
+                    </span>
+                    
+                    <span class="titulosConteudo__sigla">
+                        SIGLA
+                    </span>
+
+                    <span class="titulosConteudo__carga">
+                        CARGA HORÁRIA
+                    </span>
+                   
+                </div>
+                <div class="containerCursos__containerTabela">
+                    <table>
+                       
+                        <tbody id="tabelaItems">
+
+                           
+                            <tr>
+        
+                              <td data-title="Name" class="dataCurso">Material Design Color Palette</td>
+                              <!-- <td data-title="Email" class="dataEmail">log4304.016@gmail.com</td> -->
+                              <td data-title="Registro" class="dataSigla">DS</td>
+                              <td data-title="Usuario" class="dataCargaHoraria">
+                                <ion-icon name="time-outline"></ion-icon>
+                                1200H
+                              </td>
+                              
+                              
+                            </tr>
+                            
+                            <tr>
+        
+                              <td data-title="Name" class="dataCurso">Material Design Color Palette</td>
+                              <!-- <td data-title="Email" class="dataEmail">log4304.016@gmail.com</td> -->
+                              <td data-title="Registro" class="dataSigla">DS</td>
+                              <td data-title="Usuario" class="dataCargaHoraria">
+                                <ion-icon name="time-outline"></ion-icon>
+                                1200H
+                              </td>
+                              
+                              
+                            </tr>
+                            
+                            <tr>
+        
+                              <td data-title="Name" class="dataCurso">Material Design Color Palette</td>
+                              <!-- <td data-title="Email" class="dataEmail">log4304.016@gmail.com</td> -->
+                              <td data-title="Registro" class="dataSigla">DS</td>
+                              <td data-title="Usuario" class="dataCargaHoraria">
+                                <ion-icon name="time-outline"></ion-icon>
+                                1200H
+                              </td>
+                              
+                              
+                            </tr>
+                            
+                            <tr>
+        
+                              <td data-title="Name" class="dataCurso">Material Design Color Palette</td>
+                              <!-- <td data-title="Email" class="dataEmail">log4304.016@gmail.com</td> -->
+                              <td data-title="Registro" class="dataSigla">DS</td>
+                              <td data-title="Usuario" class="dataCargaHoraria">
+                                <ion-icon name="time-outline"></ion-icon>
+                                1200H
+                              </td>
+                              
+                              
+                            </tr>
+                            
+                            <tr>
+        
+                              <td data-title="Name" class="dataCurso">Material Design Color Palette</td>
+                              <!-- <td data-title="Email" class="dataEmail">log4304.016@gmail.com</td> -->
+                              <td data-title="Registro" class="dataSigla">DS</td>
+                              <td data-title="Usuario" class="dataCargaHoraria">
+                                <ion-icon name="time-outline"></ion-icon>
+                                1200H
+                              </td>
+                              
+                              
+                            </tr>
+                            
+                            <tr>
+        
+                              <td data-title="Name" class="dataCurso">Material Design Color Palette</td>
+                              <!-- <td data-title="Email" class="dataEmail">log4304.016@gmail.com</td> -->
+                              <td data-title="Registro" class="dataSigla">DS</td>
+                              <td data-title="Usuario" class="dataCargaHoraria">
+                                <ion-icon name="time-outline"></ion-icon>
+                                1200H
+                              </td>
+                              
+                              
+                            </tr>
+                            
+                            <tr>
+        
+                              <td data-title="Name" class="dataCurso">Material Design Color Palette</td>
+                              <!-- <td data-title="Email" class="dataEmail">log4304.016@gmail.com</td> -->
+                              <td data-title="Registro" class="dataSigla">DS</td>
+                              <td data-title="Usuario" class="dataCargaHoraria">
+                                <ion-icon name="time-outline"></ion-icon>
+                                1200H
+                              </td>
+                              
+                              
+                            </tr>
+                            
+                            <tr>
+        
+                              <td data-title="Name" class="dataCurso">Material Design Color Palette</td>
+                              <!-- <td data-title="Email" class="dataEmail">log4304.016@gmail.com</td> -->
+                              <td data-title="Registro" class="dataSigla">DS</td>
+                              <td data-title="Usuario" class="dataCargaHoraria">
+                                <ion-icon name="time-outline"></ion-icon>
+                                1200H
+                              </td>
+                              
+                              
+                            </tr>
+                            
+                            <tr>
+        
+                              <td data-title="Name" class="dataCurso">Material Design Color Palette</td>
+                              <!-- <td data-title="Email" class="dataEmail">log4304.016@gmail.com</td> -->
+                              <td data-title="Registro" class="dataSigla">DS</td>
+                              <td data-title="Usuario" class="dataCargaHoraria">
+                                <ion-icon name="time-outline"></ion-icon>
+                                1200H
+                              </td>
+                              
+                              
+                            </tr>
+                            
+                           
+                           
+                        </tbody>
+                    </table>
+                </div>
+                
+            </section>
+
+        </div>
+    </main>
+  
+        
+    
+
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+
+</body>
+</html>

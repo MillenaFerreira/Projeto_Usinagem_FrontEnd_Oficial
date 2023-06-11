@@ -1,0 +1,246 @@
+* {
+    font-family: 'Montserrat';
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #EEEEEE;
+}
+
+main {
+    height: 100%;
+    display: flex;
+}
+
+.containerTitulo {
+    width: 100%;
+    height: 5vh;
+    background-color: #3084B4;
+}
+
+.containerTitulo--displayGrid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.containerTitulo__tituloPagina {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.menuLateral {
+    height: 100%;
+    width: 20vw;
+    background-color: #3084B4;
+}
+
+.menuLateral--displayFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 60px;
+    padding-top: 50px;
+}
+
+.menuLateral__anchor {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.menuLateral__anchor::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.30s;
+}
+
+.menuLateral__anchor::after {
+    bottom: -3px;
+    transform-origin: left;
+}
+
+.menuLateral__anchor:hover::after {
+    transform: scaleX(1);
+}
+
+.containerProfessor {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.containerProfessor__menuSuperior {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.menuSuperior__tituloProfessor {
+    color: #3084B4;
+}
+
+.menuSuperior__inputProfessor {
+    height: 100%;
+    max-height: 4.5vh;
+    width: 100%;
+    max-width: 15vw;
+    font-size: 1.1rem;
+    transition: ease-in-out 100ms;
+}
+
+.menuSuperior__inputProfessor--format {
+    border: 1px solid #3084B4;
+    background-color: #E0E0E0;
+    border-radius: 10px;
+}
+
+.menuSuperior__inputProfessor:hover {
+    border: 2px solid #286c94;
+}
+
+.menuSuperior__containerLinks {
+    display: flex;
+}
+
+.containerLinks__listaLinks {
+    width: 12vw;
+    height: 10vh;
+}
+
+.containerLinks__listaLinks--displayFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+}
+
+.listaLinks__icone {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color: #3084B4;
+    width: 50px;
+    height: 50px;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: ease-in-out 200ms;
+}
+
+.listaLinks__icone:hover {
+    background-color: #286c94;
+    transform: scale(1.1);
+}
+
+.icone {
+    width: 35px;
+    height: 35px;
+}
+
+.icone:hover {
+    transform: scale(1.1);
+}
+
+.containerProfessor__menuConteudo {
+    height: 80%;
+    width: 90%;
+    background-color: #E0E0E0;
+    border: 1px solid #074A71;
+    border-radius: 10px;
+}
+
+.containerProfessor__menuConteudo--displayFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+}
+
+.menuConteudo__titulosConteudo {
+    height: 12vh;
+}
+
+.menuConteudo__titulosConteudo--displayFlex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;  
+}
+
+.containerProfessor__containerTabela {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    vertical-align: top;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: auto;
+}
+
+.titulosConteudo__nome {
+    color: #074A71;
+    font-weight: 600;
+}
+
+.titulosConteudo__registro {
+    color: #074A71;
+    font-weight: 600;
+}
+
+.titulosConteudo__usuario {
+    color: #074A71;
+    font-weight: 600;
+}
+
+.titulosConteudo__telefone {
+    color: #074A71;
+    font-weight: 600;
+}
+
+.dataName {
+    width: 23%;
+}
+
+.dataRegistro {  
+    width: 25%;
+}
+
+.dataUsuario{
+    width: 27%;
+}
+
+.dataTelefone {
+    width: 25%;
+}
+
+tr {
+    width: 100%;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: #bbbbbb;
+}
+
+td {
+    padding: 10px;
+}
