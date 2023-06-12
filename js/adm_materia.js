@@ -1,8 +1,12 @@
 'use strict'
 
 import { pesquisarMaterias } from "../js/apiMateria.js"
+import { getTodosCursos } from "../js/apiCurso.js"
 
 const materia = await pesquisarMaterias()
+const curso = await getTodosCursos()
+const cursoEspecifico = curso.cursos
+
 
 const criarTable = (materia) => {
 
@@ -22,7 +26,7 @@ const criarTable = (materia) => {
     const td_carga = document.createElement('td')
     td_carga.classList.add('dataCargaHoraria')
     td_carga.dataset.title = 'Usuario'
-    
+
     //dentro td_carga terá:
     const iconHora = document.createElement('i')
     iconHora.classList.add('fa-solid')
@@ -47,7 +51,7 @@ const criarTable = (materia) => {
     //     // document.getElementById("myInputDescricaoValor").value = materia.descricao;
     //     // document.getElementById("myInputSiglaValor").value = materia.sigla;
     //     // document.getElementById("myInputUrlValor").value = materia.foto;
-        
+
     // })
 
     const td_icon_deletar = document.createElement('td')
@@ -61,7 +65,7 @@ const criarTable = (materia) => {
     // iconDeletar.addEventListener('click', function () {
     //     localStorage.setItem('id', materia.id)
     // })
-    
+
 
     tr.append(td_nome, td_sigla, td_carga, td_icon_editar, td_icon_deletar)
     td_carga.append(iconHora, carga_horaria)
@@ -79,3 +83,50 @@ export const carregarTableMaterias = () => {
 }
 
 carregarTableMaterias()
+
+
+const criarListaCursosNoSelect = async () => {
+
+    // const buttonAdicionarCurso = document.getElementById('buttonAdicionarCurso')
+
+    // buttonAdicionarCurso.addEventListener('click', (event) => {
+    //     event.preventDefault()
+
+    //     const adicionarCurso = document.getElementById('adicionar--curso')
+
+    //     const selectMateriasCursos = document.createElement('select')
+    //     selectMateriasCursos.id = materias_cursos
+
+    //     adicionarCurso.append(selectMateriasCursos)
+
+    // })
+
+    cursoEspecifico.forEach((nomeCurso) => {
+
+        const materias_cursos = document.getElementById('materias_cursos')
+
+        const adicionarCurso = document.querySelector('.dropdownCurso')
+
+        materias_cursos.addEventListener('change', () => {
+            //console.log(materias_cursos.value);
+            //var opcaoTexto = materias_cursos.options[materias_cursos.selectedIndex]
+            console.log(materias_cursos.selectedIndex);
+        
+        });
+
+        const optionCurso = document.createElement('option')
+        optionCurso.value = nomeCurso.id
+        optionCurso.textContent = nomeCurso.nome
+
+        materias_cursos.append(optionCurso)
+
+    });
+
+}
+
+criarListaCursosNoSelect()
+
+// mobiscroll.select('#materias_cursos', {
+//     inputElement: document.getElementById('my-input'),
+//     touchUi: false
+// });

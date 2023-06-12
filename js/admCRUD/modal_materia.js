@@ -5,6 +5,14 @@ import { createMateria} from "../apiMateria.js";
 const idCurso = localStorage.getItem('id')
 console.log('logo' + idCurso);
 
+
+
+
+
+
+
+
+
 const createCardMateria = () => {
 
     console.log("entrei");
