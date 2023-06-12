@@ -126,7 +126,7 @@ main {
     height: 100%;
     max-height: 4.5vh;
     width: 100%;
-    max-width: 20vw;
+    max-width: 25vw;
     font-size: 1.1rem;
     transition: ease-in-out 100ms;
 }
@@ -227,7 +227,7 @@ main {
 .titulosConteudo__nome {
     color: #074A71;
     font-weight: 600;
-    width: 35%;
+    width: 18%;
     padding: 10px;
     text-align: center;
 }
@@ -235,7 +235,7 @@ main {
 .titulosConteudo__nif {
     color: #074A71;
     font-weight: 600;
-    width: 19%;
+    width: 14%;
     padding: 10px;
     text-align: center;
 }
@@ -243,7 +243,7 @@ main {
 .titulosConteudo__email {
     color: #074A71;
     font-weight: 600;
-    width: 42%;
+    width: 45%;
     padding: 10px;
     text-align: center;
 }
@@ -251,9 +251,10 @@ main {
 .titulosConteudo__telefone {
     color: #074A71;
     font-weight: 600;
-    width: 42%;
+    width: 46%;
     padding: 10px;
-    text-align: center;
+    text-align: start;
+    padding-left: 7.5vw;
 }
 
 .dataCurso {
@@ -276,6 +277,7 @@ tr {
     width: 100%;
     transition: all .3s ease;
     cursor: pointer;
+    text-align: center;
 }
 
 tr:hover {

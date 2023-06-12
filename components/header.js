@@ -4,7 +4,7 @@ class header extends HTMLElement {
     constructor() {
         super()
         this.shadow = this.attachShadow({ mode: 'open' })
-        this.imagem_logo = '/img/logo.png'
+        this.imagem_logo = '/img/logoComNome.png'
         this.text_button = 'Login'
         this.color_button = 'black'
         this.link_button = '#'
