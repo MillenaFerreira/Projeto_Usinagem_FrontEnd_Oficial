@@ -24,6 +24,7 @@ main {
     color: #ffff;
     font-size: 32px;
     cursor: pointer;
+    display: none;
 }
 
 .containerTitulo--displayFlex {
@@ -32,6 +33,10 @@ main {
     justify-content: center;
     align-items: center;
     padding: 0 2vh;
+}
+
+.containerTitulo--displayFlex a {
+    display: none;
 }
 
 .containerTitulo__tituloPagina {
@@ -541,6 +546,11 @@ td {
 }
 
 @media (max-width: 999px) {
+
+    .containerTitulo--displayFlex a {
+        display: block;
+    }
+
     .menuLateral {
         visibility: hidden;
         opacity: 0;
@@ -588,6 +598,18 @@ td {
 
     .menuSuperior__inputCursos {
         max-width: 60vw;
+    }
+
+    .menuConteudo__titulosConteudo--displayFlex{
+        font-size: 0.7rem;
+    }
+
+    .tabelaItemsCursos{
+        font-size: 0.9rem;
+    }
+
+    .dataCargaHoraria i {
+        display: none;
     }
 
     /* MODAL ADICIONAR */

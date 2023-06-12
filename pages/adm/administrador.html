@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,156 +14,192 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jaldi&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap"
+        rel="stylesheet">
 
     <title>ADMINISTRADOR - Professores</title>
 </head>
+
 <body>
-    <header-padrao color_button = '#DA251C' color_top = '#3084B4' text_button = 'SAIR' link_button = '../../index.html'>
-        
-    </header-padrao>
+    <header-padrao color_button='#DA251C' color_top='#3084B4'></header-padrao>
 
-    <section class="containerTitulo containerTitulo--displayGrid">
-
+    <section class="containerTitulo containerTitulo--displayFlex">
+        <a class="fa-solid fa-bars containerTitulo--icon" href="#menu--bar"></a>
         <h1 class="containerTitulo__tituloPagina">
-            ADMINISTRAÇÃO
+            PROFESSORES
         </h1>
-        
+
     </section>
 
     <main>
-        <div class="menuLateral menuLateral--displayFlex  menuLateral--anchor">
-            <a class="menuLateral__anchor" href="administrador.html">
-                PROFESSORES
-            </a>
-            <a class="menuLateral__anchor" href="cursos.html">
-                CURSOS
-            </a>
-            <a class="menuLateral__anchor" href="alunos.html">
-                ALUNOS
-            </a>
-            <a class="menuLateral__anchor" href="materias.html">
-                MATÉRIAS
-            </a>
+        <div class="menuLateral menuLateral--displayFlex  menuLateral--anchor" id="menu--bar">
+            <ul class="menuLateral--menuBar">
+                <a href="#" class="menuLateral--close">&times;</a>
+                <li>
+                    <a class="menuLateral__anchor" href="administrador.html">
+                        PROFESSORES
+                    </a>
+                </li>
+                <li>
+                    <a class="menuLateral__anchor" href="cursos.html">
+                        CURSOS
+                    </a>
+                </li>
+                <li>
+                    <a class="menuLateral__anchor" href="alunos.html">
+                        ALUNOS
+                    </a>
+                </li>
+                <li>
+                    <a class="menuLateral__anchor" href="materias.html">
+                        MATÉRIAS
+                    </a>
+                </li>
+            </ul>
         </div>
 
-        <div class="containerProfessor">
-            <section class="containerProfessor__menuSuperior">
-
-                <h2 class="menuSuperior__tituloProfessor">
+        <div class="containerCursos">
+            <section class="containerCursos__menuSuperior">
+                <h2 class="menuSuperior__tituloCursos">
                     GERENCIAR PROFESSORES
                 </h2>
-
-                <input type="text" class="menuSuperior__inputProfessor menuSuperior__inputProfessor--format" id="pesquisaProfessor" placeholder=" Pesquise por um professor...">
-
+                <input type="text" class="menuSuperior__inputCursos menuSuperior__inputCursos--format"
+                    id="pesquisaCursos" placeholder=" Pesquise por um Professor...">
                 <div class="menuSuperior__containerLinks">
-
-                    <li class="containerLinks__listaLinks containerLinks__listaLinks--displayFlex">
-                       
-                        <ul class="listaLinks__icone iconeAdicionar">
-                            <a href="#modal__adicionar">
-                                <ion-icon name="add-outline" class="icone"></ion-icon>
-                            </a> 
-                        </ul>
-                        
-                    </li>
-                    
+                    <ul class="containerLinks__listaLinks containerLinks__listaLinks--displayFlex">
+                        <a class="fas fa-plus" href="#modal__adicionar"></a>
+                    </ul>
                 </div>
             </section>
 
-            <section class="containerProfessor__menuConteudo containerProfessor__menuConteudo--displayFlex">
-                <div class="menuConteudo__titulosConteudo menuConteudo__titulosConteudo--displayFlex">
-                    <span class="titulosConteudo__nome">
-                        NOME
-                    </span>
-                    <!-- <span class="titulosConteudo__email">
-                        EMAIL
-                    </span> -->
-                    <span class="titulosConteudo__registro">
-                        REGISTRO
-                    </span>
-                    <span class="titulosConteudo__usuario">
-                        USUARIO
-                    </span>
-                    <span class="titulosConteudo__telefone">
-                        TELEFONE
-                    </span>
-                </div>
-                <div class="containerProfessor__containerTabela">
-                    <table>
-                       
-                        <tbody id="tabelaItems">
+            <!-- MODAL ADICIONAR CURSOS -->
+            <!-- <div id="modal__adicionar" class="modal__adicionar">
+                <form class="modal__adicionar--content" id="modal__adicionar--content">
+                    <p class="nome__modal">Adicionar um Matéria</p>
+                    <div class="input__nome">
+                        <label for="">Nome :</label>
+                        <input type="text" name="nome" id="myInputNome" maxlength="100" style="width: 100%;" required>
+                    </div>
+                    <div class="sigla__carga--horaria">
+                        <div class="input__sigla">
+                            <label for="">Sigla:</label>
+                            <input type="text" name="sigla" id="myInputSigla" maxlength="5" required>
+                        </div>
+                        <div class="input__carga--horaria">
+                            <label for="">Carga Horaria:</label>
+                            <input type="number" name="carga_horaria" id="myInputCargaHoraria" min="0" required>
+                        </div>
+                    </div>
+                    <div class="input__descricao">
+                        <label for="">Descrição:</label>
+                        <textarea tabindex="5" id="myInputDescricao" required></textarea>
+                    </div>
+                    <div class="dropdownCurso">
+                        <div class="adicionar--curso">
+                            <label for="materias_cursos">Está matéria é de qual curso?</label>
+                            <a href="" class="fas fa-plus"></a>
+                        </div>
+                        <select id="materias_cursos" name="cursos">
+                            <option value="desenvolvimentoDeSistemas">desenvolvimento de sistemas</option>
+                            <option value="redesDeComputadores">redes de computadores</option>
+                            <option value="eletroeletronica">eletroeletronica</option>
+                        </select>
+                    </div>
+                    <div class="modal__adicionar--footer">
+                        <a type="submit" id="salvarBtn">Salvar</a>
+                    </div>
+                    <a href="#" class="modal__adicionar--close">&times;</a>
+                </form>
+            </div> -->
 
-                           
-                            
-                            
-                           
-                           
+            <!-- MODAL EDITAR CURSOS -->
+            <!-- <div id="modal__editar" class="modal__editar">
+                <form class="modal__editar--content" id="modal__editar--content">
+                    <p class="nome__modal">Editar um Curso</p>
+                    <div class="input__nome--valor">
+                        <label for="">Nome do Curso:</label>
+                        <input type="text" name="nome" id="myInputNomeValor" maxlength="100" style="width: 100%;"
+                            required>
+                    </div>
+                    <div class="sigla__carga--horaria">
+                        <div class="input__sigla--valor">
+                            <label for="">Sigla:</label>
+                            <input type="text" name="sigla" id="myInputSiglaValor" maxlength="5" required>
+                        </div>
+                        <div class="input__carga--horaria--valor">
+                            <label for="">Carga Horaria:</label>
+                            <input type="number" name="carga_horaria" id="myInputCargaHorariaValor" min="0" required>
+                        </div>
+                    </div>
+                    <div class="input__descricao--valor">
+                        <label for="">Descrição do Curso:</label>
+                        <textarea tabindex="5" id="myInputDescricaoValor" required></textarea>
+                    </div>
+
+                    <div class="modal__editar--footer">
+                        <a type="submit" id="editar">Salvar</a>
+                    </div>
+                    <a href="#" class="modal__editar--close">&times;</a>
+                </form>
+            </div> -->
+
+            <!-- MODAL DELETAR CURSOS -->
+            <!-- <div class="modal__deletar" id="modal__deletar">
+                <div class="modal__deletar--content" id="modal__deletar--content">
+                    <p class="nome__modal--deletar">Deseja mesmo Deletar?</p>
+                    <div class="modal__deletar--footer">
+                        <a type="submit" id="naoDeletar" href="#">Não</a>
+                        <a type="submit" id="Deletar" href="#">Sim</a>
+                    </div>
+                    <a href="#" class="modal__deletar--close" id="sair">&times;</a>
+                </div>
+            </div> -->
+
+            <section class="containerCursos__menuConteudo containerCursos__menuConteudo--displayFlex">
+                <div class="containerCursos__containerTabela">
+                    <table>
+                        <div class="menuConteudo__titulosConteudo menuConteudo__titulosConteudo--displayFlex">
+                            <span class="titulosConteudo__nome">
+                                NOME
+                            </span>
+
+                            <span class="titulosConteudo__nif">
+                                NIF
+                            </span>
+
+                            <span class="titulosConteudo__email">
+                                EMAIL
+                            </span>
+
+                            <span class="titulosConteudo__telefone">
+                                TELEFONE
+                            </span>
+
+                        </div>
+                        <tbody id="tabelaItems" class="tabelaItems">
+
+                            <!-- <tr>
+                                <td data-title="Name" class="dataCurso">Material Design Color Palette</td>
+                                <td data-title="Registro" class="dataSigla">DS</td>
+                                <td data-title="Usuario" class="dataCargaHoraria">
+                                    <i class="fa-solid da-clock"></i>
+                                    <span>1200H</span>
+                                </td>
+                                <td>
+                                    <a class="fas fa-edit"></a>
+                                </td>
+                                <td>
+                                    <a class="fas fa-trash"></a>
+                                </td>
+                            </tr> -->
+
                         </tbody>
                     </table>
                 </div>
-                
             </section>
-
         </div>
-    
-        <div id="modal__adicionar" class="modal__adicionar">
-            <form class="modal__adicionar--content" id="modal__adicionar--content">
-              
-                <p class="nome__modal">
-                    Adicionar um Professor
-                </p>
-
-                <div class="input__nome">
-
-                    <label for="myInputNome">Nome do Professor:</label>
-                    <input type="text" name="nome" id="myInputNome" maxlength="100" style="width: 100%;" required>
-              
-                </div>
-
-    
-                <div class="input__email">
-
-                    <label for="myInputEmail">Email:</label>
-                    <input type="text" name="email" id="myInputEmail" maxlength="155" style="width: 100%;" required>
-                
-                </div>
-
-              
-                <div class='input__registro'>
-
-                    <label for="myInputRegistro">Nife:</label>
-                    <input type="text" name="registro" id="myInputRegistro" maxlength="100" style="width: 50%;" required>
-                
-                </div>
-
-                <div class="input__telefone">
-                    
-                    <label for="">Telefone:</label>
-                    <input type="tel" name="telefone" id="myInputTelefone" placeholder="00-00000-0000" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" style="width: 50%;" required>
-                
-                </div>
-
-                <div class="modal__adicionar--footer">
-
-                    <a type="submit" id="salvarBtn">Salvar</a>
-                
-                </div>
-                
-                <a href="#" class="modal__adicionar--close">&times;</a>
-            
-            </form>
-          </div>
-
     </main>
-  
-        
-    
-
-    
-       
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
 </body>
+
 </html>
