@@ -1,0 +1,102 @@
+/* MODEL DELETAR */
+.modal_mensagem {
+    position: absolute;
+    top: 0;
+    right: 0;
+    place-content: start center;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    width: 100vw;
+    margin-left: 0;
+    background-color: #ddd;
+    grid-row-gap: 13vh ;
+    transition: all .4s;
+}
+
+
+
+table {
+    width: 80vw;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#sairModalMensagem{
+    width: 10vw;
+    background-color: #074A71;
+    color: #ffff;
+    cursor: pointer;
+    place-content: center;
+    display: grid;
+    place-self: start;
+   height: 5vh;
+   border: 1px solid #fff;
+   border-radius: 10px;
+   letter-spacing: 4px;
+   transition: .4s ease-in-out;
+}
+
+#sairModalMensagem:hover{
+    scale: 0.9;
+}
+
+tr {
+    width: 100%;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+tr:nth-child(1) {
+   border-bottom: 2px solid #ffff;
+   color: #074A71;
+   font-size: clamp(1rem, 0.75rem + 0.8vw, 1.2rem);
+}
+tr:nth-child(1):hover {
+   background-color: transparent;
+}
+
+tr:hover {
+    background-color: #bbbbbb;
+}
+
+td {
+    padding: 10px;
+}
+
+
+@media  (max-width: 600px) {
+
+    .modal_mensagem {
+        grid-row-gap: 6vh ;
+    }
+
+    #sairModalMensagem{
+        width: 25vw;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    th {
+        text-align: center;
+    }
+    
+    td {
+        text-align: left;
+        border-bottom: none;
+    }
+    
+    td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 4px;
+        display: block;
+    }
+}
