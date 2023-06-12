@@ -210,13 +210,13 @@ main {
     height: 70%;
 }
 
-/*  */
+/*  TAREFAS  */
 
 .listasConteudo__listaTarefas {
-    
     background-color: #E0E0E0;
     width: 25%;
     height: 100%;
+    max-height: 42vh;
     border: 1px solid #074A71;
     border-radius: 10px;
 }
@@ -224,14 +224,53 @@ main {
 .listasConteudo__listaTarefas--displayFlex {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 
-/*  */
+.listaTarefas__cardTarefas {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    overflow: auto;
+}
+
+.cardTarefas__linkTarefas {
+    background-color: #D6E6F0;
+    width: 80%;
+    height: 70px;
+    text-align: center;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px #00000040);
+    transition: all 200ms;
+}
+
+.cardTarefas__linkTarefas:hover {
+    transform: scaleX(1.1);
+    background-color: #bedbec;
+}
+
+.cardTarefas__linkTarefas--displayFlex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.linkTaferas__imgTarefa {
+    height: 50px;
+
+}
+
+/* TURMAS */
 
 .listasConteudo__listaTurmas {
     background-color: #E0E0E0;
     width: 25%;
     height: 100%;
+    max-height: 42vh;
     border: 1px solid #074A71;
     border-radius: 10px;
 }
@@ -239,9 +278,64 @@ main {
 .listasConteudo__listaTurmas--displayFlex {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 
-/*  */
+.listaTurmas__cardTurmas {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    overflow: auto;
+}
+
+.cardTurmas__linkTurmas {
+    display: flex;
+    justify-content: space-between;
+    background-color: #D9D9D9;
+    border: 1px solid #3084B4;
+    width: 80%;
+    height: 80px;
+    text-align: center;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px #00000040);
+    transition: all 200ms;
+    align-items: center;
+}
+
+.cardTurmas__linkTurmas:hover {
+    transform: scaleX(1.1);
+    background-color: #c7c7c7;
+}
+
+.linkTurmas__siglaClasse {
+    font-weight: 600;
+    font-size: 1.9rem;
+    padding: 10%;
+    text-align: center;
+}
+
+.linkTurmas__semestre {
+    font-weight: bold;
+    font-size: 0.9rem;
+    height: fit-content;
+}
+
+.linkTurmas__data {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.linkTurmas__containerSemestre {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    
+}
+
+/* MATERIAS */
 
 .listasConteudo__listaMaterias {
     background-color: #E0E0E0;
@@ -255,6 +349,8 @@ main {
     display: flex;
     flex-direction: column;
 }
+
+/* TITULOS */
 
 .listaTarefas__titulo {
     width: 100%;
@@ -278,34 +374,5 @@ main {
     padding-top: 10px;
 }
 
-/*  */
 
-.listaTarefas__cardTarefas {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
 
-.cardTarefas__linkTarefas {
-    background-color: #D6E6F0;
-    width: 80%;
-    height: 20%;
-    text-align: center;
-    border-radius: 10px;
-    filter: drop-shadow(0px 4px 4px #00000040);
-}
-
-.cardTarefas__linkTarefas--displayFlex {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.linkTaferas__imgTarefa {
-    height: 50px;
-
-}
