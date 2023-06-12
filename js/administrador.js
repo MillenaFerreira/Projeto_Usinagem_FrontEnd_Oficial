@@ -25,29 +25,37 @@ const criarLista = (card) => {
     dadosListaTelefone.classList.add('dataTelefone')
     dadosListaTelefone.textContent = card.telefone
 
-    const itemEditar = document.createElement('div') 
-    itemEditar.classList.add('listaLinks__icone')
-    itemEditar.classList.add('iconeEditar')
+   
+    //
+    const itemEditar = document.createElement('td')
+    itemEditar.classList.add('IconEditar')
 
-    const iconeEditar = document.createElement('ion-icon')
-    iconeEditar.name = `create-outline`
-    iconeEditar.classList.add('icone')
+    const iconEditar = document.createElement('a')
+    iconEditar.classList.add('far')
+    iconEditar.classList.add('fa-edit')
+    iconEditar.href = '#modal__editar'
 
     itemEditar.append (
-        iconeEditar
+        iconEditar
     )
 
-    const itemApagar = document.createElement('div') 
-    itemApagar.classList.add('listaLinks__icone')
-    itemApagar.classList.add('iconeApagar')
+    //
+    const itemApagar = document.createElement('td')
+    itemApagar.classList.add('IconEditar')
 
-    const iconeApagar = document.createElement('ion-icon')
-    iconeApagar.name = `trash-outline`
-    iconeApagar.classList.add('icone')
 
+    const iconDeletar = document.createElement('a')
+    iconDeletar.classList.add('fas')
+    iconDeletar.classList.add('fa-trash')
+    iconDeletar.href = "#modal__deletar"
+    
     itemApagar.append (
-        iconeApagar
+        iconDeletar
     )
+
+
+
+   
 
 
     itemEditar.addEventListener('click', () => {
