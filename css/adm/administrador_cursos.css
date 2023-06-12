@@ -611,7 +611,7 @@ td {
     .dataCargaHoraria i {
         display: none;
     }
-
+    
     /* MODAL ADICIONAR */
     .modal__adicionar--content {
         text-align: center;
