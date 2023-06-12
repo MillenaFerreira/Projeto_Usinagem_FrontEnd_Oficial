@@ -3,11 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <script src="../../../components/header.js"></script>
+    
+    <link rel="stylesheet" href="../../../css/adm/editar_administrador_professor.css">
+    <link rel="stylesheet" href="../../../css/reset.css">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+
+    <title>ADMINISTRADOR - Editar Professor</title>
 </head>
 <body>
-    <h1>
-        aa
-    </h1>
+
+    <header-padrao color_button = '#DA251C' color_top = '#3084B4' text_button = 'SAIR' link_button = '../../index.html'>
+        
+    </header-padrao>
+
+    <section class="containerTitulo containerTitulo--displayGrid">
+
+        <h1 class="containerTitulo__tituloPagina">
+            ADMINISTRAÇÃO
+        </h1>
+        
+    </section>
+
+    <main>
+
+        <div class="menuLateral menuLateral--displayFlex  menuLateral--anchor">
+            <a class="menuLateral__anchor" href="../administrador.html">
+                PROFESSORES
+            </a>
+            <a class="menuLateral__anchor" href="cursos.html">
+                CURSOS
+            </a>
+            <a class="menuLateral__anchor" href="alunos.html">
+                ALUNOS
+            </a>
+            <a class="menuLateral__anchor" href="materias.html">
+                MATÉRIAS
+            </a>
+        </div>
+
+        <div class="containerProfessor">
+
+            <section class="containerProfessor__menuSuperior">
+
+                <h2 class="menuSuperior__tituloProfessor">
+                    EDIÇÃO DE PROFESSOR
+                </h2>
+
+                <div class="menuSuperior__containerLinks">
+
+                    <li class="containerLinks__listaLinks containerLinks__listaLinks--displayFlex">
+                       
+                        <ul class="listaLinks__icone iconeSalvar">
+                            <a href="#modal__adicionar">
+                                <ion-icon name="backspace-outline" class="icone"></ion-icon>
+                            </a> 
+                        </ul>
+
+                        <ul class="listaLinks__icone iconeCancelar">
+                            <a href="#modal__adicionar">
+                                <ion-icon name="save-outline" class="icone"></ion-icon>
+                            </a> 
+                        </ul>
+                        
+                    </li>
+                    
+                </div>
+            </section>
+
+            <section class="containerProfessor__tabelaFormulario">
+                <form class="tabelaFormulario">
+
+                    <div class="input__nome input">
+
+                        <label for="myInputNome">NOME</label>
+                        <input type="text" name="nome" id="myInputNome" maxlength="100"  required>
+                  
+                    </div>
+                    <div class="input__registro input">
+
+                        <label for="myInputRegistro">REGISTRO/NIF</label>
+                        <input type="text" name="registro" id="myInputRegistro" maxlength="100"  required>
+                  
+                    </div>
+
+                    <div class="input__telefone input ">
+
+                        <label for="myInputTelefone">TELEFONE</label>
+                        <input type="tel" name="telefone" id="myInputTelefone" placeholder="00-00000-0000" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" required>
+                  
+                    </div>
+
+                    <div class="input__email input">
+
+                        <label for="myInputEmail">EMAIL</label>
+                        <input type="email" name="email" id="myInputEmail" maxlength="155"  required>
+                  
+                    </div>
+
+                </form>
+            </section>
+
+            <section class="containerProfessor__listasConteudo">
+                <div class="listasConteudo__listaTarefas">
+                    <span class="listaTarefas__titulo">
+                        TAREFAS
+                    </span>
+                </div>
+
+                <div class="listasConteudo__listaTurmas">
+                    <span class="listaTurmas__titulo">
+                        TURMAS
+                    </span>
+                </div>
+
+                <div class="listasConteudo__listaMaterias">
+                    <span class="listaMaterias__titulo">
+                        MATÉRIAS
+                    </span>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>
