@@ -17,8 +17,9 @@
     <script src="https://kit.fontawesome.com/30058942d9.js" crossorigin="anonymous"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/aluno/reset.css">
+    <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/aluno/aluno.css">
+    <link rel="stylesheet" href="/css/aluno/criterio.css">
 
 
     <!-- COMPONENTS -->
@@ -60,15 +61,38 @@
                 <div class="linha"></div>
                 <div class="criterios">
                     <li>Descrição do critério</li>
-                    <li>Desejado</li>
-                    <li>Obtido</li>
-                    <li>Avaliação</li>
                     <li>Observação</li>
                 </div>
             </div>
         </div>
-
     </main>
+    <div class="modal_mensagem  font-family-Montserrat d-none">
+        <button id="sairModalMensagem">Sair</button>
+
+        <table>
+            <tr>
+                <th>RESULTADOS DESEJADOS</th>
+                <th>MARGENS DE ERRO</th>
+                <th>RESULTADO OBTIDO</th>
+            </tr>
+            <tr>
+                <td>Resultado 1</td>
+                <td>Margem de Erro 1</td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td>Resultado 2</td>
+                <td>Margem de Erro 2</td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td>Resultado 3</td>
+                <td>Margem de Erro 3</td>
+                <td><input type="number"></td>
+            </tr>
+           
+        </table>
+    </div>
 </body>
 
 </html>

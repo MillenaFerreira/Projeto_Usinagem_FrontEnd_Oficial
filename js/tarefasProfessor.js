@@ -35,11 +35,7 @@ const criarDadosTarefa = async () => {
         nomeTarefa.textContent = tarefa.nome_tarefa
 
 
-        // const button_excluir = document.createElement('button')
-        // button_excluir.classList.add('fa-solid')
-        // button_excluir.classList.add('fa-trash')
-        // button_excluir.id = 'excluir2'
-        // button_excluir.title = "Excluir tarefa"
+
 
         const button_editar = document.createElement('button')
         button_editar.classList.add('far')
@@ -71,7 +67,6 @@ const criarDadosTarefa = async () => {
 
             localStorage.setItem('tarefaNome', tarefa.nome_tarefa)
             console.log('clique', tarefa.nome_tarefa);
-            //console.log(idTarefa);
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -85,13 +80,83 @@ const criarDadosTarefa = async () => {
             const sairModalMensagem = document.getElementById('sairModalMensagem')
             sairModalMensagem.addEventListener('click', (event) => {
                 event.preventDefault();
+                const modalMensgaem = document.querySelector('.modal_mensagem')
                 modalMensgaem.classList.add('d-none')
-                modalMensgaem.classList.remove('d-flex')
+                modalMensgaem.classList.remove('d-flex2')
             })
 
 
+            const excluirTarefaButton = document.getElementById('excluirTarefaButton')
+            
             const excluirTarefaButton2 = document.getElementById('excluirTarefaButton2')
-            console.log(excluirTarefaButton2);
+
+            const modal_excluir = document.querySelector('.modal_excluir')
+
+            const naoExcluir = document.querySelector('.naoExcluir')
+
+            const  button_editar= document.getElementById('editarTarefaButton')
+
+            button_editar.addEventListener('click', async (event) => {
+
+                //console.log(descricaoTarefa2.value, nomeTarefa2.value);
+                event.preventDefault();
+                const modalMensgaem = document.querySelector('.modal_mensagem')
+                modalMensgaem.classList.add('d-none')
+                modalMensgaem.classList.remove('d-flex2')
+                const editarTarefaModal = document.getElementById('modal__editar__tarefa')
+                editarTarefaModal.classList.remove('d-none')
+                editarTarefaModal.classList.add('d-flex')
+                console.log(tarefa);
+                nomeTarefa2.value = tarefa.nome_tarefa
+                urlTarefa2.value = tarefa.foto_peca
+                tempoPrevisto2.value = tarefa.tempo_previsto_tarefa
+                descricaoTarefa2.value = tarefa.descricao_tarefa
+                tipo_atividade2.value = tarefa.id_tipo_tarefa
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+    
+                tarefaEditada.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const tarefaUpdate = {
+                        "nome": `${nomeTarefa2.value}`,
+                        "tempo_previsto": `${tempoPrevisto2.value.substring(0, 2) + ':' + tempoPrevisto2.value.substring(3, 5) + ':00'}`,
+                        "numero": 12,
+                        "foto_peca": `${urlTarefa2.value}`,
+                        "descricao": descricaoTarefa2.value,
+                        "id_tipo_tarefa": parseInt(tipo_atividade2.value)
+                    }
+                    console.log(tarefaUpdate);
+    
+                    updateTarefa(tarefa.id, tarefaUpdate)
+    
+    
+    
+                    editarTarefaModal.classList.remove('d-flex')
+                    editarTarefaModal.classList.add('d-none')
+    
+                    const modalMensgaem = document.querySelector('.modal_mensagem')
+                    modalMensgaem.classList.add('d-none')
+                    modalMensgaem.classList.remove('d-flex')
+    
+    
+    
+                })
+            });
+            
+            excluirTarefaButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                modal_excluir.classList.add('d-grid-center')
+                modal_excluir.classList.remove('d-none')
+
+            });
+            naoExcluir.addEventListener('click', (event) => {
+                event.preventDefault();
+                modal_excluir.classList.remove('d-grid-center')
+                modal_excluir.classList.add('d-none')
+
+            });
 
 
             const idTarefa = tarefa.id;
@@ -100,60 +165,16 @@ const criarDadosTarefa = async () => {
 
             excluirTarefaButton2.addEventListener('click', (event) => {
                 event.preventDefault();
-                console.log('teste');
+            
                 console.log(idTarefa);
+                deleteTarefa(idTarefa)
 
             });
         });
 
 
 
-        button_editar.addEventListener('click', async (event) => {
-            event.preventDefault();
-            const modalMensgaem = document.querySelector('.modal_mensagem')
-            modalMensgaem.classList.add('d-none')
-            modalMensgaem.classList.remove('d-flex')
-            const editarTarefaModal = document.getElementById('modal__editar__tarefa')
-            editarTarefaModal.classList.remove('d-none')
-            editarTarefaModal.classList.add('d-flex')
-            console.log(tarefa);
-            nomeTarefa2.value = tarefa.nome_tarefa
-            urlTarefa2.value = tarefa.foto_peca
-            tempoPrevisto2.value = tarefa.tempo_previsto_tarefa
-            descricaoTarefa2.value = tarefa.descricao_tarefa
-            tipo_atividade2.value = tarefa.id_tipo_tarefa
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
 
-            tarefaEditada.addEventListener('click', (event) => {
-                event.preventDefault();
-                const tarefaUpdate = {
-                    "nome": `${nomeTarefa2.value}`,
-                    "tempo_previsto": `${tempoPrevisto2.value.substring(0, 2) + ':' + tempoPrevisto2.value.substring(3, 5) + ':00'}`,
-                    "numero": 12,
-                    "foto_peca": `${urlTarefa2.value}`,
-                    "descricao": descricaoTarefa2.value,
-                    "id_tipo_tarefa": parseInt(tipo_atividade2.value)
-                }
-                console.log(tarefaUpdate);
-
-                updateTarefa(tarefa.id, tarefaUpdate)
-
-
-
-                editarTarefaModal.classList.remove('d-flex')
-                editarTarefaModal.classList.add('d-none')
-
-                const modalMensgaem = document.querySelector('.modal_mensagem')
-                modalMensgaem.classList.add('d-none')
-                modalMensgaem.classList.remove('d-flex')
-
-
-
-            })
-        });
 
 
 
@@ -193,7 +214,7 @@ const buttonSendTarefa = document.getElementById('sendTarefa')
 const nomeTarefa = document.getElementById('nomeTarefa')
 const urlTarefa = document.getElementById('urlTarefa')
 const tempoPrevisto = document.getElementById('tempoPrevisto')
-//const descricaoTarefa = document.getElementById('descricaoTarefa')
+const descricaoTarefa = document.getElementById('descricaoTarefa')
 const selectElement = document.getElementById("tipo-atividade");
 
 

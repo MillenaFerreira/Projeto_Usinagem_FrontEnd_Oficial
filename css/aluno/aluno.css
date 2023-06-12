@@ -115,6 +115,7 @@ nav {
     overflow: hidden;
     transition: .4s ease-in-out;
 }
+
 .card3 {
     width: 350px;
     height: 350px;
@@ -131,9 +132,10 @@ nav {
     overflow: hidden;
     transition: .4s ease-in-out;
 }
+
 .card2 {
     width: 350px;
-    height: auto;
+    height: 200px;
     background: #D9D9D9;
     padding: 20px 0;
     border: 1px solid #3084B4;
@@ -149,11 +151,13 @@ nav {
     transition: .4s ease-in-out;
 }
 
-.card2:hover, .card3:hover{
+.card2:hover,
+.card:hover,
+.card3:hover {
     scale: .9;
 }
 
-.descricaoMateria{
+.descricaoMateria {
     text-align: center;
     font-size: .9rem;
     line-height: 20px;
@@ -210,8 +214,8 @@ nav {
     border-bottom: 2px solid rgba(48, 132, 180, 0.5);
 }
 
-.linkCriterioTarefa{
-    display:grid;
+.linkCriterioTarefa {
+    display: grid;
     place-self: end;
 }
 
@@ -222,6 +226,21 @@ nav {
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
+   width: 90vw;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: .4s ease-in-out;
+    padding: 20px 10px;
+    border-bottom: 2px solid rgba(48, 132, 180, 0.5);
+}
+.dados2 {
+    display: flex;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+   width: 91vw;
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: .4s ease-in-out;
@@ -295,18 +314,20 @@ label {
     font-size: clamp(0.8125rem, -0.0469rem + 2.75vw, 1.5rem);
 }
 
-.dados {
+.dados, .dados2 {
     display: flex;
     justify-content: space-between;
-    font-size: clamp(0.8125rem, -0.0469rem + 2.75vw, 1.5rem);
+    font-size: clamp(1.125rem, -0.0469rem + 2.75vw, 1.5rem);
 }
 
 /* .time_input_termino, .time_input_desconto{
     margin-right: 20px;
 } */
-.dados:hover {
+.dados:hover, .dados2:hover {
     background-color: #ffff;
 }
+
+
 
 .data {
     display: flex;
@@ -388,13 +409,13 @@ label {
     opacity: .9;
     padding: 20px;
     display: grid;
+    place-self: start;
     place-content: center;
     cursor: pointer;
     transition: shadow .2s;
 }
 
 .buttonBack i {
-
     color: #FFFF;
     font-size: 1rem;
 
@@ -544,20 +565,23 @@ label {
     width: 30vw;
 }
 
-.cardLink{
+.cardLink {
     width: 350px;
     height: 350px;
     position: absolute;
     z-index: 1;
     background-color: transparent;
 }
-.card p{
+
+.card p {
     text-align: center;
     z-index: 0;
 }
-.card img{
+
+.card img {
     z-index: 0;
 }
+
 .contentShowDesc {
     display: flex;
     flex-direction: column;
@@ -629,17 +653,21 @@ label {
     width: auto;
     gap: 2vw;
 }
-.linkHorario{
+
+.linkHorario {
     display: grid;
     place-self: end;
 }
+
 .desejaEnviarButtons button {
     padding: 0px 20px 0px 20px;
     cursor: pointer;
 
 }
 
-
+.descricaoCriterio {
+    font-size: clamp(0.9rem, -0.225rem + 3.6vw, 1.8rem);
+}
 
 @media (max-width: 999px) {
 
@@ -674,7 +702,67 @@ body::-webkit-scrollbar-thumb:hover {
     background: #074A71;
 }
 
+.modal_mensagem {
+    position: absolute;
+    z-index: 2;
+    background-color: #ffff;
+    float: top;
+    border: 5px double #074A71;
+    padding:   20px;
+    align-items: center;
+    gap: 5vh;
+    flex-direction: column;
+    width: 70vw;
+    margin-left: 13vw;
+    height: 60vh;
+}
+
+.modal_mensagem p{
+   display: grid;
+   place-self: center;
+}
+
+.botoes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.botoes a {
+    height: auto;
+    width: auto;
+}
+
+.botoes button {
+    width: 10vw;
+    color: #fff;
+    background-color: #074A71;
+    border: 1px solid transparent;
+    cursor: pointer;
+    height: 5vh;
+    transition: .5s ease-in-out;
+}
+
+.botoes button:hover {
+    scale: 0.9;
+
+}
+.dados{
+    width: 90vw;
+}
+.container_relatorio_dadosBotao{
+    width: 90vw;
+    height: auto;
+    border: none;
+}
+
 @media (max-width: 640px) {
+
+    .modal_mensagem {
+        width: 90vw;
+        margin-left: 0vw;
+    }
 
     /* AREA DO ALUNO */
     .busca a {

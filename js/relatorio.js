@@ -7,25 +7,19 @@ const criterioForEach = async () => {
 
     const criterios = await pesquisarCriterios();
 
+    const modal_mensagem = document.querySelector('.modal_mensagem')
 
     const registroCriterios = criterios;
    
 
     registroCriterios.forEach((criterio) => {
-        console.log(criterio);
 
         const container_relatorio = document.getElementById('container-relatorio')
 
-        const modal_mensagem = document.querySelector('.modal_mensagem')
-
+        
         const botaoDados = document.createElement('button')
         botaoDados.classList.add('container_relatorio_dadosBotao')
 
-        botaoDados.addEventListener('click', (event) => {
-            event.preventDefault();
-            modal_mensagem.classList.add('d-flex')
-            modal_mensagem.classList.remove('d-none')
-        })
 
         const container_dados = document.createElement('div')
         container_dados.classList.add('dados2')
@@ -64,21 +58,29 @@ const criterioForEach = async () => {
         buttonEdit.classList.add('fa-edit')
 
 
-
-         container_relatorio.append(botaoDados)
+        container_relatorio.append(botaoDados)
         container_dados.append(descricaoCriterio, container, divButtonEdit)
         botaoDados.append(container_dados)
-         container.append(checkbox, spanCheck)
+        container.append(checkbox, spanCheck)
 
-         const btnBack = document.querySelector('.buttonBack')
 
-            btnBack.addEventListener('click', (event) => {
+            botaoDados.addEventListener('click', (event) => {
             event.preventDefault();
-            modal_mensagem.classList.remove('d-flex')
-            modal_mensagem.classList.add('d-none')
+            modal_mensagem.classList.add('d-grid')
+            console.log(criterio);
+            modal_mensagem.classList.remove('d-none')
         })
 
+
+        const sairModalMensagem = document.getElementById('sairModalMensagem')
+        sairModalMensagem.addEventListener('click', (event) => {
+            event.preventDefault();
+            modal_mensagem.classList.remove('d-grid')
+            modal_mensagem.classList.add('d-none')
+        })
      });
+
+
 }
 
 criterioForEach()

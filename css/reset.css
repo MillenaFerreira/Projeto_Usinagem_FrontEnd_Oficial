@@ -20,7 +20,7 @@
     --card-student-secondary-color: #00008BB2;
 }
 
-a{text-decoration: none; color: inherit;}
+a{text-decoration: none;}
 ul,li,ol{list-style: none;}
 
 
@@ -30,3 +30,11 @@ ul,li,ol{list-style: none;}
 .font-family-jaldi{font-family: 'Jaldi', sans-serif;}
 
 .font-family-Montserrat{font-family: 'Montserrat', sans-serif;}
+
+.d-grid{
+    display: grid;
+}
+
+.d-none{
+    display: none;
+}
