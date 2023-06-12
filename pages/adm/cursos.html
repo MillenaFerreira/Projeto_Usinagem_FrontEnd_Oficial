@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="../../css/adm/administrador_cursos.css">
 
   <script src="../../components/header.js"></script>
-  <script src="../../js/administrador.js" type="module" defer></script>
 
   <!-- Link do FontAwesome -->
   <script src="https://kit.fontawesome.com/30058942d9.js" crossorigin="anonymous"></script>
@@ -115,26 +114,27 @@
       <div id="modal__editar" class="modal__editar">
         <form class="modal__editar--content" id="modal__editar--content">
           <p class="nome__modal">Editar um Curso</p>
-          <div class='input__file--valor'>
-            <label for="">URL da Imagem do Curso:</label>
-            <input type="url" name="url" id="myInputUrlValor" maxlength="2000" style="width: 100%;" required>
-          </div>
           <div class="input__nome--valor">
             <label for="">Nome do Curso:</label>
             <input type="text" name="nome" id="myInputNomeValor" maxlength="100" style="width: 100%;" required>
           </div>
-          <div class="input__sigla--valor">
-            <label for="">Sigla do Curso:</label>
-            <input type="text" name="sigla" id="myInputSiglaValor" maxlength="5" style="width: 100%;" required>
+          <div class='input__file--valor'>
+            <label for="">URL da Imagem do Curso:</label>
+            <input type="url" name="url" id="myInputUrlValor" maxlength="2000" style="width: 100%;" required>
           </div>
+          <div class="sigla__carga--horaria">
+            <div class="input__sigla--valor">
+                <label for="">Sigla:</label>
+                <input type="text" name="sigla" id="myInputSiglaValor" maxlength="5" required>
+            </div>
+            <div class="input__carga--horaria--valor">
+                <label for="">Carga Horaria:</label>
+                <input type="number" name="carga_horaria" id="myInputCargaHorariaValor" min="0" required>
+            </div>
+        </div>
           <div class="input__descricao--valor">
             <label for="">Descrição do Curso:</label>
-            <input type="text" name="sigla" id="myInputDescricaoValor" style="width: 100%;" required>
-          </div>
-          <div class="input__carga--horaria--valor">
-            <label for="">Carga Horaria do Curso:</label>
-            <input type="number" name="carga_horaria" id="myInputCargaHorariaValor" min="0" style="width: 100%;"
-              required>
+            <textarea tabindex="5" id="myInputDescricaoValor" required></textarea>
           </div>
           <div class="modal__editar--footer">
             <a type="submit" id="editar">Salvar</a>
@@ -146,7 +146,7 @@
       <!-- MODAL DELETAR CURSOS -->
       <div class="modal__deletar" id="modal__deletar">
         <div class="modal__deletar--content" id="modal__deletar--content">
-          <p class="nome__modal">Deseja mesmo Deletar?</p>
+          <p class="nome__modal--deletar">Deseja mesmo Deletar?</p>
           <div class="modal__deletar--footer">
             <a type="submit" id="naoDeletar" href="#">Não</a>
             <a type="submit" id="Deletar" href="#">Sim</a>
@@ -172,7 +172,7 @@
               </span>
 
             </div>
-            <tbody id="tabelaItems" class="tabelaItems">
+            <tbody id="tabelaItemsCursos" class="tabelaItemsCursos">
               <!-- ONDE VAI FICAR AS TABELAS -->
             </tbody>
           </table>

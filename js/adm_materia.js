@@ -1,10 +1,10 @@
 'use strict'
 
-import { getTodosCursos } from "../js/apiCurso.js"
+import { pesquisarMaterias } from "../js/apiMateria.js"
 
-const cursos = await getTodosCursos()
+const materia = await pesquisarMaterias()
 
-const criarTable = (curso) => {
+const criarTable = (materia) => {
 
     //Principal
     const tr = document.createElement('tr')
@@ -12,12 +12,12 @@ const criarTable = (curso) => {
     const td_nome = document.createElement('td')
     td_nome.classList.add('dataCurso')
     td_nome.dataset.title = 'Name'
-    td_nome.textContent = curso.nome
+    td_nome.textContent = materia.nome
 
     const td_sigla = document.createElement('td')
     td_sigla.classList.add('dataSigla')
     td_sigla.dataset.title = 'Registro'
-    td_sigla.textContent = curso.sigla
+    td_sigla.textContent = materia.sigla
 
     const td_carga = document.createElement('td')
     td_carga.classList.add('dataCargaHoraria')
@@ -29,7 +29,7 @@ const criarTable = (curso) => {
     iconHora.classList.add('fa-clock')
 
     const carga_horaria = document.createElement('span')
-    carga_horaria.textContent = ' ' + curso.carga_horaria + 'H'
+    carga_horaria.textContent = ' ' + materia.carga_horaria + 'H'
 
     const td_icon_editar = document.createElement('td')
     td_icon_editar.classList.add('IconEditar')
@@ -39,16 +39,16 @@ const criarTable = (curso) => {
     iconEditar.classList.add('far')
     iconEditar.classList.add('fa-edit')
     iconEditar.href = '#modal__editar'
-    iconEditar.addEventListener('click', function () {
-        localStorage.setItem('id_update', curso.id)
+    // iconEditar.addEventListener('click', function () {
+    //     localStorage.setItem('id_update', materia.id)
 
-        document.getElementById("myInputNomeValor").value = curso.nome;
-        document.getElementById("myInputCargaHorariaValor").value = curso.carga_horaria;
-        document.getElementById("myInputDescricaoValor").value = curso.descricao;
-        document.getElementById("myInputSiglaValor").value = curso.sigla;
-        document.getElementById("myInputUrlValor").value = curso.foto;
+    //     // document.getElementById("myInputNomeValor").value = materia.nome;
+    //     // document.getElementById("myInputCargaHorariaValor").value = materia.carga_horaria;
+    //     // document.getElementById("myInputDescricaoValor").value = materia.descricao;
+    //     // document.getElementById("myInputSiglaValor").value = materia.sigla;
+    //     // document.getElementById("myInputUrlValor").value = materia.foto;
         
-    })
+    // })
 
     const td_icon_deletar = document.createElement('td')
     td_icon_deletar.classList.add('IconEditar')
@@ -58,9 +58,9 @@ const criarTable = (curso) => {
     iconDeletar.classList.add('fas')
     iconDeletar.classList.add('fa-trash')
     iconDeletar.href = "#modal__deletar"
-    iconDeletar.addEventListener('click', function () {
-        localStorage.setItem('id', curso.id)
-    })
+    // iconDeletar.addEventListener('click', function () {
+    //     localStorage.setItem('id', materia.id)
+    // })
     
 
     tr.append(td_nome, td_sigla, td_carga, td_icon_editar, td_icon_deletar)
@@ -71,11 +71,11 @@ const criarTable = (curso) => {
     return tr
 }
 
-export const carregarTableCursos = () => {
-    const table = document.querySelector('.tabelaItemsCursos')
-    const tableJSON = cursos.cursos.map(criarTable)
+export const carregarTableMaterias = () => {
+    const table = document.querySelector('.tabelaItemsMaterias')
+    const tableJSON = materia.map(criarTable)
 
     table.replaceChildren(...tableJSON)
 }
 
-carregarTableCursos()
+carregarTableMaterias()
