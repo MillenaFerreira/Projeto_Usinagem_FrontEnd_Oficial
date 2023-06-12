@@ -59,7 +59,9 @@
                     <li class="containerLinks__listaLinks containerLinks__listaLinks--displayFlex">
                        
                         <ul class="listaLinks__icone iconeAdicionar">
-                            <ion-icon name="add-outline" class="icone"></ion-icon>
+                            <a href="#modal__adicionar">
+                                <ion-icon name="add-outline" class="icone"></ion-icon>
+                            </a> 
                         </ul>
                         
                     </li>
@@ -102,6 +104,55 @@
             </section>
 
         </div>
+    
+        <div id="modal__adicionar" class="modal__adicionar">
+            <form class="modal__adicionar--content" id="modal__adicionar--content">
+              
+                <p class="nome__modal">
+                    Adicionar um Professor
+                </p>
+
+                <div class="input__nome">
+
+                    <label for="myInputNome">Nome do Professor:</label>
+                    <input type="text" name="nome" id="myInputNome" maxlength="100" style="width: 100%;" required>
+              
+                </div>
+
+    
+                <div class="input__email">
+
+                    <label for="myInputEmail">Email:</label>
+                    <input type="text" name="email" id="myInputEmail" maxlength="155" style="width: 100%;" required>
+                
+                </div>
+
+              
+                <div class='input__registro'>
+
+                    <label for="myInputRegistro">Nife:</label>
+                    <input type="text" name="registro" id="myInputRegistro" maxlength="100" style="width: 50%;" required>
+                
+                </div>
+
+                <div class="input__telefone">
+                    
+                    <label for="">Telefone:</label>
+                    <input type="tel" name="telefone" id="myInputTelefone" placeholder="00-00000-0000" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" style="width: 50%;" required>
+                
+                </div>
+
+                <div class="modal__adicionar--footer">
+
+                    <a type="submit" id="salvarBtn">Salvar</a>
+                
+                </div>
+                
+                <a href="#" class="modal__adicionar--close">&times;</a>
+            
+            </form>
+          </div>
+
     </main>
   
         
