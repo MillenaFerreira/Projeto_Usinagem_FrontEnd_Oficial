@@ -158,62 +158,11 @@ main {
     transform: scale(1.1);
 }
 
-.iconeApagar {
-    display: none;
-    width: 40px;
-    height: 40px;
-}
-
-.iconeEditar {
-    display: none;
-    width: 40px;
-    height: 40px;
-}
-
-.iconeApagar:hover {
-    transform: scaleX(1.1);
-}
-
-.iconeEditar:hover {
-    transform: scaleX(1.1);
-}
-
 .alunoLista {
     position: relative;
     display: flex;
-    gap: 10px;
+    gap: 3px;
     align-items: center;
-}
-
-.alunoLista:hover .dataName{
-    width: 40%;
-}
-.alunoLista:hover .dataEmail{
-    width: 40%;
-}
-
-.alunoLista:hover .dataRegistro{
-    position: relative;
-    padding-left: 100px;
-}
-
-.alunoLista:hover .iconeApagar{
-    display: block;
-    padding-top: 5px;
-    width: 45px;
-}
-
-.alunoLista:hover .iconeEditar{
-    display: block;
-    padding-top: 5px;
-    width: 45px;
-
-}
-
-.alunoLista:hover .icone {
-    height: 30px;
-    width: 30px;
-
 }
 
 
@@ -237,8 +186,8 @@ main {
 
 .menuConteudo__titulosConteudo--displayFlex {
     display: flex;
-    justify-content: space-around;
-    align-items: center;  
+    align-items: center; 
+    text-align: center;
 }
 
 .containerAluno__containerTabela {
@@ -257,16 +206,19 @@ main {
 .titulosConteudo__nome {
     color: #074A71;
     font-weight: 600;
+    width: 32%;
 }
 
 .titulosConteudo__registro {
     color: #074A71;
     font-weight: 600;
+    width: 32%;
 }
 
 .titulosConteudo__email {
     color: #074A71;
     font-weight: 600;
+    width: 30%;
 }
 
 
@@ -286,15 +238,14 @@ main {
 
 tr {
     width: 100%;
-    transition: all .3s ease;
     cursor: pointer;
 }
 
-tr:hover {
+tr:hover td {
     background-color: #bbbbbb;
 }
 
 td {
-    padding: 10px;
-    
+    padding: 5px;
+    transition: all .3s ease;
 }
