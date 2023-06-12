@@ -158,69 +158,11 @@ main {
     transform: scale(1.1);
 }
 
-.iconeApagar {
-    display: none;
-    width: 40px;
-    height: 40px;
-}
-
-.iconeApagar:hover {
-    transform: scaleX(1.1);
-}
-
-.iconeEditar:hover {
-    transform: scaleX(1.1);
-}
-
-.iconeEditar {
-    display: none;
-    width: 40px;
-    height: 40px;
-}
-
 .professorLista {
     position: relative;
     display: flex;
-    gap: 10px;
+    gap: 2px;
     align-items: center;
-}
-
-.professorLista:hover .iconeApagar{
-    display: block;
-    padding-top: 5px;
-    width: 45px;
-}
-
-.professorLista:hover .iconeEditar{
-    display: block;
-    padding-top: 5px;
-    width: 45px;
-}
-
-.professorLista:hover .icone {
-    height: 30px;
-    width: 30px;
-    
-}
-
-.professorLista:hover .dataTelefone{
-    position: relative;
-    padding-left: 12%;
-}
-
-.professorLista:hover .dataUsuario{
-    position: relative;
-    padding-left: 9%;
-}
-
-.professorLista:hover .dataRegistro{
-    position: relative;
-    padding-left: 5%;
-}
-
-.professorLista:hover .dataName{
-    position: relative;
-    padding-left: 2%;
 }
 
 .containerProfessor__menuConteudo {
@@ -243,8 +185,8 @@ main {
 
 .menuConteudo__titulosConteudo--displayFlex {
     display: flex;
-    justify-content: space-around;
-    align-items: center;  
+    align-items: center; 
+    text-align: center;
 }
 
 .containerProfessor__containerTabela {
@@ -263,21 +205,25 @@ main {
 .titulosConteudo__nome {
     color: #074A71;
     font-weight: 600;
+    width: 23%;
 }
 
 .titulosConteudo__registro {
     color: #074A71;
     font-weight: 600;
+    width: 22%;
 }
 
 .titulosConteudo__usuario {
     color: #074A71;
     font-weight: 600;
+    width: 25%;
 }
 
 .titulosConteudo__telefone {
     color: #074A71;
     font-weight: 600;
+    width: 25%;
 }
 
 .dataName {
@@ -298,16 +244,16 @@ main {
 
 tr {
     width: 100%;
-    transition: all .3s ease;
     cursor: pointer;
 }
 
-tr:hover {
+tr:hover td{
     background-color: #bbbbbb;
 }
 
 td {
     padding: 10px;
+    transition: all .3s ease;
 }
 
 .modal__adicionar {
@@ -374,8 +320,6 @@ td {
 }
 
 /*  */
-
-
 
 
 .input__nome {
