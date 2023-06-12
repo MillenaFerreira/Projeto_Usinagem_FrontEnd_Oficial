@@ -536,6 +536,15 @@ td {
     font-size: 3rem;
 }
 
+
+/* DROPDOWN */
+.adicionar--curso{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+}
+
 @media (max-width: 999px) {
     .menuLateral {
         visibility: hidden;
