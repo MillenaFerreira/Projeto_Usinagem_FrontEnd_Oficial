@@ -1,57 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css_marcelo/reset.css">
-    <link rel="stylesheet" href="../../css_marcelo/professor.css">
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/adm/administrador_materia.css">
+
     <script src="../../components/header.js"></script>
-    <script src="../../js/administrador.js" type="module" defer></script>
+
+    <!-- Link do FontAwesome -->
+    <script src="https://kit.fontawesome.com/30058942d9.js" crossorigin="anonymous"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
-    <title>ADMINISTRADOR - Matérias</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jaldi&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap"
+        rel="stylesheet">
+
+    <title>MATERIAS</title>
+
+    <script src="../../js/adm_materia.js" defer type="module"></script>
+  <!-- <script src="../../js/admCRUD/modal_cursos.js" defer type="module"></script> -->
 </head>
+
 <body>
-    <header-padrao color_button = '#DA251C' color_top = '#3084B4'>
-        
-    </header-padrao>
+    <header-padrao color_button='#DA251C' color_top='#3084B4'></header-padrao>
 
-    <section class="containerTitulo containerTitulo--displayGrid">
-
+    <section class="containerTitulo containerTitulo--displayFlex">
+        <a class="fa-solid fa-bars containerTitulo--icon" href="#menu--bar"></a>
         <h1 class="containerTitulo__tituloPagina">
-            ADMINISTRAÇÃO
+            MATÉRIAS
         </h1>
-        
+
     </section>
 
     <main>
-        <div class="menuLateral menuLateral--displayFlex  menuLateral--anchor">
-            <a class="menuLateral__anchor" href="administrador.html">
-                PROFESSORES
-            </a>
-            <a class="menuLateral__anchor" href="cursos.html">
-                CURSOS
-            </a>
-            <a class="menuLateral__anchor" href="alunos.html">
-                ALUNOS
-            </a>
-            <a class="menuLateral__anchor" href="materias.html">
-                MATÉRIAS
-            </a>
+        <div class="menuLateral menuLateral--displayFlex  menuLateral--anchor" id="menu--bar">
+            <ul class="menuLateral--menuBar">
+                <a href="#" class="menuLateral--close">&times;</a>
+                <li>
+                    <a class="menuLateral__anchor" href="administrador.html">
+                        PROFESSORES
+                    </a>
+                </li>
+                <li>
+                    <a class="menuLateral__anchor" href="cursos.html">
+                        CURSOS
+                    </a>
+                </li>
+                <li>
+                    <a class="menuLateral__anchor" href="alunos.html">
+                        ALUNOS
+                    </a>
+                </li>
+                <li>
+                    <a class="menuLateral__anchor" href="materias.html">
+                        MATÉRIAS
+                    </a>
+                </li>
+            </ul>
         </div>
 
-        <div class="teste">
+        <div class="containerCursos">
+            <section class="containerCursos__menuSuperior">
+                <h2 class="menuSuperior__tituloCursos">
+                    GERENCIAR MATÉRIAS
+                </h2>
+                <input type="text" class="menuSuperior__inputCursos menuSuperior__inputCursos--format"
+                    id="pesquisaCursos" placeholder=" Pesquise por um Curso...">
+                <div class="menuSuperior__containerLinks">
+                    <ul class="containerLinks__listaLinks containerLinks__listaLinks--displayFlex">
+                        <a class="fas fa-plus" href="#modal__adicionar"></a>
+                    </ul>
+                </div>
+            </section>
 
+            <!-- MODAL ADICIONAR CURSOS -->
+            <div id="modal__adicionar" class="modal__adicionar">
+                <form class="modal__adicionar--content" id="modal__adicionar--content">
+                    <p class="nome__modal">Adicionar um Matéria</p>
+                    <div class="input__nome">
+                        <label for="">Nome :</label>
+                        <input type="text" name="nome" id="myInputNome" maxlength="100" style="width: 100%;" required>
+                    </div>
+                    <div class="sigla__carga--horaria">
+                        <div class="input__sigla">
+                            <label for="">Sigla:</label>
+                            <input type="text" name="sigla" id="myInputSigla" maxlength="5" required>
+                        </div>
+                        <div class="input__carga--horaria">
+                            <label for="">Carga Horaria:</label>
+                            <input type="number" name="carga_horaria" id="myInputCargaHoraria" min="0" required>
+                        </div>
+                    </div>
+                    <div class="input__descricao">
+                        <label for="">Descrição:</label>
+                        <textarea tabindex="5" id="myInputDescricao" required></textarea>
+                    </div>
+                    <div class="modal__adicionar--footer">
+                        <a type="submit" id="salvarBtn">Salvar</a>
+                    </div>
+                    <a href="#" class="modal__adicionar--close">&times;</a>
+                </form>
+            </div>
+
+            <!-- MODAL EDITAR CURSOS -->
+            <div id="modal__editar" class="modal__editar">
+                <form class="modal__editar--content" id="modal__editar--content">
+                    <p class="nome__modal">Editar um Curso</p>
+                    <div class="input__nome--valor">
+                        <label for="">Nome do Curso:</label>
+                        <input type="text" name="nome" id="myInputNomeValor" maxlength="100" style="width: 100%;"
+                            required>
+                    </div>
+                    <div class="sigla__carga--horaria">
+                        <div class="input__sigla--valor">
+                            <label for="">Sigla:</label>
+                            <input type="text" name="sigla" id="myInputSiglaValor" maxlength="5" required>
+                        </div>
+                        <div class="input__carga--horaria--valor">
+                            <label for="">Carga Horaria:</label>
+                            <input type="number" name="carga_horaria" id="myInputCargaHorariaValor" min="0" required>
+                        </div>
+                    </div>
+                    <div class="input__descricao--valor">
+                        <label for="">Descrição do Curso:</label>
+                        <textarea tabindex="5" id="myInputDescricaoValor" required></textarea>
+                    </div>
+
+                    <div class="modal__editar--footer">
+                        <a type="submit" id="editar">Salvar</a>
+                    </div>
+                    <a href="#" class="modal__editar--close">&times;</a>
+                </form>
+            </div>
+
+            <!-- MODAL DELETAR CURSOS -->
+            <div class="modal__deletar" id="modal__deletar">
+                <div class="modal__deletar--content" id="modal__deletar--content">
+                    <p class="nome__modal--deletar">Deseja mesmo Deletar?</p>
+                    <div class="modal__deletar--footer">
+                        <a type="submit" id="naoDeletar" href="#">Não</a>
+                        <a type="submit" id="Deletar" href="#">Sim</a>
+                    </div>
+                    <a href="#" class="modal__deletar--close" id="sair">&times;</a>
+                </div>
+            </div>
+
+            <section class="containerCursos__menuConteudo containerCursos__menuConteudo--displayFlex">
+                <div class="containerCursos__containerTabela">
+                    <table>
+                        <div class="menuConteudo__titulosConteudo menuConteudo__titulosConteudo--displayFlex">
+                            <span class="titulosConteudo__cursos">
+                                MATÉRIAS
+                            </span>
+
+                            <span class="titulosConteudo__sigla">
+                                SIGLA
+                            </span>
+
+                            <span class="titulosConteudo__carga">
+                                CARGA HORÁRIA
+                            </span>
+
+                        </div>
+                        <tbody id="tabelaItemsMaterias" class="tabelaItemsMaterias">
+
+                            <!-- <tr>
+                                <td data-title="Name" class="dataCurso">Material Design Color Palette</td>
+                                <td data-title="Registro" class="dataSigla">DS</td>
+                                <td data-title="Usuario" class="dataCargaHoraria">
+                                    <i class="fa-solid da-clock"></i>
+                                    <span>1200H</span>
+                                </td>
+                                <td>
+                                    <a class="fas fa-edit"></a>
+                                </td>
+                                <td>
+                                    <a class="fas fa-trash"></a>
+                                </td>
+                            </tr> -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
     </main>
-  
-        
-    
-
-    
-       
-    
-
 </body>
+
 </html>
