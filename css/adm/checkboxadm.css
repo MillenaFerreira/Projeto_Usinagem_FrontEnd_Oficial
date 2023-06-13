@@ -11,3 +11,8 @@
     font-weight: 600;
     letter-spacing: 1px;
 }
+
+.list__item{
+    display: flex;
+    gap: 1vw;
+}

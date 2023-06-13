@@ -115,8 +115,14 @@ const criarListaCursosNoSelect = async () => {
 
         const inputElement = document.createElement('input')
         inputElement.type = 'checkbox'
+        inputElement.id = nomeCurso.id
         inputElement.classList.add('checkbox')
 
+        inputElement.addEventListener('click', () => {
+            if(inputElement.checked){
+                console.log(inputElement.id);
+            }
+        })
 
         adicionarCurso.append(listElement)
         listElement.append(inputElement, labelElement)
