@@ -1,12 +1,16 @@
 'use strict'
 
-import { pegarAlunosApi } from "./apiAdmAlunos.js"
+import { getTodasMatriculas } from "./apiMatricula.js"
 
-const alunosLista = await pegarAlunosApi()
+const matricula = await getTodasMatriculas()
 
 const criarListaAlunos = (card) => {
     const itemLista = document.createElement('tr')
     itemLista.classList.add('alunoLista')
+    itemLista.addEventListener('click', () => {
+        console.log(card.id_matricula);
+        //window.location.href = '../../pages/adm/editar/editarAlunos.html'
+    })
 
     const dadosListaNome = document.createElement('td')
     dadosListaNome.classList.add('dataName')
@@ -14,11 +18,11 @@ const criarListaAlunos = (card) => {
 
     const dadosEmail = document.createElement('td')
     dadosEmail.classList.add('dataEmail')
-    dadosEmail.textContent = card.email_aluno
+    dadosEmail.textContent = card.email_institucional
 
     const dadosRegistro = document.createElement('td')
     dadosRegistro.classList.add('dataRegistro')
-    dadosRegistro.textContent = card.cpf
+    dadosRegistro.textContent = card.numero_matricula
 
 
     //
@@ -50,10 +54,10 @@ const criarListaAlunos = (card) => {
 
 
 
-    itemEditar.addEventListener('click', () => {
-        window.localStorage.setItem('dadosAluno', (card.id).toString())
-        window.location = `./editar/editarAdministrador.html`
-    })
+    // itemEditar.addEventListener('click', () => {
+    //     window.localStorage.setItem('dadosAluno', (card.id).toString())
+    //     window.location = `./editar/editarAdministrador.html`
+    // })
 
     itemLista.append (
         dadosListaNome,
@@ -69,7 +73,7 @@ const criarListaAlunos = (card) => {
 const carregarItems = () => {
     const container = document.getElementById('tabelaItemsAlunos')
 
-    const gerarItems = alunosLista.alunos.map(criarListaAlunos)
+    const gerarItems = matricula.map(criarListaAlunos)
 
     container.replaceChildren(...gerarItems)
 

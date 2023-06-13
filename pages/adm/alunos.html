@@ -68,31 +68,35 @@
           </div>
         </section>
   
-        <!-- MODAL ADICIONAR CURSOS -->
+        <!-- MODAL ADICIONAR ALUNOS -->
         <div id="modal__adicionar" class="modal__adicionar">
           <form class="modal__adicionar--content" id="modal__adicionar--content">
-            <p class="nome__modal">Adicionar um Curso</p>
+            <p class="nome__modal">Adicionar um Aluno</p>
             <div class="input__nome">
-              <label for="">Nome do Curso:</label>
-              <input type="text" name="nome" id="myInputNome" maxlength="100" style="width: 100%;" required>
+              <label for="">Nome do Aluno:</label>
+              <input type="text" name="nome" id="myInputNome" maxlength="100" style="width: 100%;" placeholder="José Batista da Silva" required>
             </div>
-            <div class="sigla__carga--horaria">
-              <div class="input__sigla">
-                <label for="">Sigla:</label>
-                <input type="text" name="sigla" id="myInputSigla" maxlength="5" required>
+            <div class="matricula__data--nascimento">
+              <div class="input__matricula">
+                <label for="">Matricula:</label>
+                <input type="number" name="matricula" id="myInputMatricula" maxlength="5" placeholder="55585555" required>
               </div>
-              <div class="input__carga--horaria">
-                <label for="">Carga Horaria:</label>
-                <input type="number" name="carga_horaria" id="myInputCargaHoraria" min="0" required>
+              <div class="input__data--nascimento">
+                <label for="">Data de Nascimento:</label>
+                <input type="date" name="data_nascimento" id="myInputDataNascimento" required>
               </div>
             </div>
-            <div class='input__file'>
-              <label for="">URL da Imagem:</label>
-              <input type="url" name="url" id="myInputUrl" maxlength="2000" style="width: 100%;" required>
+            <div class='input__email--pessoal'>
+              <label for="">Email pessoal:</label>
+              <input type="text" name="email_pessoal" id="myInputEmailPessoal" maxlength="2000" style="width: 100%;" required>
             </div>
-            <div class="input__descricao">
-              <label for="">Descrição:</label>
-              <textarea tabindex="5" id="myInputDescricao" required></textarea>
+            <div class='input__email--institucional'>
+              <label for="">Email institucional:</label>
+              <input type="text" name="email_institucional" id="myInputEmailInstitucional" maxlength="2000" style="width: 100%;" required>
+            </div>
+            <div class='input__senha'>
+              <label for="">Senha do Aluno:</label>
+              <input type="password" name="senha" id="myInputSenha" maxlength="2000" style="width: 100%;" required>
             </div>
             <div class="modal__adicionar--footer">
               <a type="submit" id="salvarBtn">Salvar</a>
@@ -101,40 +105,44 @@
           </form>
         </div>
   
-        <!-- MODAL EDITAR CURSOS -->
+        <!-- MODAL EDITAR ALUNOS -->
         <div id="modal__editar" class="modal__editar">
           <form class="modal__editar--content" id="modal__editar--content">
-            <p class="nome__modal">Editar um Curso</p>
-            <div class="input__nome--valor">
-              <label for="">Nome do Curso:</label>
-              <input type="text" name="nome" id="myInputNomeValor" maxlength="100" style="width: 100%;" required>
+            <p class="nome__modal">Adicionar um Aluno</p>
+            <div class="input__nome">
+              <label for="">Nome do Aluno:</label>
+              <input type="text" name="nome" id="myInputNomeValor" maxlength="100" style="width: 100%;" placeholder="José Batista da Silva" required>
             </div>
-            <div class='input__file--valor'>
-              <label for="">URL da Imagem do Curso:</label>
-              <input type="url" name="url" id="myInputUrlValor" maxlength="2000" style="width: 100%;" required>
-            </div>
-            <div class="sigla__carga--horaria">
-              <div class="input__sigla--valor">
-                  <label for="">Sigla:</label>
-                  <input type="text" name="sigla" id="myInputSiglaValor" maxlength="5" required>
+            <div class="matricula__data--nascimento">
+              <div class="input__matricula">
+                <label for="">Matricula:</label>
+                <input type="number" name="matricula" id="myInputMatriculaValor" maxlength="5" placeholder="55585555" required>
               </div>
-              <div class="input__carga--horaria--valor">
-                  <label for="">Carga Horaria:</label>
-                  <input type="number" name="carga_horaria" id="myInputCargaHorariaValor" min="0" required>
+              <div class="input__data--nascimento">
+                <label for="">Data de Nascimento:</label>
+                <input type="date" name="data_nascimento" id="myInputDataNascimentoValor" required>
               </div>
-          </div>
-            <div class="input__descricao--valor">
-              <label for="">Descrição do Curso:</label>
-              <textarea tabindex="5" id="myInputDescricaoValor" required></textarea>
             </div>
-            <div class="modal__editar--footer">
-              <a type="submit" id="editar">Salvar</a>
+            <div class='input__email--pessoal'>
+              <label for="">Email pessoal:</label>
+              <input type="text" name="email_pessoal" id="myInputEmailPessoalValor" maxlength="2000" style="width: 100%;" required>
             </div>
-            <a href="#" class="modal__editar--close">&times;</a>
+            <div class='input__email--institucional'>
+              <label for="">Email institucional:</label>
+              <input type="text" name="email_institucional" id="myInputEmailInstitucionalValor" maxlength="2000" style="width: 100%;" required>
+            </div>
+            <div class='input__senha'>
+              <label for="">Senha do Aluno:</label>
+              <input type="password" name="senha" id="myInputSenhaValor" maxlength="2000" style="width: 100%;" required>
+            </div>
+            <div class="modal__adicionar--footer">
+              <a type="submit" id="salvarBtn">Salvar</a>
+            </div>
+            <a href="#" class="modal__adicionar--close">&times;</a>
           </form>
         </div>
   
-        <!-- MODAL DELETAR CURSOS -->
+        <!-- MODAL DELETAR ALUNOS -->
         <div class="modal__deletar" id="modal__deletar">
           <div class="modal__deletar--content" id="modal__deletar--content">
             <p class="nome__modal--deletar">Deseja mesmo Deletar?</p>
@@ -155,7 +163,7 @@
                 </span>
   
                 <span class="titulosConteudo__email">
-                  EMAIL
+                  EMAIL INSTITUCIONAL
                 </span>
   
                 <span class="titulosConteudo__matricula">

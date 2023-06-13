@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="../../../components/header.js"></script>
+
+    <link rel="stylesheet" href="../../../css/adm/editar_alunos.css">
+    <link rel="stylesheet" href="../../../css/reset.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jaldi&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap"
+        rel="stylesheet">
+
+    <title>ADMINISTRADOR - Editar Professor</title>
+</head>
+
+<body>
+    <header-padrao color_button='#DA251C' color_top='#3084B4' text_button="VOLTAR"></header-padrao>
+
+    <section class="containerTitulo containerTitulo--displayFlex">
+        <a class="fa-solid fa-bars containerTitulo--icon" href="#menu--bar"></a>
+        <h1 class="containerTitulo__tituloPagina">
+            ADMINISTRAÇÃO
+        </h1>
+
+    </section>
+
+    <main>
+        <div class="menuLateral menuLateral--displayFlex  menuLateral--anchor" id="menu--bar">
+            <ul class="menuLateral--menuBar">
+                <a href="#" class="menuLateral--close">&times;</a>
+                <li>
+                    <a class="menuLateral__anchor" href="administrador.html">
+                        PROFESSORES
+                    </a>
+                </li>
+                <li>
+                    <a class="menuLateral__anchor" href="cursos.html">
+                        CURSOS
+                    </a>
+                </li>
+                <li>
+                    <a class="menuLateral__anchor" href="alunos.html">
+                        ALUNOS
+                    </a>
+                </li>
+                <li>
+                    <a class="menuLateral__anchor" href="materias.html">
+                        MATÉRIAS
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="containerAlunos">
+            <section class="containerAlunos__menuSuperior">
+                <h2 class="menuSuperior__tituloProfessor">
+                    Aluno - Millena Ferreira
+                </h2>
+            </section>
+
+            <section class="containerAlunos__tabelaFormulario">
+                <form class="tabelaFormulario">
+
+                    <div class="input__nome input">
+
+                        <label for="myInputNome">NOME</label>
+                        <input type="text" name="nome" id="myInputNome" maxlength="100"  required>
+                  
+                    </div>
+                    <div class="input__registro input">
+
+                        <label for="myInputRegistro">REGISTRO/NIF</label>
+                        <input type="text" name="registro" id="myInputRegistro" maxlength="100"  required>
+                  
+                    </div>
+
+                    <div class="input__telefone input ">
+
+                        <label for="myInputTelefone">TELEFONE</label>
+                        <input type="tel" name="telefone" id="myInputTelefone" placeholder="00-00000-0000" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" required>
+                  
+                    </div>
+
+                    <div class="input__email input">
+
+                        <label for="myInputEmail">EMAIL</label>
+                        <input type="email" name="email" id="myInputEmail" maxlength="155"  required>
+                  
+                    </div>
+
+                </form>
+            </section>
+
+            <section class="containerAlunos__listasConteudo">
+                <div class="listasConteudo__listaTarefas listasConteudo__listaTarefas--displayFlex">
+
+                    <span class="listaTarefas__titulo titulo">
+                        TAREFAS
+                    </span>
+
+                    <div class="listaTarefas__cardTarefas">
+
+                        <a class="cardTarefas__linkTarefas cardTarefas__linkTarefas--displayFlex" href="#">
+                          
+                            <img class="linkTaferas__imgTarefa" src="../../../img/peca.png" alt="">
+                            <span class="linkTaferas__tituloTarefa">Tarefa 1</span>
+                         
+                        </a>
+
+                        <a class="cardTarefas__linkTarefas cardTarefas__linkTarefas--displayFlex" href="#">
+                          
+                            <img class="linkTaferas__imgTarefa" src="../../../img/peca.png" alt="">
+                            <span class="linkTaferas__tituloTarefa">Tarefa 1</span>
+                         
+                        </a>
+
+                        <a class="cardTarefas__linkTarefas cardTarefas__linkTarefas--displayFlex" href="#">
+                          
+                            <img class="linkTaferas__imgTarefa" src="../../../img/peca.png" alt="">
+                            <span class="linkTaferas__tituloTarefa">Tarefa 1</span>
+                         
+                        </a>
+
+                        <a class="cardTarefas__linkTarefas cardTarefas__linkTarefas--displayFlex" href="#">
+                          
+                            <img class="linkTaferas__imgTarefa" src="../../../img/peca.png" alt="">
+                            <span class="linkTaferas__tituloTarefa">Tarefa 1</span>
+                         
+                        </a>
+
+                        <a class="cardTarefas__linkTarefas cardTarefas__linkTarefas--displayFlex" href="#">
+                          
+                            <img class="linkTaferas__imgTarefa" src="../../../img/peca.png" alt="">
+                            <span class="linkTaferas__tituloTarefa">Tarefa 1</span>
+                         
+                        </a>
+
+                        <a class="cardTarefas__linkTarefas cardTarefas__linkTarefas--displayFlex" href="#">
+                          
+                            <img class="linkTaferas__imgTarefa" src="../../../img/peca.png" alt="">
+                            <span class="linkTaferas__tituloTarefa">Tarefa 1</span>
+                         
+                        </a>
+
+                        <a class="cardTarefas__linkTarefas cardTarefas__linkTarefas--displayFlex" href="#">
+                          
+                            <img class="linkTaferas__imgTarefa" src="../../../img/peca.png" alt="">
+                            <span class="linkTaferas__tituloTarefa">Tarefa 1</span>
+                         
+                        </a>
+
+                        <a class="cardTarefas__linkTarefas cardTarefas__linkTarefas--displayFlex" href="#">
+                          
+                            <img class="linkTaferas__imgTarefa" src="../../../img/peca.png" alt="">
+                            <span class="linkTaferas__tituloTarefa">Tarefa 1</span>
+                         
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="listasConteudo__listaTurmas listasConteudo__listaTurmas--displayFlex">
+
+                    <span class="listaTurmas__titulo titulo">
+                        TURMAS
+                    </span>
+
+                    <div class="listaTurmas__cardTurmas">
+
+                        <a class="cardTurmas__linkTurmas" href="">
+
+                            <span class="linkTurmas__siglaClasse">
+                                DS2T
+                            </span>
+                            <div class="linkTurmas__containerSemestre">
+                                <span class="linkTurmas__semestre">
+                                    2ºSemestre
+                                </span>
+                                <span class="linkTurmas__data">
+                                    06/2023
+                                </span>
+                            </div>
+
+                        </a>
+
+                        <a class="cardTurmas__linkTurmas" href="">
+
+                            <span class="linkTurmas__siglaClasse">
+                                DS2T
+                            </span>
+                            <div class="linkTurmas__containerSemestre">
+                                <span class="linkTurmas__semestre">
+                                    2ºSemestre
+                                </span>
+                                <span class="linkTurmas__data">
+                                    06/2023
+                                </span>
+                            </div>
+
+                        </a>
+
+                        <a class="cardTurmas__linkTurmas" href="">
+
+                            <span class="linkTurmas__siglaClasse">
+                                DS2T
+                            </span>
+                            <div class="linkTurmas__containerSemestre">
+                                <span class="linkTurmas__semestre">
+                                    2ºSemestre
+                                </span>
+                                <span class="linkTurmas__data">
+                                    06/2023
+                                </span>
+                            </div>
+
+                        </a>
+
+                        <a class="cardTurmas__linkTurmas" href="">
+
+                            <span class="linkTurmas__siglaClasse">
+                                DS2T
+                            </span>
+                            <div class="linkTurmas__containerSemestre">
+                                <span class="linkTurmas__semestre">
+                                    2ºSemestre
+                                </span>
+                                <span class="linkTurmas__data">
+                                    06/2023
+                                </span>
+                            </div>
+
+                        </a>
+
+                        <a class="cardTurmas__linkTurmas" href="">
+
+                            <span class="linkTurmas__siglaClasse">
+                                DS2T
+                            </span>
+                            <div class="linkTurmas__containerSemestre">
+                                <span class="linkTurmas__semestre">
+                                    2ºSemestre
+                                </span>
+                                <span class="linkTurmas__data">
+                                    06/2023
+                                </span>
+                            </div>
+
+                        </a>
+
+                        <a class="cardTurmas__linkTurmas" href="">
+
+                            <span class="linkTurmas__siglaClasse">
+                                DS2T
+                            </span>
+                            <div class="linkTurmas__containerSemestre">
+                                <span class="linkTurmas__semestre">
+                                    2ºSemestre
+                                </span>
+                                <span class="linkTurmas__data">
+                                    06/2023
+                                </span>
+                            </div>
+
+                        </a>
+
+                        <a class="cardTurmas__linkTurmas" href="">
+
+                            <span class="linkTurmas__siglaClasse">
+                                DS2T
+                            </span>
+                            <div class="linkTurmas__containerSemestre">
+                                <span class="linkTurmas__semestre">
+                                    2ºSemestre
+                                </span>
+                                <span class="linkTurmas__data">
+                                    06/2023
+                                </span>
+                            </div>
+
+                        </a>
+                        
+                    </div>
+
+                </div>
+
+                <div class="listasConteudo__listaMaterias listasConteudo__listaMaterias--displayFlex">
+
+                    <span class="listaMaterias__titulo titulo">
+                        MATÉRIAS
+                    </span>
+
+                    <ul>
+                        <li>
+                            <a href="">
+                                
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

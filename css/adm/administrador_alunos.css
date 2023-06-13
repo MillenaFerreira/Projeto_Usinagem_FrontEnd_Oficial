@@ -228,7 +228,7 @@ main {
 .titulosConteudo__nome {
     color: #074A71;
     font-weight: 600;
-    width: 28%;
+    width: 31%;
     padding: 10px;
     text-align: center;
 }
@@ -244,7 +244,7 @@ main {
 .titulosConteudo__matricula {
     color: #074A71;
     font-weight: 600;
-    width: 24%;
+    width: 20%;
     padding: 10px;
     text-align: center;
 }
@@ -265,7 +265,7 @@ main {
     text-align: center;
 }
 
-.tabelaItemsAlunos{
+.tabelaItemsAlunos {
     text-align: center;
 }
 
@@ -348,27 +348,19 @@ td {
     font-size: 3rem;
 }
 
-.sigla__carga--horaria {
+.matricula__data--nascimento {
     padding-top: 5px;
     display: flex;
     justify-content: space-between;
     gap: 20px;
 }
 
-.input__file {
-    font-size: 1rem;
-    display: flex;
-    flex-direction: column;
-}
-
 .input__nome {
-    font-size: 1rem;
     display: flex;
     flex-direction: column;
 }
 
-.input__sigla {
-    font-size: 1rem;
+.input__matricula {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -376,8 +368,7 @@ td {
     gap: 5px;
 }
 
-.input__carga--horaria {
-    font-size: 1rem;
+.input__data--nascimento {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -385,16 +376,22 @@ td {
     gap: 5px;
 }
 
-.input__descricao {
-    font-size: 1rem;
+
+.input__email--pessoal {
     display: flex;
     flex-direction: column;
 }
 
-#myInputDescricao {
-    height: 100px;
-    resize: none;
+.input__email--institucional {
+    display: flex;
+    flex-direction: column;
 }
+
+.input__senha {
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* MODEL EDITAR */
 .modal__editar {
@@ -603,11 +600,11 @@ td {
         max-width: 60vw;
     }
 
-    .menuConteudo__titulosConteudo--displayFlex{
+    .menuConteudo__titulosConteudo--displayFlex {
         font-size: 0.7rem;
     }
 
-    .tabelaItemsAlunos{
+    .tabelaItemsAlunos {
         font-size: 0.9rem;
     }
 
