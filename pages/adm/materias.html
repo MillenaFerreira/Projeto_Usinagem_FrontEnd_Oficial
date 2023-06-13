@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="../../css/reset.css">
     <link rel="stylesheet" href="../../css/adm/administrador_materia.css">
+    <link rel="stylesheet" href="/css/adm/checkboxadm.css">
 
     <script src="../../components/header.js"></script>
 
@@ -102,13 +103,22 @@
                     <div class="dropdownCurso">
                         <div class="adicionar--curso">
                             <label for="materias_cursos">Está matéria é de qual curso?</label>
-                           <button type="button" id="buttonAdicionarNovaMateria"><i class="fas fa-plus"></i></button> 
                         </div>
-                        <select id="materias_cursos" name="cursos">
-                            <!-- <option value="desenvolvimentoDeSistemas">desenvolvimento de sistemas</option>
+                        <!-- <select id="materias_cursos" name="cursos">
+                            <option value="desenvolvimentoDeSistemas">desenvolvimento de sistemas</option>
                             <option value="redesDeComputadores">redes de computadores</option>
-                            <option value="eletroeletronica">eletroeletronica</option> -->
-                        </select>
+                            <option value="eletroeletronica">eletroeletronica</option>
+                        </select> -->
+                        <div class="content--list">
+                            <ul class="list">
+                              <!-- <li class="list__item">
+                                <label class="label--checkbox">
+                                    <input type="checkbox" class="checkbox" checked>
+                                      Desenvolvimento de Sistemas
+                                </label>
+                              </li> -->
+                            </ul>
+                        </div>
                     </div>
                     <div class="modal__adicionar--footer">
                         <a type="submit" id="salvarBtn">Salvar</a>

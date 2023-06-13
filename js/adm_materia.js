@@ -103,22 +103,30 @@ const criarListaCursosNoSelect = async () => {
 
     cursoEspecifico.forEach((nomeCurso) => {
 
-        const materias_cursos = document.getElementById('materias_cursos')
 
-        const adicionarCurso = document.querySelector('.dropdownCurso')
+        const adicionarCurso = document.querySelector('.list')
 
-        materias_cursos.addEventListener('change', () => {
-            //console.log(materias_cursos.value);
-            //var opcaoTexto = materias_cursos.options[materias_cursos.selectedIndex]
-            console.log(materias_cursos.selectedIndex);
-        
-        });
+        const listElement = document.createElement('li')
+        listElement.classList.add('list__item')
 
-        const optionCurso = document.createElement('option')
-        optionCurso.value = nomeCurso.id
-        optionCurso.textContent = nomeCurso.nome
+        const labelElement = document.createElement('label')
+        labelElement.classList.add('label--checkbox')
+        labelElement.textContent = nomeCurso.nome
 
-        materias_cursos.append(optionCurso)
+        const inputElement = document.createElement('input')
+        inputElement.type = 'checkbox'
+        inputElement.id = nomeCurso.id
+        inputElement.classList.add('checkbox')
+
+        inputElement.addEventListener('click', () => {
+            if(inputElement.checked){
+                console.log(inputElement.id);
+            }
+        })
+
+        adicionarCurso.append(listElement)
+        listElement.append(inputElement, labelElement)
+
 
     });
 
@@ -126,7 +134,3 @@ const criarListaCursosNoSelect = async () => {
 
 criarListaCursosNoSelect()
 
-// mobiscroll.select('#materias_cursos', {
-//     inputElement: document.getElementById('my-input'),
-//     touchUi: false
-// });
