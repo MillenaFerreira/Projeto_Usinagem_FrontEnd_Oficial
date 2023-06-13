@@ -1,0 +1,127 @@
+.main_content{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    gap: 13%;
+    padding-top: 7%;
+}
+
+.main_content .title{
+    font-size: clamp(1.3rem, 0.5513rem + 2.649vw, 2rem);
+    font-weight: 500;
+    text-align: center;
+    width: 70%;
+    color: var(--font-dark-gray-color);
+}
+
+.main_content .presentation{
+    font-size: clamp(0.875rem, 0.8039rem + 0.4065vw, 1.125rem);
+    text-align: center;
+    width: 90%;
+}
+
+.main_content_utilities{
+    background-color: var(--primary-color);
+    width: 90%;
+    border-radius: 5px;
+    height: auto;
+    justify-content: center;
+}
+
+.main_content_utilities_utility{
+    flex-direction: column;
+    color: #ffff;
+    align-items: center;
+    padding: 4vh;
+    gap: 2vh;
+    width: 33%;
+}
+
+.main_content_utilities_utility span{
+    text-align: center;
+    font-size: clamp(0.6875rem, -0.0375rem + 4vw, 0.9375rem);
+}
+
+.main_content_utilities_utility h1{
+    text-align: center;
+    font-size: clamp(1.25rem, -13.25rem + 80vw, 1.75rem);
+}
+
+
+
+.main_content_utilities_utility:nth-child(2){
+    background-color: var(--light-primary-color);
+}
+
+
+.footer{
+    width: 100vw;
+    flex-direction: column;
+    background-color: #ffff;
+    height: 5vh;
+}
+
+.footer_dadosInstituicao{
+    flex-direction: column;
+    background-color: var(--dark-primary-color);
+    color: #ffff;
+    align-items: center;
+    text-align: center;
+    padding: 3px;
+}
+
+.footer_links{
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    padding-top: 25px;
+}
+
+.footer_links_app {
+   font-size: clamp(0.9375rem, NaNrem + NaNvw, 0.9375rem);
+   width: 60%;
+   
+}
+
+
+.footer_links_app span {
+    width: 60%;
+ }
+
+ .footer_links_app button {
+    border: 1px solid transparent;
+    background-color: black;
+    border-radius: 4px;
+ }
+
+@media (max-width:640px) {
+
+    .main_content{
+        padding-top: 18%;
+        gap: 5%;
+    }
+    .main_content h1{
+        width: 95%;
+    }
+
+    .main_content_utilities_utility h1{
+        width: 100%;
+        font-size: clamp(1.375rem, 3.5809rem + -11.7647vw, 1.875rem);
+    }
+
+    .main_content span{
+        width: 95%;
+    }
+
+    .main_content_utilities{
+        flex-direction: column;
+    }
+
+    .main_content_utilities_utility{
+        width: 100%;
+    }
+
+
+}

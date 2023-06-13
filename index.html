@@ -5,34 +5,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- LINK DO GOOGLE FONTS -->
+    <meta name="description"
+        content="Plataforma de Acompanhamento de Atividades do curso de Mecânica do Senai PROFº. VICENTE AMATO">
+    <meta name="keywords" content="Acompanhamento de Atividades, Mecânica, Senai, PROFº. VICENTE AMATO">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Jaldi&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index/style.css">
+    <link rel="stylesheet" href="./css/index/main.css">
+    <link rel="stylesheet" href="./css/index/header.css">
+    <link rel="stylesheet" href="./css/index/media.css">
+
     <!-- COMPONENTS -->
-    <script src="./components/header.js" defer type="module"></script>
-
-    <!-- APP -->
-
-
-    <title>HOME</title>
+    <script src="/components/header.js" defer type="module"></script>
+    
+    <title>Gestor Atividades Senai</title>
 </head>
 
-<body>
-    <header-padrao color_top="#3084B4" color_button="#DA251C" text_button = 'LOGIN' link_button = './pages/login/login.html'></header-padrao>
-    <nav>
-        <a href="/pages/aluno/aluno.html">ALUNOS</a>
-        <a href="/pages/professor/professor.html">PROFESSORES</a>
-    </nav>
+<body class="d-flex">
+    <header-padrao color_top="#3084B4" color_button="#DA251C" text_button="LOGIN" link_button="/pages/login/login.html"></header-padrao>
+    <main>
+        <div class="main_content d-flex">
+            <h1 class="font-family-Montserrat title">Bem-vindo à plataforma de Acompanhamento de Atividades de Mecânica!</h1>
+            <span class="font-family-Montserrat presentation">Estamos comprometidos em fornecer a você uma experiência de aprendizado eficiente e organizada. Não deixe de explorar todas as funcionalidades disponíveis na plataforma. Seja bem-vindo e aproveite ao máximo sua jornada acadêmica na turma de Mecânica do SENAI!</span>
+            <div class="main_content_utilities d-flex">
+                <div class="main_content_utilities_utility d-flex font-family-Montserrat">
+                    <h1>Visualize suas atividades:</h1>
+                    <span>Acesse uma lista completa de todas as atividades programadas para a turma de Mecânica do SENAI. Saiba quais são as próximas tarefas e mantenha-se atualizado sobre os prazos.</span>
+                </div>
+                <div class="main_content_utilities_utility d-flex font-family-Montserrat">
+                    <h1>Autoavaliação:</h1>
+                    <span>Avalie seu desempenho e habilidades por meio da funcionalidade de autoavaliação. Identifique seus pontos fortes e áreas que precisam de melhoria para um aprendizado mais efetivo.</span>
+                </div>
+                <div class="main_content_utilities_utility d-flex font-family-Montserrat">
+                    <h1>Notificações:</h1>
+                    <span>Receba notificações em tempo real sobre novas atividades, prazos iminentes e atualizações importantes. Mantenha-se informado para não perder nenhuma informação crucial.</span>
+                </div>
+            </div>
+            <div class="footer d-flex">
+                <div class="footer_dadosInstituicao d-flex font-family-Montserrat">
+                    <span>Escola Senai "Profº. Vicente Amato"</span>
+                    <span>Rua Elton Silva, 905 - Centro - Jandira/SP - CEP 06600-025</span>
+                    <span>Telefone: (11) 4772-4700 |E-mail:senaijandira@sp.senai.br</span>
+                </div>
+                <div class="footer_links d-flex">
+                    <div class="footer_links_app d-flex font-family-Montserrat">
+                        <span>Faça download do aplicativo oficial da turma de mecânica do Senai PROFº. VICENTE AMATO</span>
+                        <a href="#">
+                            <button type="button">
+                                <img src="./img/logoGooglePLay.png" alt="logoGooglePLay">
+                            </button>
+                        </a>
+                    </div>
+                    <span class="font-family-Montserrat privacy">©2023, Senai PROFº. VICENTE AMATO. Todos os direitos reservados.</span>
+                </div>
+            </div>
+        </div>
+       
+        
+    </main>
 </body>
 
 </html>

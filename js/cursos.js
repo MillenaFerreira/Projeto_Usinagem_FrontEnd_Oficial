@@ -8,6 +8,10 @@ const criarCard = (curso) => {
 
     const card = document.createElement('div')
     card.classList.add('card_curso')
+    card.addEventListener('click', () => {
+        localStorage.setItem('id_curso', curso.id)
+        window.location.href = '../../pages/professor/turmas.html'
+    })
 
     //dentro do segura_tudo terá:
     const imagem = document.createElement('img')
