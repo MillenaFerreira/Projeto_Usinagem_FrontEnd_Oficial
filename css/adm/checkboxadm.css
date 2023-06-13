@@ -1,0 +1,13 @@
+.content--list{
+    background-color: #C4D9E5;
+    height: 18vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 4px;
+    overflow-y: auto;
+    color: #666666;
+    padding: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
