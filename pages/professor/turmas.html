@@ -19,42 +19,40 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/css/aluno/reset.css">
     <link rel="stylesheet" href="/css/aluno/professor.css">
+    <link rel="stylesheet" href="/css/professor/turmas.css">
 
 
     <!-- COMPONENTS -->
     <script src="/components/header.js" defer type="module"></script>
     <script src="/components/nav.js" defer type="module"></script>
 
+    <script src="/js/turmas_professor.js" defer type="module"></script>
 
-    <script src="/js/horario.js" defer type="module"></script>
-    <script src="/js/tarefas.js" defer type="module"></script>
-    <script src="/js/app.js" defer type="module"></script>
-    <script src="/js/adicionar.js" defer type="module"></script>
-    <script src="/js/relatorio.js" defer type="module"></script>
-
-    <title>Document</title>
+    <title>Turmas</title>
 </head>
 
 <body>
     <header-padrao color_top="#3084B4" color_button="#DA251C" text_button="VOLTAR"
         link_button="../index.html"></header-padrao>
     <!-- NAV PRINCIPAL -->
-    <nav-professor 
-        nome1="Cursos" link1="/pages/professor/cursos.html"
-        nome2="Turmas" link2="/pages/professor/turmas.html"
-        nome3="Disciplinas" link3="/pages/professor/disciplinas.html"
+    <nav-professor nome1="Cursos" link1="/pages/professor/cursos.html" nome2="Turmas"
+        link2="/pages/professor/turmas.html" nome3="Disciplinas" link3="/pages/professor/disciplinas.html"
         nome4="Alunos" link4="/pages/professor/alunos.html">
     </nav-professor>
 
     <main id="root_aluno">
         <div class="container container-areaAluno" id="container-areaAluno">
             <div class="container_topo">
-                <p>Lista de turmas</p>
+                <p>Turmas</p>
                 <div class="linha"></div>
-            </div>  
+            </div>
             <div class="cards_turma_professor">
-                
-            </div>  
+                <!-- <div class="card_turmas">
+                    <h1>DS2T</h1>
+                    <span>2º Semestre</span>
+                    <span>06/2023</span>
+                </div>   -->
+            </div>
         </div>
     </main>
 </body>
