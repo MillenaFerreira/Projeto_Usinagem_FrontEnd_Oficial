@@ -1,7 +1,6 @@
 import { pesquisarMaterias } from './apiMateria.js'
 
 const criarDadosMateria = async () => {
-    console.log('foi');
     const tarefasDados = await pesquisarMaterias();
     console.log(tarefasDados);
 
@@ -35,6 +34,12 @@ const criarDadosMateria = async () => {
 
 
         containerTarefa.append(card)
+
+        aLinkCard.addEventListener('click', () => {
+            localStorage.setItem('idMateria', materia.id)
+            localStorage.setItem('nomeMateria', materia.nome)
+            aLinkCard.href = "./areaAluno.html"
+        })
 
     })
 

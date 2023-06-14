@@ -3,22 +3,24 @@
 import { getCursoProfessor } from "../js/apiTurmaCursoMateriaProfessor.js"
 
 const idProfessor = localStorage.getItem('idProfessor')
-console.log(typeof(idProfessor))
-const cursos = await getCursoProfessor(parseInt(idProfessor))
-console.log(typeof(idProfessor))
+var idProf = parseInt(idProfessor)
+
+const cursos = await getCursoProfessor(idProf)
+
 
 const criarCard = (curso) => {
 
     const card = document.createElement('div')
     card.classList.add('card_curso')
     card.addEventListener('click', () => {
-        localStorage.setItem('id_curso', curso.id)
+        
+        localStorage.setItem('idCurso', curso.curso.id_curso)
         window.location.href = '../../pages/professor/turmas.html'
     })
 
     //dentro do segura_tudo terá:
     const imagem = document.createElement('img')
-    imagem.src = curso.foto
+    imagem.src = curso.curso.foto
 
     const nome_carga = document.createElement('div')
     nome_carga.classList.add('nome_carga')
@@ -32,10 +34,10 @@ const criarCard = (curso) => {
 
     //dentro do nome terá:
     const nomeSigla = document.createElement('h2')
-    nomeSigla.textContent = curso.sigla
+    nomeSigla.textContent = curso.curso.sigla
 
     const nomeCompleto = document.createElement('span')
-    nomeCompleto.textContent = curso.nome
+    nomeCompleto.textContent = curso.curso.nome
 
 
     //dentro da carga_horaria terá:
@@ -44,7 +46,7 @@ const criarCard = (curso) => {
     icone.classList.add('fa-clock')
 
     const hora_curso = document.createElement('div')
-    hora_curso.textContent = `${curso.carga_horaria}H` 
+    hora_curso.textContent = `${curso.curso.carga_horaria}H` 
 
     card.append(imagem, nome_carga)
     nome_carga.append(nome, carga_horaria)

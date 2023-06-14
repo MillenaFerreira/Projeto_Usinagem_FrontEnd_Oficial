@@ -1,10 +1,12 @@
 'use strict'
 
 import { createTarefa, deleteTarefa, updateTarefa } from './apiTarefas.js'
-
-
-
 import { pesquisarTarefas } from './apiTarefas.js';
+
+var idMateria = localStorage.getItem('idMateria')
+console.log(idMateria);
+
+
 //import "./router.js"
 
 const criarDadosTarefa = async () => {
