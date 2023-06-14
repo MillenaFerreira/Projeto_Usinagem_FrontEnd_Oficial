@@ -1,14 +1,22 @@
 'use strict'
 
-import { pesquisarMateriasPeloIdDoProfessorTurma } from "../js/apiMateria.js"
+import { getDisciplinaProfessor } from "../js/apiTurmaCursoMateriaProfessor.js"
+
+const idProfessor = localStorage.getItem('idProfessor')
+var idProf = parseInt(idProfessor)
+console.log(idProf)
+
+//const disciplina = await getTurmaProfessor(idProf, idCurso)
+//console.log(disciplina);
 
 
+//import { pesquisarMateriasPeloIdDoProfessorTurma } from "../js/apiMateria.js"
 var idTurma = localStorage.getItem('id_turma')
 console.log(idTurma);
 
 const pegarMateriaPeloIdProfessorMateria = async () => {
 
-    const materiasProfessor = await pesquisarMateriasPeloIdDoProfessorTurma(1, idTurma);
+    const materiasProfessor = await getDisciplinaProfessor(idProf, idTurma);
     const materias = materiasProfessor
     
     const container = document.querySelector('.cards_discipinas_professor')
