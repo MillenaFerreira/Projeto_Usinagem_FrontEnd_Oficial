@@ -21,7 +21,9 @@ margin-top: 5vh;
     padding-left: 1%;
 }
 .card_disciplina:hover{
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 8px 8px 5px 2px rgba(0, 0, 0, 0.25);
+    border: 4px solid #3084B4;
+    transition: all .2s;
 }
 
 .nome_disciplina{
