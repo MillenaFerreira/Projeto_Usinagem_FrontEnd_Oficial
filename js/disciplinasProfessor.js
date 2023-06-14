@@ -39,6 +39,12 @@ const pegarMateriaPeloIdProfessorMateria = async () => {
         linkCardDisciplina.append(nomeMateria,descricaoMateria,cargaHoraria)
         cargaHoraria.append(iconeHorario)
 
+        linkCardDisciplina.addEventListener('click', () => {
+            //console.log(materia.id);
+            localStorage.setItem('idMateria', materia.id)
+            linkCardDisciplina.href = "./tarefas.html"
+        })
+
     });
 }
 
