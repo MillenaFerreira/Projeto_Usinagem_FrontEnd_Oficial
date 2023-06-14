@@ -3,6 +3,12 @@
 import { pesquisarTarefas, } from './apiTarefas.js';
 //import "./router.js"
 
+
+const getNomeDaMateria = localStorage.getItem('nomeMateria')
+
+const nomeDaMateria = document.querySelector('.nomeDaMateria')
+nomeDaMateria.textContent = "Tarefas da matéria " + getNomeDaMateria
+
 const criarDadosTarefa = async ()  => {
     const tarefasDados = await pesquisarTarefas();
 
