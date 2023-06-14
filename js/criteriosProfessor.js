@@ -64,7 +64,7 @@ const showCriterioPeloIdTarefa = async () => {
         const editarModalButton = document.getElementById('editarTarefaButton')
         editarModalButton.addEventListener('click', (event)=> {
             event.preventDefault();
-            
+
             const modal__editar__criterio = document.querySelector('.modal__editar__criterio')
             modal__editar__criterio.classList.add('d-flex')
             modal__editar__criterio.classList.remove('d-none')
@@ -72,6 +72,13 @@ const showCriterioPeloIdTarefa = async () => {
             const modalMensgaem = document.querySelector('.modal_mensagem')
             modalMensgaem.classList.add('d-none')
             modalMensgaem.classList.remove('d-flex2')
+
+            const sairCriterioModalEditar = document.getElementById('sairCriterioModalEditar')
+            sairCriterioModalEditar.addEventListener('click', (event) => {
+                event.preventDefault();
+                modal__editar__criterio.classList.add('d-none')
+                modal__editar__criterio.classList.remove('d-flex')
+            })
         })
 
     })
