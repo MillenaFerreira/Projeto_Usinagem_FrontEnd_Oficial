@@ -1,6 +1,12 @@
 'use strict'
 
+import { createCriterio } from './apiCriterios.js'
+
 const tarefaNome = localStorage.getItem('tarefaNome')
+const tarefaId = localStorage.getItem('tarefaId')
+const parseIntId = parseInt(tarefaId)
+console.log(tarefaId);
+
 
 console.log(tarefaNome);
 
@@ -46,10 +52,18 @@ const adicionarCriterio = () => {
         observacaoNotaStatus = false
     }
 
-    console.log(descricaoCriterio.value);
-    console.log(valorCriticoStatus);
-    console.log(observacaoNotaStatus);
+    // console.log(descricaoCriterio.value);
+    // console.log(valorCriticoStatus);
+    // console.log(observacaoNotaStatus);
     
+    const criterio = {
+        "descricao": `${descricaoCriterio.value}`,
+        "observacao": observacaoNotaStatus,
+        "tipo_critico": valorCriticoStatus,
+        "id_tarefa": parseIntId
+    }
+    console.log(criterio);
+    createCriterio(parseIntId, criterio)
     
 }
 

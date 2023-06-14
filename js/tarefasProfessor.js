@@ -68,6 +68,7 @@ const criarDadosTarefa = async () => {
             event.preventDefault();
 
             localStorage.setItem('tarefaNome', tarefa.nome_tarefa)
+            localStorage.setItem('tarefaId', tarefa.id)
             console.log('clique', tarefa.nome_tarefa);
             window.scrollTo({
                 top: 0,
