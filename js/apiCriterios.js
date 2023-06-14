@@ -6,6 +6,13 @@ export const pesquisarCriterios = async () => {
     const data = await response.json();
     return data.criterios;
   }
+export const pesquisarCriteriosPeloIdTarefa = async (idTarefa) => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/criterio?idTarefa=${idTarefa}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.criterios;
+    
+  }
 
   export const updateCriterio = async (idCriterio) => {
     const url = `https://usinagem-senai.cyclic.app/v1/projeto-usinagem/criterio/${idCriterio}`;

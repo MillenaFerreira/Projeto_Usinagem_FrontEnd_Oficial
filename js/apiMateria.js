@@ -5,8 +5,9 @@ export const pesquisarMaterias = async () => {
   const response = await fetch(url);
   const data = await response.json();
   return data.materias;
-
 }
+
+
 export const pesquisarMateriasPeloIdDoProfessorTurma = async (idProfessor,idTurma) => {
   const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/turma-curso-materia-prof/materias-professor/${idProfessor}?idTurma=${idTurma}`;
   const response = await fetch(url);

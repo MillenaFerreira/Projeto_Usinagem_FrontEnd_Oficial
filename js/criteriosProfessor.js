@@ -1,14 +1,11 @@
 'use strict'
 
-import { createCriterio } from './apiCriterios.js'
+import { createCriterio , pesquisarCriteriosPeloIdTarefa} from './apiCriterios.js'
 
 const tarefaNome = localStorage.getItem('tarefaNome')
 const tarefaId = localStorage.getItem('tarefaId')
 const parseIntId = parseInt(tarefaId)
-console.log(tarefaId);
 
-
-console.log(tarefaNome);
 
 const titleCriterio = document.querySelector('.titleCriterio')
 titleCriterio.textContent = 'Critérios da tarefa ' +  tarefaNome
@@ -31,6 +28,31 @@ sairCriterioModal.addEventListener('click', (event) => {
     modalAdc.classList.remove('d-flex')
 })
 
+const showCriterioPeloIdTarefa = async () => {
+    const criterioDados = await pesquisarCriteriosPeloIdTarefa(tarefaId);
+    
+    criterioDados.forEach((criterio) => {
+        const cardsContainer = document.querySelector('.cards_criterio_professor')
+
+        const cardCriterio = document.createElement('a')
+        cardCriterio.classList.add('cardCriterio')
+
+        const descCriterio = document.createElement('span')
+        const tipoCritico = document.createElement('span')
+        const observacao = document.createElement('span')
+
+        descCriterio.textContent = "Descrição: " + criterio.descricao_criterio
+        tipoCritico.textContent = "Tipo Crítico: " + criterio.tipo_critico
+        observacao.textContent = "Observação nota: " + criterio.observacao_nota_criterio
+
+        cardsContainer.append(cardCriterio)
+        cardCriterio.append(descCriterio, tipoCritico, observacao)
+    })
+    
+}
+
+showCriterioPeloIdTarefa()
+
 const adicionarCriterio = () => {
     
     const descricaoCriterio = document.getElementById('descricaoCriterio')
@@ -51,10 +73,6 @@ const adicionarCriterio = () => {
     }else{
         observacaoNotaStatus = false
     }
-
-    // console.log(descricaoCriterio.value);
-    // console.log(valorCriticoStatus);
-    // console.log(observacaoNotaStatus);
     
     const criterio = {
         "descricao": `${descricaoCriterio.value}`,
