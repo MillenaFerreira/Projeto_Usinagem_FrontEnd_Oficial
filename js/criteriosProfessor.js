@@ -47,6 +47,20 @@ const showCriterioPeloIdTarefa = async () => {
 
         cardsContainer.append(cardCriterio)
         cardCriterio.append(descCriterio, tipoCritico, observacao)
+
+        cardCriterio.addEventListener('click', () => {
+           const modal_mensagem = document.querySelector('.modal_mensagem')
+           modal_mensagem.classList.remove('d-none')
+           modal_mensagem.classList.add('d-flex2')
+           const sairModalMensagem = document.getElementById('sairModalMensagem')
+           sairModalMensagem.addEventListener('click', (event) => {
+               event.preventDefault();
+               const modalMensgaem = document.querySelector('.modal_mensagem')
+               modalMensgaem.classList.add('d-none')
+               modalMensgaem.classList.remove('d-flex2')
+           })
+        })
+
     })
     
 }

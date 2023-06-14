@@ -13,6 +13,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/css/aluno/reset.css">
     <link rel="stylesheet" href="/css/aluno/aluno.css">
+    <link rel="stylesheet" href="/css/professor/tarefas.css">
     <link rel="stylesheet" href="/css/professor/criterio.css">
     <!-- <link rel="stylesheet" href="/css/professor/tarefas.css"> -->
 
@@ -47,12 +48,31 @@
                 <button class="fas fa-plus" id="adicionar"></button>
             </div>
             <div class="cards_criterio_professor">
-                <!-- <div class="cardCriterio">
-                    <span>Descrição: blablablaajnnnjjaajan haajjajj
-                        ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffa</span>
-                    <span>Tipo Crítico: true</span>
-                    <span>"observacao_nota_criterio: false</span>
-                </div> -->
+                <div class="modal_mensagem  d-none font-family-Montserrat">
+                    <button id="sairModalMensagem">Sair</button>
+                    <div class="apresentacaoModal">
+                        <h3 id="nomeTarefaMensagem">Área de configurações do critério</h3>
+                        <span>Aqui você pode editar, excluir o critério</span>
+                    </div>
+
+                    <div class="buttoesFuncoes">
+                        <button id="excluirTarefaButton">Excluir</button>
+                        <button id="editarTarefaButton">Editar</button>
+                    </div>
+
+                    <div class="modal_excluir d-none">
+                        <h3>Aviso!</h3>
+                        <span>
+                            <p>Ao confirmar a exclusão, esta ação não poderá ser desfeita.</p>
+                            <p>Você tem certeza de que deseja excluir?</p>
+                        </span>
+                        <div class="confirmacao">
+                            <button id="excluirTarefaButton2">sim</button>
+                            <button class="naoExcluir">não</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>  
         </div>
        
