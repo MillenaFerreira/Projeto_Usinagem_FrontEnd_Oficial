@@ -81,6 +81,17 @@ const showCriterioPeloIdTarefa = async () => {
             })
         })
 
+        const excluirTarefaButton = document.getElementById('excluirTarefaButton')
+        const modal_excluir = document.querySelector('.modal_excluir')
+
+
+        excluirTarefaButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            modal_excluir.classList.add('d-grid-center')
+            modal_excluir.classList.remove('d-none')
+
+        });
+
     })
     
 }
