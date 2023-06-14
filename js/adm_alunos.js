@@ -33,6 +33,11 @@ const criarListaAlunos = (card) => {
     iconEditar.classList.add('far')
     iconEditar.classList.add('fa-edit')
     iconEditar.href = '#modal__editar'
+    iconEditar.id = 'iconeEditarAluno'
+    iconEditar.addEventListener('click', () => {
+        window.localStorage.setItem('id_aluno_editar', card.id_matricula)
+        console.log(card.id_matricula)
+    })
 
     itemEditar.append (
         iconEditar
