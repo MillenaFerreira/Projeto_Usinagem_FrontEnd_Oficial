@@ -22,9 +22,9 @@ const validarUsuario = async () => {
         if (teste.status == 200 && teste.usuarios[0].nivel == 'Administrador') {
             window.location = '/pages/adm/administrador.html'
         } else if (teste.status == 200 && teste.usuarios[0].nivel == 'Aluno') {
-            window.location = '/pages/aluno/aluno.html'
+            window.location = '/pages/aluno/materia.html'
         } else if (teste.status == 200 && teste.usuarios[0].nivel == 'Professor') {
-            window.location = '/pages/professor/professor.html'
+            window.location = '/pages/professor/cursos.html'
         } else {
             informativoSenhaIncorreta()
         }
