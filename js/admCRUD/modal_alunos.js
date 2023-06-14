@@ -44,12 +44,6 @@ const createRegistroAluno = () => {
 
 const updateRegistroAluno = async () => {
  
-    const botaoEditar = document.getElementById('iconeEditarAluno')
-    botaoEditar.addEventListener('click', async () => {
-        const dadosAntigosAluno = await pegarAlunoPorIdApi(idAlunoUpdate)
-
-        console.log(dadosAntigosAluno)
-    })
 
     document.getElementById('salvarBtn').addEventListener('click', async () => {
 
