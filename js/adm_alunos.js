@@ -52,7 +52,7 @@ const criarListaAlunos = (card) => {
         iconDeletar
     )
 
-
+    
 
     // itemEditar.addEventListener('click', () => {
     //     window.localStorage.setItem('dadosAluno', (card.id).toString())
@@ -78,5 +78,6 @@ const carregarItems = () => {
     container.replaceChildren(...gerarItems)
 
 }
+
 
 carregarItems()
