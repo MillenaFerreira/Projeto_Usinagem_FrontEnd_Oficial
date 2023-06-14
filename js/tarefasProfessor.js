@@ -16,9 +16,6 @@ const criarDadosTarefa = async () => {
 
     tarefasDados.forEach((tarefa) => {
 
-        // const aLinkCard = document.createElement('a')
-        // aLinkCard.classList.add('cardLink')
-
         const buttonCard = document.createElement('button')
         buttonCard.classList.add('buttonCard')
         buttonCard.title = "Clique para mais informações da tarefa."
@@ -37,8 +34,6 @@ const criarDadosTarefa = async () => {
         nomeTarefa.textContent = tarefa.nome_tarefa
 
 
-
-
         const button_editar = document.createElement('button')
         button_editar.classList.add('far')
         button_editar.classList.add('fa-edit')
@@ -54,8 +49,6 @@ const criarDadosTarefa = async () => {
         const descricaoTarefa2 = document.getElementById('descricaoTarefa2')
 
 
-
-
         card.append(imgPeca, spanTipoTarefa, nomeTarefa)
 
         buttonCard.append(card)
@@ -68,6 +61,7 @@ const criarDadosTarefa = async () => {
             event.preventDefault();
 
             localStorage.setItem('tarefaNome', tarefa.nome_tarefa)
+            localStorage.setItem('tarefaId', tarefa.id)
             console.log('clique', tarefa.nome_tarefa);
             window.scrollTo({
                 top: 0,
