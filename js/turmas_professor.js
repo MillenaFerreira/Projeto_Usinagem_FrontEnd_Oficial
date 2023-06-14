@@ -6,8 +6,9 @@ const turma = await getTodasTurmas()
 
 const criarCard = (turma) => {
 
-    const card = document.createElement('div')
+    const card = document.createElement('a')
     card.classList.add('card_turmas')
+  
 
     const nome = document.createElement('h1')
     nome.textContent = turma.nome
@@ -20,7 +21,15 @@ const criarCard = (turma) => {
 
     card.append(nome, semestre, data_conclusao)
 
+    card.addEventListener('click', () => {
+        
+        localStorage.setItem('id_turma', turma.id_turma)
+        card.href = "./disciplinas.html"
+        
+    })
+
     return card
+    
 
 }
 
