@@ -16,14 +16,18 @@ const validarUsuario = async () => {
         const login = inputLogin.value
         const senhaHash = inputSenha.value
         
-        const teste = await pegarUsuarioPerLogin(login, senhaHash)
+        const usuario = await pegarUsuarioPerLogin(login, senhaHash)
+        console.log(await pegarUsuarioPerLogin(login, senhaHash));
 
-      
-        if (teste.status == 200 && teste.usuarios[0].nivel == 'Administrador') {
+        if (usuario.status == 200 && usuario.usuarios[0].nivel == 'Administrador') {
             window.location = '/pages/adm/administrador.html'
-        } else if (teste.status == 200 && teste.usuarios[0].nivel == 'Aluno') {
+            //localStorage.setItem('idProfessor', usuario.professor.id)    
+        } else if (usuario.status == 200 && usuario.usuarios[0].nivel == 'Aluno') {
+            localStorage.setItem('idAluno', usuario.aluno.id)  
             window.location = '/pages/aluno/materia.html'
-        } else if (teste.status == 200 && teste.usuarios[0].nivel == 'Professor') {
+        } else if (usuario.status == 200 && usuario.usuarios[0].nivel == 'Professor') {
+            console.log(usuario + "teste");
+            localStorage.setItem('idProfessor', usuario.professor.id_professor)  
             window.location = '/pages/professor/cursos.html'
         } else {
             informativoSenhaIncorreta()

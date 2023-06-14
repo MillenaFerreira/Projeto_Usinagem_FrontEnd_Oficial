@@ -1,8 +1,11 @@
 'use strict'
 
-import { getTodosCursos } from "../js/apiCurso.js"
+import { getCursoProfessor } from "../js/apiTurmaCursoMateriaProfessor.js"
 
-const cursos = await getTodosCursos()
+const idProfessor = localStorage.getItem('idProfessor')
+console.log(typeof(idProfessor))
+const cursos = await getCursoProfessor(parseInt(idProfessor))
+console.log(typeof(idProfessor))
 
 const criarCard = (curso) => {
 
@@ -55,9 +58,13 @@ const criarCard = (curso) => {
 
 const carregarCardCursos = () => {
     const cards = document.querySelector('.cards_cursos')
-    const cardsJSON = cursos.cursos.map(criarCard)
+    const cardsJSON = cursos.map(criarCard)
 
     cards.replaceChildren(...cardsJSON)
 }
 
 carregarCardCursos()
+
+// if(cursos != undefined){
+//     carregarCardCursos()
+// }
