@@ -1,23 +1,34 @@
 'use strict'
 
-import { getTodasTurmas } from "../js/apiTurma.js"
+import { getTurmaProfessor } from "../js/apiTurmaCursoMateriaProfessor.js"
 
-const turma = await getTodasTurmas()
+const idProfessor = localStorage.getItem('idProfessor')
+var idProf = parseInt(idProfessor)
+console.log(idProf)
+
+const idCurso = localStorage.getItem('idCurso')
+//console.log(idCurso);
+
+
+const turma = await getTurmaProfessor(idProf, idCurso)
+console.log(turma);
+
 
 const criarCard = (turma) => {
+    
 
     const card = document.createElement('a')
     card.classList.add('card_turmas')
   
 
     const nome = document.createElement('h1')
-    nome.textContent = turma.nome
+    nome.textContent = turma.nome_turma
 
     const semestre = document.createElement('span')
-    semestre.textContent = turma.semestre + "º Semestre"
+    semestre.textContent = turma.semestre_turma + "º Semestre"
 
     const data_conclusao = document.createElement('span')
-    data_conclusao.textContent = turma.data_conclusao
+    data_conclusao.textContent = turma.conclusao_turma
 
     card.append(nome, semestre, data_conclusao)
 

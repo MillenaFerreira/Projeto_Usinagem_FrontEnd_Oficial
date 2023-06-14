@@ -26,9 +26,8 @@ const validarUsuario = async () => {
             localStorage.setItem('idAluno', usuario.aluno.id)  
             window.location = '/pages/aluno/materia.html'
         } else if (usuario.status == 200 && usuario.usuarios[0].nivel == 'Professor') {
-            console.log(usuario + "teste");
             localStorage.setItem('idProfessor', usuario.professor.id_professor)  
-            window.location = '/pages/professor/cursos.html'
+            window.location.href = '/pages/professor/cursos.html'
         } else {
             informativoSenhaIncorreta()
         }
