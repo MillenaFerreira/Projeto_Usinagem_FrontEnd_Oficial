@@ -99,6 +99,29 @@
         </form>
 
     </div>
+    <div id="modal__editar__criterio" class="modal__editar__criterio d-none">
+        <form id="editarCriterio">
+            <button id="sairCriterioModalEditar">Sair</button>
+            <div class="titleForm">
+                <h3>Edite um critério</h3>
+            </div>
+            <div class="inputsCriterio">
+                <textarea name="" placeholder="Digite a descrição do critério" id="descricaoCriterio"></textarea>
+                <div class="contCritico cont">
+                    <label for="critico">Marque o checkbox se o critério for do tipo crítico:</label>
+                    <input type="checkbox" name="critico" id="critico">
+                </div>
+               <div class="contNota cont">
+                <label for="observacaoNota">Marque o checkbox se esse critério afeta a nota:</label>
+                <input type="checkbox" name="observacaoNota" id="observacaoNota">
+               </div>
+                
+            </div>
+            <button id="sendCriterioEditado">Send</button>
+        </form>
+
+    </div>
+
 </body>
 
 </html>
