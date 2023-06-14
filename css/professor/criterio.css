@@ -1,0 +1,82 @@
+.modal__adicionar__criterio{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: .9;
+    position: absolute;
+    background-color: #3084B4;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#adcCriterio{
+    background-color:#074A71;
+    width: 70%;
+    color: #ffff;
+    display: flex;
+    height: auto;
+    padding: 4%;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+#sairCriterioModal{
+    width: 10vw;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+
+#sairCriterioModal:hover, #sendCriterio:hover{
+    scale: 0.9;
+}
+
+#sendCriterio{
+    width: 10vw;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+    display: grid;
+    place-self: center;
+}
+
+.inputsCriterio{
+    display: grid;
+    place-self: center;
+    width: 100%;
+}
+
+.inputsCriterio textarea{
+    width: 100%;
+    height: 80px;
+    resize: none;
+}
+
+.cont{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3vh;
+}
+
+.titleForm{
+    font-size: clamp(1.2rem, 0.45rem + 2.4vw, 1.8rem);
+    letter-spacing: 1px;
+}
+.d-flex{
+    display: flex;
+}
+@media (max-width:600px){
+    #sairCriterioModal, #sendCriterio{
+        width: 25vw;
+    }
+
+    .cont{
+        width: 95%;
+    }
+}

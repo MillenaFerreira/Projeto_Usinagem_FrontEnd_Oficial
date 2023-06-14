@@ -20,5 +20,14 @@ export const pesquisarCriterios = async () => {
     fetch(url, options)
   
   }
-  
-  
+
+export const createCriterio = async (idTarefa, materia) => {
+  const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/criterio?idTarefa=${idTarefa}`;
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(materia)
+  };
+}

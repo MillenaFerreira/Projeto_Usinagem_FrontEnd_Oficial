@@ -13,18 +13,13 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/css/aluno/reset.css">
     <link rel="stylesheet" href="/css/aluno/aluno.css">
+    <link rel="stylesheet" href="/css/professor/criterio.css">
+    <!-- <link rel="stylesheet" href="/css/professor/tarefas.css"> -->
 
 
     <!-- COMPONENTS -->
     <script src="/components/header.js" defer type="module"></script>
     <script src="/components/nav.js" defer type="module"></script>
-
-
-    <!-- <script src="/js/horario.js" defer type="module"></script>
-    <script src="/js/tarefas.js" defer type="module"></script>
-    <script src="/js/app.js" defer type="module"></script>
-    <script src="/js/adicionar.js" defer type="module"></script>
-    <script src="/js/relatorio.js" defer type="module"></script> -->
 
     <script src="/js/criteriosProfessor.js" defer type="module"></script>
 
@@ -48,11 +43,36 @@
                 <p class="titleCriterio">Criterios</p>
                 <div class="linha"></div>
             </div>  
+            <div class="adicionar_editar_deletar">
+                <button class="fas fa-plus" id="adicionar"></button>
+            </div>
             <div class="cards_turma_professor">
-        
             </div>  
         </div>
+       
     </main>
+    <div id="modal__adicionar__criterio" class="modal__adicionar__criterio d-none">
+        <form id="adcCriterio">
+            <button id="sairCriterioModal">Sair</button>
+            <div class="titleForm">
+                <h3>Adicione um critério</h3>
+            </div>
+            <div class="inputsCriterio">
+                <textarea name="" placeholder="Digite a descrição do critério" id="descricaoCriterio"></textarea>
+                <div class="contCritico cont">
+                    <label for="critico">Marque o checkbox se o critério for do tipo crítico:</label>
+                    <input type="checkbox" name="critico" id="critico">
+                </div>
+               <div class="contNota cont">
+                <label for="observacaoNota">Marque o checkbox se esse critério afeta a nota:</label>
+                <input type="checkbox" name="observacaoNota" id="observacaoNota">
+               </div>
+                
+            </div>
+            <button id="sendCriterio">Send</button>
+        </form>
+
+    </div>
 </body>
 
 </html>
