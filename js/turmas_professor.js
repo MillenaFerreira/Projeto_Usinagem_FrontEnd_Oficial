@@ -7,19 +7,25 @@ var idProf = parseInt(idProfessor)
 console.log(idProf)
 
 const idCurso = localStorage.getItem('idCurso')
-//console.log(idCurso);
+console.log(idCurso);
 
 
 const turma = await getTurmaProfessor(idProf, idCurso)
-console.log(turma);
 
 
-const criarCard = (turma) => {
-    
+const criarCard = (turma) => { 
+    console.log(turma);
+       
 
     const card = document.createElement('a')
     card.classList.add('card_turmas')
-  
+    
+    card.addEventListener('click', () => {
+        
+        localStorage.setItem('id_turma', turma.id_turma)
+        card.href = "./disciplinas.html"
+        
+    })
 
     const nome = document.createElement('h1')
     nome.textContent = turma.nome_turma
@@ -32,12 +38,7 @@ const criarCard = (turma) => {
 
     card.append(nome, semestre, data_conclusao)
 
-    card.addEventListener('click', () => {
-        
-        localStorage.setItem('id_turma', turma.id_turma)
-        card.href = "./disciplinas.html"
-        
-    })
+    
 
     return card
     
