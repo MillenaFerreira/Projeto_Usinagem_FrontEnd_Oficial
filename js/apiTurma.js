@@ -17,3 +17,26 @@ export const getTurmasByIDCurso = async () => {
     return data.turmas
 
 }
+
+export const createTurma = async (turma) => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/turma`;
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(turma)
+    };
+  
+    fetch(url, options)
+    .then(response => {
+      if (response.ok) {
+        location.reload();
+      } else {
+        console.log('Erro ao criar a turma.');
+      }
+    })
+    .catch(error => {
+      console.log('Ocorreu um erro na requisição:', error);
+    });
+  }

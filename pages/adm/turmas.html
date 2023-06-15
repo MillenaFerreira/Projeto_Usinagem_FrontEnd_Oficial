@@ -23,7 +23,7 @@
     <title>TURMAS</title>
 
     <script src="../../js/adm_turmas.js" defer type="module"></script>
-    <!-- <script src="../../js/admCRUD/modal_materia.js" defer type="module"></script> -->
+    <script src="../../js/admCRUD/modal_turmas.js" defer type="module"></script>
 </head>
 
 <body>
@@ -91,14 +91,14 @@
                         <label for="">Nome:</label>
                         <input type="text" name="nome" id="myInputNome" maxlength="100" style="width: 100%;" required>
                     </div>
-                    <div class="sigla__carga--horaria">
-                        <div class="input__sigla">
+                    <div class="data__inicio--data__conclusao">
+                        <div class="input__data--inicio">
                             <label for="">Data Início:</label>
-                            <input type="text" name="sigla" id="myInputSigla" maxlength="5" required>
+                            <input type="date" name="data_inicio" id="myInputDataInicio" required>
                         </div>
-                        <div class="input__carga--horaria">
+                        <div class="input__data--conclusao">
                             <label for="">Data Conclusão:</label>
-                            <input type="number" name="carga_horaria" id="myInputCargaHoraria" min="0" required>
+                            <input type="date" name="data_conclusao" id="myInputDataConclusao" required>
                         </div>
                     </div>
                     <div class="input__descricao">
@@ -108,26 +108,45 @@
                     <div class="input__radios">
                         <label for="">Semestre:</label>
                         <div class="radio">
-                            <input name="mybuttons" type="radio" value="1" /> 
+                            <input id="semestre1" name="mybuttons" type="radio" value="1" /> 
                             <span>1</span>
                         </div>
                         <div class="radio">
-                            <input name="mybuttons" type="radio" value="2" /> 
+                            <input id="semestre2" name="mybuttons" type="radio" value="2" /> 
                             <span>2</span>
                         </div>
                         <div class="radio">
-                            <input name="mybuttons" type="radio" value="3" /> 
+                            <input id="semestre3" name="mybuttons" type="radio" value="3" /> 
                             <span>3</span>
                         </div>
                         <div class="radio">
-                            <input name="mybuttons" type="radio" value="4" /> 
+                            <input id="semestre4" name="mybuttons" type="radio" value="4" /> 
                             <span>4</span>
                         </div>
                         <div class="radio">
-                            <input name="mybuttons" type="radio" value="5" /> 
+                            <input id="semestre5" name="mybuttons" type="radio" value="5" /> 
                             <span>5</span>
                         </div>
-                        
+                        <div class="dropdownCurso">
+                            <div class="adicionar--curso">
+                                <label for="materias_cursos">Esta turma é de qual curso?</label>
+                            </div>
+                            <!-- <select id="materias_cursos" name="cursos">
+                                <option value="desenvolvimentoDeSistemas">desenvolvimento de sistemas</option>
+                                <option value="redesDeComputadores">redes de computadores</option>
+                                <option value="eletroeletronica">eletroeletronica</option>
+                            </select> -->
+                            <div class="content--list">
+                                <ul class="list">
+                                  <!-- <li class="list__item">
+                                    <label class="label--checkbox">
+                                        <input type="checkbox" class="checkbox" checked>
+                                          Desenvolvimento de Sistemas
+                                    </label>
+                                  </li> -->
+                                </ul>
+                            </div>
+                        </div>
                         <!-- <input name="mybuttons" type="radio" value="2" /> 2
                         <input name="mybuttons" type="radio" value="3" /> 3
                         <input name="mybuttons" type="radio" value="4" /> 4
