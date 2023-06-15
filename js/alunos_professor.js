@@ -3,17 +3,18 @@
 import { getAlunosProfessor } from "../js/apiTurmaCursoMateriaProfessor.js"
 
 var idTurma = localStorage.getItem('id_turma')
-console.log(idTurma);
-
 
 const alunos = await getAlunosProfessor(idTurma)
-
-console.log(alunos);
 
 
 const criarTable = (aluno) => {
     const tr_principal = document.createElement('tr')
     tr_principal.classList.add('hover')
+
+    console.log(aluno)
+    tr_principal.addEventListener('click', () => {
+        window.location = `./aluno.html`
+    })
 
     const td_nome = document.createElement('td')
     td_nome.classList.add('tabela')
