@@ -63,7 +63,8 @@ const criarTable = (turmas) => {
     iconDeletar.classList.add('fa-trash')
     iconDeletar.href = "#modal__deletar"
     iconDeletar.addEventListener('click', function () {
-        localStorage.setItem('id2', turmas.id)
+        localStorage.setItem('id', turmas.id_turma)
+        //console.log(turmas.id_turma);
     })
 
 

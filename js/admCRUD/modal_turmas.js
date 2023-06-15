@@ -2,7 +2,7 @@
 
 import { createTurma, updateTurma, deleteTurma } from '../apiTurma.js'
 
-const idTurma = localStorage.getItem('id2')
+const idTurma = localStorage.getItem('id')
 const idCursoParaTurma = localStorage.getItem('idCursoParaTurma')
 console.log(parseInt(idCursoParaTurma));
 
@@ -45,7 +45,7 @@ const createCardTurma = () => {
 
             console.log(turma);
             console.log(createTurma(turma));
-            //createTurma(turma)
+            createTurma(turma)
 
         } else {
             console.log('campo não preeenchido');
