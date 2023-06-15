@@ -1,8 +1,11 @@
 'use strict'
 
 import { getTodasTurmas } from "../js/apiTurma.js"
+import { getTodosCursos } from "../js/apiCurso.js"
 
 const turmas = await getTodasTurmas()
+const curso = await getTodosCursos()
+const cursoEspecifico = curso.cursos
 
 
 const criarTable = (turmas) => {
@@ -77,3 +80,38 @@ export const carregarTableTurmas = () => {
 }
 
 carregarTableTurmas()
+
+const criarListaCursosNoSelect = async () => {
+
+    cursoEspecifico.forEach((nomeCurso) => {
+
+
+        const adicionarCurso = document.querySelector('.list')
+
+        const listElement = document.createElement('li')
+        listElement.classList.add('list__item')
+
+        const labelElement = document.createElement('label')
+        labelElement.classList.add('label--checkbox')
+        labelElement.textContent = nomeCurso.nome
+
+        const inputElement = document.createElement('input')
+        inputElement.type = 'checkbox'
+        inputElement.id = nomeCurso.id
+        inputElement.classList.add('checkbox')
+
+        inputElement.addEventListener('click', () => {
+            if(inputElement.checked){
+                console.log(inputElement.id);
+            }
+        })
+
+        adicionarCurso.append(listElement)
+        listElement.append(inputElement, labelElement)
+
+
+    });
+
+}
+
+criarListaCursosNoSelect()
