@@ -278,7 +278,7 @@ main {
 }
 
 /* RADIO */
-.input__radios {
+.input__radios  {
     display: flex;
     justify-content: space-between;
     padding-right: 40%;
