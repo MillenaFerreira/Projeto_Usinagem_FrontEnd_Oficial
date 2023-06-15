@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="../../../components/header.js"></script>
+
+    <link rel="stylesheet" href="../../../css/adm/editar_turmas.css">
+    <link rel="stylesheet" href="../../../css/reset.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jaldi&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap"
+        rel="stylesheet">
+
+    <title>ADMINISTRADOR - Editar Professor</title>
+</head>
+
+<body>
+    <header-padrao color_button='#DA251C' color_top='#3084B4' text_button="VOLTAR"></header-padrao>
+
+    <section class="containerTitulo containerTitulo--displayFlex">
+        <a class="fa-solid fa-bars containerTitulo--icon" href="#menu--bar"></a>
+        <h1 class="containerTitulo__tituloPagina">
+            ADMINISTRAÇÃO
+        </h1>
+
+    </section>
+
+    <main>
+        <div class="menuLateral menuLateral--displayFlex  menuLateral--anchor" id="menu--bar">
+            <ul class="menuLateral--menuBar">
+                <a href="#" class="menuLateral--close">&times;</a>
+                <li>
+                    <a class="menuLateral__anchor" href="administrador.html">
+                        PROFESSORES
+                    </a>
+                </li>
+                <li>
+                    <a class="menuLateral__anchor" href="cursos.html">
+                        CURSOS
+                    </a>
+                </li>
+                <li>
+                    <a class="menuLateral__anchor" href="alunos.html">
+                        ALUNOS
+                    </a>
+                </li>
+                <li>
+                    <a class="menuLateral__anchor" href="materias.html">
+                        MATÉRIAS
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="containerTurma">
+            <section class="containerTurmas__menuSuperior">
+                <h2 class="menuSuperior__tituloProfessor">
+                    EDIÇÃO DE TURMA
+                </h2>
+            </section>
+
+            <section class="containerTurmas__tabelaFormulario">
+                <form class="tabelaFormulario">
+
+                    <div class="input__nome input">
+
+                        <label for="myInputNome">NOME*</label>
+                        <input type="text" name="nome" id="myInputNome" maxlength="75" required>
+
+                    </div>
+                    <div class="input__descricao input">
+
+                        <label for="myInputDescricao">DESCRIÇÃO</label>
+                        <textarea tabindex="5" id="myInputDescricao" required=""></textarea>
+
+                    </div>
+
+                    <div class="input__data_inicio input">
+
+                        <label for="myInputDataInicio">DATA INÍCIO</label>
+                        <input type="date" name="data_inicio" id="myInputDataInicio" maxlength="75" required>
+
+                    </div>
+
+                    <div class="input__data_conclusao input">
+
+                        <label for="myInputDataConclusao">DATA CONCLUSÃO</label>
+                        <input type="date" name="data_conclusao" id="myInputDataConclusao" maxlength="75" required>
+
+                    </div>
+
+                    <div class="input__semestre input">
+
+                        <label for="myInputSemestre">SEMESTRE</label>
+                        <input type="text" name="semestre" id="myInputSemestre" maxlength="100" required>
+
+                    </div>
+
+                </form>
+            </section>
+
+            <section class="containerTurmas__listasConteudo">
+                <div class="listasConteudo__listaProfessor listasConteudo__listaProfessor--displayFlex">
+
+                    <span class="listaProfessor__titulo titulo">
+                        PROFESSORES
+                    </span>
+
+                    <div class="listaProfessor__cardProfessor">
+
+                        <a class="cardProfessor__linkProfessor cardProfessor__linkProfessor--displayFlex" href="#">
+
+                            <span class="linkTaferas__tituloTarefa">Professor 1</span>
+
+                        </a>
+
+                        <a class="cardProfessor__linkProfessor cardProfessor__linkProfessor--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Professor 1</span>
+
+                        </a>
+
+                        <a class="cardProfessor__linkProfessor cardProfessor__linkProfessor--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Professor 1</span>
+
+                        </a>
+
+                        <a class="cardProfessor__linkProfessor cardProfessor__linkProfessor--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Professor 1</span>
+
+                        </a>
+
+                        <a class="cardProfessor__linkProfessor cardProfessor__linkProfessor--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Professor 1</span>
+
+                        </a>
+
+                        <a class="cardProfessor__linkProfessor cardProfessor__linkProfessor--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Professor 1</span>
+
+                        </a>
+
+                        <a class="cardProfessor__linkProfessor cardProfessor__linkProfessor--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Professor 1</span>
+
+                        </a>
+
+                        <a class="cardProfessor__linkProfessor cardProfessor__linkProfessor--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Professor 1</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="listasConteudo__listaAluno listasConteudo__listaAluno--displayFlex">
+
+                    <span class="listaAluno__titulo titulo">
+                        ALUNOS
+                    </span>
+
+                    <div class="listaAluno__cardAluno">
+
+                        <a class="cardAluno__linkAluno cardAluno__linkAluno--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Aluno 1</span>
+
+                        </a>
+
+                        <a class="cardAluno__linkAluno cardAluno__linkAluno--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Aluno 1</span>
+
+                        </a>
+
+                        <a class="cardAluno__linkAluno cardAluno__linkAluno--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Aluno 1</span>
+
+                        </a>
+
+                        <a class="cardAluno__linkAluno cardAluno__linkAluno--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Aluno 1</span>
+
+                        </a>
+
+                        <a class="cardAluno__linkAluno cardAluno__linkAluno--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Aluno 1</span>
+
+                        </a>
+
+                        <a class="cardAluno__linkAluno cardAluno__linkAluno--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Aluno 1</span>
+
+                        </a>
+
+                        <a class="cardAluno__linkAluno cardAluno__linkAluno--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Aluno 1</span>
+
+                        </a>
+
+                        <a class="cardAluno__linkAluno cardAluno__linkAluno--displayFlex" href="#">
+
+                             
+                            <span class="linkTaferas__tituloTarefa">Aluno 1</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>
