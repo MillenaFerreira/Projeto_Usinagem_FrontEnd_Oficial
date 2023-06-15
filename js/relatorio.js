@@ -3,13 +3,19 @@
 import { pesquisarCriterios, pesquisarCriteriosPeloIdTarefa } from './apiCriterios.js'
 import { updateCriterio } from './apiCriterios.js'
 
+const idTarefa = localStorage.getItem('idTarefaParaAluno')
+const idTarefaFormat = parseInt(idTarefa)
+console.log(idTarefaFormat);
+
 const criterioForEach = async () => {
 
     const criterios = await pesquisarCriterios();
+    const pesquisarCriteriosId = await pesquisarCriteriosPeloIdTarefa(idTarefaFormat);
+    console.log(pesquisarCriteriosId);
 
     const modal_mensagem = document.querySelector('.modal_mensagem')
 
-    const registroCriterios = criterios;
+    const registroCriterios = pesquisarCriteriosId;
    
 
     registroCriterios.forEach((criterio) => {

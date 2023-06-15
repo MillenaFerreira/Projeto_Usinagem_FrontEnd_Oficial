@@ -36,6 +36,12 @@ const criarDadosTarefa = async ()  => {
        
 
         containerTarefa.append(card)
+
+        aLinkCard.addEventListener('click', (event) => {
+            //event.preventDefault()
+            localStorage.setItem('idTarefaParaAluno', tarefa.id)
+            aLinkCard.href = "/pages/aluno/relatorio.html"
+        })
         
     })
  
