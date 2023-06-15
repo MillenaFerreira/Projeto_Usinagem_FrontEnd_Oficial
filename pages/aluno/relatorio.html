@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/aluno/aluno.css">
     <link rel="stylesheet" href="/css/aluno/criterio.css">
+    <link rel="stylesheet" href="/css/professor/desejadoProfessor.css">
+    <link rel="stylesheet" href="/css/professor/tarefas.css">
+    <link rel="stylesheet" href="/css/professor/criterio.css">
+    <link rel="stylesheet" href="/css/aluno/desejado.css">
 
 
     <!-- COMPONENTS -->
@@ -70,33 +74,18 @@
             </div>
         </div>
     </main>
-    <div class="modal_mensagem  font-family-Montserrat d-none">
-        <button id="sairModalMensagem">Sair</button>
+    <div id="modal__adicionar__criterio" class="modal__adicionar__tarefa d-none">
 
-        <table>
-            <tr>
-                <th>RESULTADOS DESEJADOS</th>
-                <th>MARGENS DE ERRO</th>
-                <th>RESULTADO OBTIDO</th>
-            </tr>
-            <tr>
-                <td>Resultado 1</td>
-                <td>Margem de Erro 1</td>
-                <td><input type="number"></td>
-            </tr>
-            <tr>
-                <td>Resultado 2</td>
-                <td>Margem de Erro 2</td>
-                <td><input type="number"></td>
-            </tr>
-            <tr>
-                <td>Resultado 3</td>
-                <td>Margem de Erro 3</td>
-                <td><input type="number"></td>
-            </tr>
-           
-        </table>
-    </div>
+        <form id="adcTarefa">
+            <button id="sair">Sair</button>
+            <div class="titleForm d-flex font-family-Montserrat">
+                <h3>Adicione informações obtidas nesse critério</h3>
+            </div>
+            <div class="inputsTarefa d-flex flex-column">
+                <input type="number" placeholder="Digite o resultado obtido" id="desejado" class="obtido">
+                </div>
+                <button id="sendTarefa">Send</button>
+            </div>
 </body>
 
 </html>

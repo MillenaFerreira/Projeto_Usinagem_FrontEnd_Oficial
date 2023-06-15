@@ -13,7 +13,7 @@ const criterioForEach = async () => {
     const pesquisarCriteriosId = await pesquisarCriteriosPeloIdTarefa(idTarefaFormat);
     console.log(pesquisarCriteriosId);
 
-    const modal_mensagem = document.querySelector('.modal_mensagem')
+    const modal_mensagem = document.getElementById('modal__adicionar__criterio')
 
     const registroCriterios = pesquisarCriteriosId;
    
@@ -98,7 +98,7 @@ const criterioForEach = async () => {
         })
 
 
-        const sairModalMensagem = document.getElementById('sairModalMensagem')
+        const sairModalMensagem = document.getElementById('sair')
         sairModalMensagem.addEventListener('click', (event) => {
             event.preventDefault();
             modal_mensagem.classList.remove('d-grid')
