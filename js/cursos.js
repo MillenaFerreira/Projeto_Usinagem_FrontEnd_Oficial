@@ -15,6 +15,8 @@ const criarCard = (curso) => {
     card.addEventListener('click', () => {
         
         localStorage.setItem('idCurso', curso.curso.id_curso)
+        
+        
         window.location.href = '../../pages/professor/turmas.html'
     })
 

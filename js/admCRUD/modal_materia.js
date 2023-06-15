@@ -2,7 +2,7 @@
 
 import { createMateria} from "../apiMateria.js";
 
-const idCurso = localStorage.getItem('id')
+const idCurso = localStorage.getItem('idCurso')
 console.log('logo' + idCurso);
 
 
@@ -37,7 +37,7 @@ const createCardMateria = () => {
                 "carga_horaria": cargaHoraria,
                 "sigla": `${sigla}`,
                 "descricao": `${descricao}`,
-                "id_curso": 1
+                "id_curso": idCurso
                 
             };
 

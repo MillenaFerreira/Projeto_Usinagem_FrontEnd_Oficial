@@ -3,6 +3,9 @@
 import { createTurma } from '../apiTurma.js'
 
 const idTurma = localStorage.getItem('id')
+const idCursoParaTurma = localStorage.getItem('idCursoParaTurma')
+console.log('fcf'+parseInt(idCursoParaTurma));
+
 console.log('logo' + idTurma);
 
 const createCardTurma = () => {
@@ -37,12 +40,12 @@ const createCardTurma = () => {
                 "data_conclusao": `${dataConclusao}`,
                 "descricao": `${descricao}`,
                 "semestre": semestreInput,
-                "id_curso": 1
+                "id_curso": parseInt(idCursoParaTurma)
             };
             
             console.log(turma);
             console.log(createTurma(turma));
-            createTurma(turma)
+            //createTurma(turma)
 
         } else {
             console.log('campo não preeenchido');

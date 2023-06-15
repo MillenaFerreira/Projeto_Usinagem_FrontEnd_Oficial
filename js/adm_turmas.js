@@ -102,7 +102,7 @@ const criarListaCursosNoSelect = async () => {
 
         inputElement.addEventListener('click', () => {
             if(inputElement.checked){
-                console.log(inputElement.id);
+                localStorage.setItem('idCursoParaTurma', inputElement.id)
             }
         })
 
