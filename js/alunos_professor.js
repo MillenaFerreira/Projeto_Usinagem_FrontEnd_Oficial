@@ -3,12 +3,8 @@
 import { getAlunosProfessor } from "../js/apiTurmaCursoMateriaProfessor.js"
 
 var idTurma = localStorage.getItem('id_turma')
-console.log(idTurma);
-
 
 const alunos = await getAlunosProfessor(idTurma)
-
-console.log(alunos);
 
 
 const criarTable = (aluno) => {
@@ -18,6 +14,11 @@ const criarTable = (aluno) => {
         localStorage.setItem('idTurmaAluno', aluno.id_turma)
         localStorage.setItem('idAluno', aluno.id_matricula)
         window.location.href = '../../pages/professor/aluno.html'
+    })
+
+    console.log(aluno)
+    tr_principal.addEventListener('click', () => {
+        window.location = `./aluno.html`
     })
 
     const td_nome = document.createElement('td')
