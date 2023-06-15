@@ -1,0 +1,164 @@
+* {
+    font-family: 'Montserrat';
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #EEEEEE;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+<<<<<<< HEAD
+.criarTarefa{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+.linha {
+    background-color: #3084B4;
+    width: 100%;
+    height: 2px;
+=======
+/**/
+
+.menuSuperior {
+    height: 10vh;
+    background-color: #3084B4;
+}
+
+/**/
+
+.containerDadosAluno {
+    height: 100%;
+>>>>>>> 9bd844d8b8ab278383e8f2ec080979aa765ccfe4
+}
+
+.containerDadosAluno--displayFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+/**/
+
+.containerDadosAluno__nomeAluno {
+    width: 150%;
+}
+
+.containerDadosAluno__emailAluno {
+    width: 150%;
+}
+
+.containerDadosAluno__dataNascimentoAluno {
+    width: 150%;
+}
+
+.containerDadosAluno__matriculaAluno {
+    width: 150%;
+}
+
+.containerDadosAluno__nomeAluno--displayFlex {
+    display: flex;
+    flex-direction: column; 
+}
+
+.containerDadosAluno__emailAluno--displayFlex {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerDadosAluno__DataNascimentoAluno--displayFlex {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerDadosAluno__MatriculaAluno--displayFlex {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerDadosAluno__botaoNotasAluno--displayFlex {
+    display: flex;
+    flex-direction: column;
+}
+/**/
+
+.labelNomeAluno {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.myInputNomeAlunoProfessor {
+    background-color: #EEEEEE;
+    border: transparent;
+    border-bottom: 2px solid #074A71;
+}
+
+.labelEmailAluno {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.myInputEmailAlunoProfessor {
+    background-color: #EEEEEE;
+    border: transparent;
+    border-bottom: 2px solid #074A71;
+}
+
+.labelDataNascimentoAluno {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.myInputDataNascimentoAlunoProfessor {
+    background-color: #EEEEEE;
+    border: transparent;
+    border-bottom: 2px solid #074A71;
+}
+
+.labelMatriculaAluno {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.myInputMatriculaAlunoProfessor {
+    background-color: #EEEEEE;
+    border: transparent;
+    border-bottom: 2px solid #074A71;
+}
+
+/**/
+
+.containerTarefasAluno {
+   
+}
+
+.containerTarefasAluno__filtroTarefas {
+
+}
+
+.containerTarefasAluno__listaTarefas {
+
+}
+
+.listaTarefas__cardTarefas {
+
+}
+
+.cardTarefas__imagemTarefa {
+
+}
