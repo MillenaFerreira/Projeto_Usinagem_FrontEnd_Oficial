@@ -1,7 +1,7 @@
 'use strict'
 
 import { formatarDataNascimento } from "../adm_alunos.js";
-import { createAlunoApi, updateAlunoApi, updateStatusAlunoPorIdApi, pegarAlunoPorIdApi} from "../apiAdmAlunos.js";
+import { createAlunoApi, updateAlunoApi, updateStatusAlunoPorIdApi, pegarAlunoPorIdApi, updateStatusAtivoAlunoPorIdApi} from "../apiAdmAlunos.js";
 
 const createRegistroAluno = () => {
     
@@ -106,6 +106,33 @@ const updateStatusAlunoPorId = async () => {
 
     })
 }
+
+const updateStatusAtivoAlunoPorId = async () => {
+    document.getElementById('Reativar').addEventListener('click', async () => {
+        const idAluno = window.localStorage.getItem('id_aluno_reativar')
+
+
+        const dadosAluno = await pegarAlunoPorIdApi(idAluno)
+        const aluno = dadosAluno.aluno[0]
+
+        const data = formatarDataNascimento(aluno.data_nascimento)
+
+        const dadosAtualizados = {
+            "id" : idAluno,
+            "numero_matricula": aluno.numero_matricula,
+            "nome_aluno": `${aluno.nome_aluno}`,
+            "data_nascimento": `${data}`,
+            "email_aluno": `${aluno.email_pessoal}`,
+            "email_usuario": `${aluno.email_institucional}`,
+            "senha": aluno.senha
+        }
+
+        updateStatusAtivoAlunoPorIdApi(dadosAtualizados)
+
+    })
+}
+
+updateStatusAtivoAlunoPorId()
 
 updateStatusAlunoPorId()
 
