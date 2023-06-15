@@ -22,7 +22,7 @@ export const createAlunoApi = async (aluno) => {
     fetch(url, options)
     .then(response => {
         if(response.ok) {
-            Location.reload();
+            location.reload();
         } else {
             console.log('Erro ao criar o aluno')
         }
@@ -46,7 +46,7 @@ export const updateAlunoApi = async (aluno) => {
     fetch(url, options)
     .then(response => {
         if (response.ok) {
-            Location.reload()
+            location.reload();
         } else {
             console.log('Erro ao criar um aluno.')
         }
@@ -65,7 +65,7 @@ export const deleteAlunoApi = async (id) => {
     fetch(url, options)
     .then(response => {
         if (response.ok) {
-            Location.reload()
+            location.reload();
         } else {
             console.log('Erro ao deletar o aluno.')
         }
@@ -73,4 +73,12 @@ export const deleteAlunoApi = async (id) => {
     .catch (error => {
         console.log('Erro na requisição: ', error)
     })
+}
+
+export const pegarAlunoPorIdApi = async (id) => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/aluno/${id}`
+    const response = await fetch(url)
+    const data = await response.json()
+
+    return data
 }
