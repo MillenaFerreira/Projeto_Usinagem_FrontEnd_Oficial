@@ -1,0 +1,672 @@
+* {
+    font-family: 'Montserrat';
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #EEEEEE;
+}
+
+main {
+    height: 100%;
+    display: flex;
+}
+
+.containerTitulo {
+    width: 100%;
+    height: 5vh;
+    background-color: #3084B4;
+}
+
+.containerTitulo--icon {
+    color: #ffff;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.containerTitulo--displayFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2vh;
+}
+
+.containerTitulo--displayFlex a {
+    display: none;
+}
+
+.containerTitulo__tituloPagina {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menuLateral {
+    height: 100%;
+    width: 20vw;
+    background-color: #3084B4;
+}
+
+.menuLateral--displayFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 60px;
+    padding-top: 50px;
+}
+
+.menuLateral--menuBar {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.menuLateral--close {
+    display: none;
+}
+
+.menuLateral__anchor {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.menuLateral__anchor::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.30s;
+}
+
+.menuLateral__anchor::after {
+    bottom: -3px;
+    transform-origin: left;
+}
+
+.menuLateral__anchor:hover::after {
+    transform: scaleX(1);
+}
+
+.containerCursos {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.containerCursos__menuSuperior {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.menuSuperior__tituloCursos {
+    color: #3084B4;
+}
+
+.menuSuperior__inputCursos {
+    height: 100%;
+    max-height: 4.5vh;
+    width: 100%;
+    max-width: 20vw;
+    font-size: 1.1rem;
+    transition: ease-in-out 100ms;
+}
+
+.menuSuperior__inputCursos--format {
+    border: 1px solid #3084B4;
+    background-color: #E0E0E0;
+    border-radius: 10px;
+}
+
+.menuSuperior__inputCursos:hover {
+    border: 2px solid #286c94;
+}
+
+.menuSuperior__containerLinks {
+    display: flex;
+}
+
+.containerLinks__listaLinks {
+    width: 12vw;
+    height: 10vh;
+}
+
+.containerLinks__listaLinks--displayFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+}
+
+.containerLinks__listaLinks a {
+    justify-content: center;
+    align-items: center;
+}
+
+.containerLinks__listaLinks a {
+    display: grid;
+    place-items: center;
+    background-color: #3084B4;
+    width: 50px;
+    height: 50px;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: ease-in-out 200ms;
+}
+
+.containerLinks__listaLinks a:hover {
+    background-color: #286c94;
+    transform: scale(1.1);
+}
+
+.icone {
+    width: 35px;
+    height: 35px;
+}
+
+.icone:hover {
+    transform: scale(1.1);
+}
+
+.containerCursos__menuConteudo {
+    height: 80%;
+    width: 90%;
+    background-color: #E0E0E0;
+    border: 1px solid #074A71;
+    border-radius: 10px;
+}
+
+.containerCursos__menuConteudo--displayFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menuConteudo__titulosConteudo {
+    height: 10vh;
+}
+
+.menuConteudo__titulosConteudo--displayFlex {
+    display: flex;
+    align-items: center;
+}
+
+.containerCursos__containerTabela {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    vertical-align: top;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: auto;
+}
+
+.titulosConteudo__turmas {
+    color: #074A71;
+    font-weight: 600;
+    width: 35%;
+    padding: 10px;
+    text-align: center;
+}
+
+.titulosConteudo__data--inicio {
+    color: #074A71;
+    font-weight: 600;
+    width: 19%;
+    padding: 10px;
+    text-align: center;
+}
+
+.titulosConteudo__data--conclusao {
+    color: #074A71;
+    font-weight: 600;
+    width: 19%;
+    padding: 10px;
+    text-align: center;
+}
+
+.titulosConteudo__semestre {
+    color: #074A71;
+    font-weight: 600;
+    width: 42%;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.dataTurma {
+    width: 30%;
+    text-align: center;
+}
+
+.dataInicio {
+    width: 20%;
+    text-align: center;
+}
+
+.dataConclusao {
+    width: 20%;
+    text-align: center;
+}
+
+.dataSemestre {
+    width: 40%;
+    text-align: center;
+}
+
+/* RADIO */
+.input__radios {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 40%;
+}
+
+tr {
+    width: 100%;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: #bbbbbb;
+}
+
+td {
+    padding: 10px;
+}
+
+
+
+
+/* MODEL ADICIONAR */
+.modal__adicionar {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, .7);
+    transition: all .4s;
+    line-height: 2.5rem;
+}
+
+.nome__modal {
+    color: #074A71;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.modal__adicionar:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal__adicionar--content {
+    font-family: 'Montserrat';
+    border-radius: 4px;
+    position: relative;
+    max-width: 90%;
+    background: #fff;
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal__adicionar--footer {
+    text-align: right;
+}
+
+#salvarBtn {
+    font-size: 1.3rem;
+    padding: 10px;
+    background-color: #3084B4;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal__adicionar--close {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+.sigla__carga--horaria {
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.input__nome {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input__sigla {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.input__carga--horaria {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.input__descricao {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#myInputDescricao {
+    height: 100px;
+    resize: none;
+}
+
+#myInputDescricaoValor {
+    height: 100px;
+    resize: none;
+}
+
+/* MODEL EDITAR */
+.modal__editar {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, .7);
+    transition: all .4s;
+    line-height: 2.5rem;
+}
+
+.modal__editar:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal__editar--content {
+    font-family: 'Montserrat';
+    border-radius: 4px;
+    position: relative;
+    max-width: 90%;
+    background: #fff;
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal__editar--footer {
+    text-align: right;
+}
+
+.modal__editar--close {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+#editar {
+    font-size: 1.3rem;
+    padding: 10px;
+    background-color: #3084B4;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input__nome--valor {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input__sigla--valor {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.input__carga--horaria--valor {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.input__descricao--valor {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* MODEL DELETAR */
+.modal__deletar {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, .7);
+    transition: all .4s;
+    line-height: 2.5rem;
+}
+
+.nome__modal--deletar {
+    color: #074A71;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.modal__deletar:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal__deletar--content {
+    font-family: 'Montserrat';
+    border-radius: 4px;
+    position: relative;
+    max-width: 90%;
+    background: #fff;
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.modal__deletar--footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.modal__deletar--footer a {
+    font-size: 1.3rem;
+    padding: 10px 25px;
+    background-color: #3084B4;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal__deletar--close {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+
+/* DROPDOWN */
+.adicionar--curso {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+}
+
+@media (max-width: 999px) {
+
+    .containerTitulo--displayFlex a {
+        display: block;
+    }
+
+    .menuLateral {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all .4s;
+        width: 50%;
+    }
+
+    .menuLateral:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .menuLateral--close {
+        display: block;
+        color: #ffff;
+        font-size: 3rem;
+    }
+
+    .containerCursos__menuSuperior {
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 20px;
+    }
+
+    .menuSuperior__inputCursos {
+        max-width: 40vw;
+        height: 100px;
+    }
+
+    .containerLinks__listaLinks {
+        padding-bottom: 20px;
+    }
+
+}
+
+@media (max-width: 640px) {
+    .containerTitulo {
+        height: 10vh;
+    }
+
+    .menuSuperior__inputCursos {
+        max-width: 60vw;
+    }
+
+    .menuConteudo__titulosConteudo--displayFlex {
+        font-size: 0.7rem;
+    }
+
+    .tabelaItemsTurmas {
+        font-size: 0.9rem;
+    }
+
+    .dataCargaHoraria i {
+        display: none;
+    }
+
+    /* MODAL ADICIONAR */
+    .modal__adicionar--content {
+        padding: 1em 1em;
+        gap: 15px;
+        padding-top: 50px;
+    }
+
+    #myInputSigla {
+        width: 100%;
+    }
+
+    #myInputCargaHoraria {
+        width: 100%;
+    }
+
+    .input__sigla {
+        flex-direction: column;
+    }
+
+    .input__carga--horaria {
+        flex-direction: column;
+    }
+
+    #myInputSiglaValor {
+        width: 100%;
+    }
+
+    /* RADIO */
+    .input__radios {
+        padding-right: 0%;
+    }
+
+}
