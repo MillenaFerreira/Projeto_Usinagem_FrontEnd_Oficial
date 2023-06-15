@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../../css/reset.css">
-    <link rel="stylesheet" href="../../css/adm/administrador_materia.css">
+    <link rel="stylesheet" href="../../css/adm/administrador_turmas.css">
     <link rel="stylesheet" href="/css/adm/checkboxadm.css">
 
     <script src="../../components/header.js"></script>
@@ -20,10 +20,10 @@
         href="https://fonts.googleapis.com/css2?family=Jaldi&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&display=swap"
         rel="stylesheet">
 
-    <title>MATERIAS</title>
+    <title>TURMAS</title>
 
-    <script src="../../js/adm_materia.js" defer type="module"></script>
-    <script src="../../js/admCRUD/modal_materia.js" defer type="module"></script>
+    <script src="../../js/adm_turmas.js" defer type="module"></script>
+    <!-- <script src="../../js/admCRUD/modal_materia.js" defer type="module"></script> -->
 </head>
 
 <body>
@@ -32,7 +32,7 @@
     <section class="containerTitulo containerTitulo--displayFlex">
         <a class="fa-solid fa-bars containerTitulo--icon" href="#menu--bar"></a>
         <h1 class="containerTitulo__tituloPagina">
-            MATÉRIAS
+            TURMAS
         </h1>
 
     </section>
@@ -72,10 +72,10 @@
         <div class="containerCursos">
             <section class="containerCursos__menuSuperior">
                 <h2 class="menuSuperior__tituloCursos">
-                    GERENCIAR MATÉRIAS
+                    GERENCIAR TURMAS
                 </h2>
                 <input type="text" class="menuSuperior__inputCursos menuSuperior__inputCursos--format"
-                    id="pesquisaCursos" placeholder=" Pesquise por uma Matéria...">
+                    id="pesquisaCursos" placeholder=" Pesquise por uma Turma...">
                 <div class="menuSuperior__containerLinks">
                     <ul class="containerLinks__listaLinks containerLinks__listaLinks--displayFlex">
                         <a class="fas fa-plus" href="#modal__adicionar"></a>
@@ -86,18 +86,18 @@
             <!-- MODAL ADICIONAR CURSOS -->
             <div id="modal__adicionar" class="modal__adicionar">
                 <form class="modal__adicionar--content" id="modal__adicionar--content">
-                    <p class="nome__modal">Adicionar um Matéria</p>
+                    <p class="nome__modal">Adicionar uma Turma</p>
                     <div class="input__nome">
-                        <label for="">Nome :</label>
+                        <label for="">Nome:</label>
                         <input type="text" name="nome" id="myInputNome" maxlength="100" style="width: 100%;" required>
                     </div>
                     <div class="sigla__carga--horaria">
                         <div class="input__sigla">
-                            <label for="">Sigla:</label>
+                            <label for="">Data Início:</label>
                             <input type="text" name="sigla" id="myInputSigla" maxlength="5" required>
                         </div>
                         <div class="input__carga--horaria">
-                            <label for="">Carga Horaria:</label>
+                            <label for="">Data Conclusão:</label>
                             <input type="number" name="carga_horaria" id="myInputCargaHoraria" min="0" required>
                         </div>
                     </div>
@@ -105,25 +105,33 @@
                         <label for="">Descrição:</label>
                         <textarea tabindex="5" id="myInputDescricao" required></textarea>
                     </div>
-                    <div class="dropdownCurso">
-                        <div class="adicionar--curso">
-                            <label for="materias_cursos">Está matéria é de qual curso?</label>
+                    <div class="input__radios">
+                        <label for="">Semestre:</label>
+                        <div class="radio">
+                            <input name="mybuttons" type="radio" value="1" /> 
+                            <span>1</span>
                         </div>
-                        <!-- <select id="materias_cursos" name="cursos">
-                            <option value="desenvolvimentoDeSistemas">desenvolvimento de sistemas</option>
-                            <option value="redesDeComputadores">redes de computadores</option>
-                            <option value="eletroeletronica">eletroeletronica</option>
-                        </select> -->
-                        <div class="content--list">
-                            <ul class="list">
-                              <!-- <li class="list__item">
-                                <label class="label--checkbox">
-                                    <input type="checkbox" class="checkbox" checked>
-                                      Desenvolvimento de Sistemas
-                                </label>
-                              </li> -->
-                            </ul>
+                        <div class="radio">
+                            <input name="mybuttons" type="radio" value="2" /> 
+                            <span>2</span>
                         </div>
+                        <div class="radio">
+                            <input name="mybuttons" type="radio" value="3" /> 
+                            <span>3</span>
+                        </div>
+                        <div class="radio">
+                            <input name="mybuttons" type="radio" value="4" /> 
+                            <span>4</span>
+                        </div>
+                        <div class="radio">
+                            <input name="mybuttons" type="radio" value="5" /> 
+                            <span>5</span>
+                        </div>
+                        
+                        <!-- <input name="mybuttons" type="radio" value="2" /> 2
+                        <input name="mybuttons" type="radio" value="3" /> 3
+                        <input name="mybuttons" type="radio" value="4" /> 4
+                        <input name="mybuttons" type="radio" value="5" /> 5 -->
                     </div>
                     <div class="modal__adicionar--footer">
                         <a type="submit" id="salvarBtn">Salvar</a>
@@ -179,28 +187,26 @@
                 <div class="containerCursos__containerTabela">
                     <table>
                         <div class="menuConteudo__titulosConteudo menuConteudo__titulosConteudo--displayFlex">
-                            <span class="titulosConteudo__cursos">
-                                MATÉRIAS
+                            <span class="titulosConteudo__turmas">
+                                NOME
                             </span>
-
-                            <span class="titulosConteudo__sigla">
-                                SIGLA
+                            <span class="titulosConteudo__data--inicio">
+                                DATA INÍCIO
                             </span>
-
-                            <span class="titulosConteudo__carga">
-                                CARGA HORÁRIA
+                            <span class="titulosConteudo__data--conclusao">
+                                DATA CONCLUSÃO
                             </span>
-
+                            <span class="titulosConteudo__semestre">
+                                SEMESTRE
+                            </span>
                         </div>
-                        <tbody id="tabelaItemsMaterias" class="tabelaItemsMaterias">
+                        <tbody id="tabelaItemsTurmas" class="tabelaItemsTurmas">
 
                             <!-- <tr>
-                                <td data-title="Name" class="dataCurso">Material Design Color Palette</td>
-                                <td data-title="Registro" class="dataSigla">DS</td>
-                                <td data-title="Usuario" class="dataCargaHoraria">
-                                    <i class="fa-solid da-clock"></i>
-                                    <span>1200H</span>
-                                </td>
+                                <td data-title="Name" class="dataTurma">Material Design Color Palette</td>
+                                <td data-title="Inicio" class="dataInicio">DS</td>
+                                <td data-title="Conclusao" class="dataConclusao">1200H</td>
+                                <td data-title="Semestre" class="dataSemestre">1ºSemestre</td>
                                 <td>
                                     <a class="fas fa-edit"></a>
                                 </td>
