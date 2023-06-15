@@ -1,6 +1,7 @@
 'use strict'
 
-import { createAlunoApi, updateAlunoApi, deleteAlunoApi, pegarAlunoPorIdApi } from "../apiAdmAlunos.js";
+import { formatarDataNascimento } from "../adm_alunos.js";
+import { createAlunoApi, updateAlunoApi, updateStatusAlunoPorIdApi, pegarAlunoPorIdApi} from "../apiAdmAlunos.js";
 
 const createRegistroAluno = () => {
     
@@ -45,19 +46,16 @@ const createRegistroAluno = () => {
 const updateRegistroAluno = async () => {
  
 
-    document.getElementById('salvarBtn').addEventListener('click', async () => {
+    document.getElementById('salvarBtnEditar').addEventListener('click', async () => {
 
         const idAlunoUpdate = window.localStorage.getItem('id_aluno_editar')
 
-        
-
-        const nomeInput = document.getElementById('myInputNome')
- 
-        const matriculaInput = document.getElementById('myInputMatricula')
-        const dataNascimentoInput = document.getElementById('myInputDataNascimento')
-        const emailPessoalInput = document.getElementById('myInputEmailPessoal')
-        const emailInstitucionalInput = document.getElementById('myInputEmailInstitucional')
-        const senhaInput = document.getElementById('myInputSenha')
+        const nomeInput = document.getElementById('myInputNomeValor')
+        const matriculaInput = document.getElementById('myInputMatriculaValor')
+        const dataNascimentoInput = document.getElementById('myInputDataNascimentoValor')
+        const emailPessoalInput = document.getElementById('myInputEmailPessoalValor')
+        const emailInstitucionalInput = document.getElementById('myInputEmailInstitucionalValor')
+        const senhaInput = document.getElementById('myInputSenhaValor')
         
 
    
@@ -79,10 +77,37 @@ const updateRegistroAluno = async () => {
             "senha": senha
         }
 
-        console.log(dadosAtualizados)
+        updateAlunoApi(dadosAtualizados)
         
     })
 }
+
+const updateStatusAlunoPorId = async () => {
+    document.getElementById('Deletar').addEventListener('click', async () => {
+        const idAluno = window.localStorage.getItem('id_aluno_apagar')
+
+
+        const dadosAluno = await pegarAlunoPorIdApi(idAluno)
+        const aluno = dadosAluno.aluno[0]
+
+        const data = formatarDataNascimento(aluno.data_nascimento)
+
+        const dadosAtualizados = {
+            "id" : idAluno,
+            "numero_matricula": aluno.numero_matricula,
+            "nome_aluno": `${aluno.nome_aluno}`,
+            "data_nascimento": `${data}`,
+            "email_aluno": `${aluno.email_pessoal}`,
+            "email_usuario": `${aluno.email_institucional}`,
+            "senha": aluno.senha
+        }
+
+        updateStatusAlunoPorIdApi(dadosAtualizados)
+
+    })
+}
+
+updateStatusAlunoPorId()
 
 createRegistroAluno()
 

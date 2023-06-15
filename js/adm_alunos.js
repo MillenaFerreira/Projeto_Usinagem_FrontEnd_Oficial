@@ -7,10 +7,17 @@ const matricula = await getTodasMatriculas()
 
 const criarListaAlunos = (card) => {
     const itemLista = document.createElement('tr')
-    itemLista.classList.add('alunoLista')
+    
+
+    if(card.status_matricula == "Inativo") {
+        itemLista.classList.add('alunoLista')
+        itemLista.classList.add('alunoLista--backGroundRed')
+    } else {
+        itemLista.classList.add('alunoLista')
+    }
+
     itemLista.addEventListener('click', () => {
         console.log(card.id_matricula);
-        //window.location.href = '../../pages/adm/editar/editarAlunos.html'
     })
 
     const dadosListaNome = document.createElement('td')
@@ -39,26 +46,23 @@ const criarListaAlunos = (card) => {
         window.localStorage.setItem('id_aluno_editar', card.id_matricula)
        
         const dadosAntigosAluno = await pegarAlunoPorIdApi(card.id_matricula)
-        console.log(dadosAntigosAluno)
-
-       
-        
+ 
         const nomeInput = document.getElementById('myInputNomeValor')
-        // const matriculaInput = document.getElementById('myInputMatricula')
+        const matriculaInput = document.getElementById('myInputMatriculaValor')
         const dataNascimentoInput = document.getElementById('myInputDataNascimentoValor')
-        // const emailPessoalInput = document.getElementById('myInputEmailPessoal')
+        const emailPessoalInput = document.getElementById('myInputEmailPessoalValor')
         const emailInstitucionalInput = document.getElementById('myInputEmailInstitucionalValor')
-        // const senhaInput = document.getElementById('myInputSenha')
+        const senhaInput = document.getElementById('myInputSenhaValor')
 
         const data = formatarDataNascimento(dadosAntigosAluno.aluno[0].data_nascimento)
 
         nomeInput.value = dadosAntigosAluno.aluno[0].nome_aluno
-      
+        matriculaInput.value = dadosAntigosAluno.aluno[0].numero_matricula
         dataNascimentoInput.value = data
-      
-        emailInstitucionalInput.value = dadosAntigosAluno.aluno[0].email_aluno
-        
-        
+        emailPessoalInput.value = dadosAntigosAluno.aluno[0].email_pessoal
+        senhaInput.value = dadosAntigosAluno.aluno[0].senha
+        emailInstitucionalInput.value = dadosAntigosAluno.aluno[0].email_institucional
+                
     })
 
     itemEditar.append (
@@ -68,24 +72,21 @@ const criarListaAlunos = (card) => {
     //
     const itemApagar = document.createElement('td')
     itemApagar.classList.add('IconEditar')
+    itemApagar.addEventListener('click', () => {
+        window.localStorage.setItem('id_aluno_apagar', card.id_matricula)
+    })
 
 
     const iconDeletar = document.createElement('a')
     iconDeletar.classList.add('fas')
     iconDeletar.classList.add('fa-trash')
     iconDeletar.href = "#modal__deletar"
-    
+
     
     itemApagar.append (
         iconDeletar
     )
 
-    
-
-    // itemEditar.addEventListener('click', () => {
-    //     window.localStorage.setItem('dadosAluno', (card.id).toString())
-    //     window.location = `./editar/editarAdministrador.html`
-    // })
 
     itemLista.append (
         dadosListaNome,
@@ -107,7 +108,7 @@ const carregarItems = () => {
 
 }
 
-const formatarDataNascimento = (data) => {
+export const formatarDataNascimento = (data) => {
 
     const dataOriginal = data.toString()
 
