@@ -14,17 +14,28 @@ export const pesquisarCriteriosPeloIdTarefa = async (idTarefa) => {
     
   }
 
-  export const updateCriterio = async (idCriterio) => {
-    const url = `https://usinagem-senai.cyclic.app/v1/projeto-usinagem/criterio/${idCriterio}`;
+  export const updateCriterio = async (idCriterio, bodyCriterio) => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/criterio/${idCriterio}`;
     const options = {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(idCriterio)
+      body: JSON.stringify(bodyCriterio)
     };
   
     fetch(url, options)
+    .then(response => {
+      if (response.ok) {
+        location.reload();
+  
+      } else {
+        console.log('Erro ao criar a tarefa.');
+      }
+    })
+    .catch(error => {
+      console.log('Ocorreu um erro na requisição:', error);
+    });
   
   }
 

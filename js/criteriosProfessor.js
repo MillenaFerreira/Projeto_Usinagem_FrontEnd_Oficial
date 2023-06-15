@@ -1,6 +1,6 @@
 'use strict'
 
-import { createCriterio , pesquisarCriteriosPeloIdTarefa} from './apiCriterios.js'
+import { createCriterio , pesquisarCriteriosPeloIdTarefa, updateCriterio} from './apiCriterios.js'
 
 const tarefaNome = localStorage.getItem('tarefaNome')
 const tarefaId = localStorage.getItem('tarefaId')
@@ -49,6 +49,12 @@ const showCriterioPeloIdTarefa = async () => {
         cardCriterio.append(descCriterio, tipoCritico, observacao)
 
         cardCriterio.addEventListener('click', () => {
+
+            localStorage.setItem('idCriterio', criterio.id_criterio)
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
            const modal_mensagem = document.querySelector('.modal_mensagem')
            modal_mensagem.classList.remove('d-none')
            modal_mensagem.classList.add('d-flex2')
@@ -133,4 +139,39 @@ const adicionarCriterio = () => {
 sendCriterio.addEventListener('click', (event) => {
     event.preventDefault()
     adicionarCriterio()
+})
+
+const sendCriterioEditado = document.getElementById('sendCriterioEditado')
+sendCriterioEditado.addEventListener('click', (event)  => {
+    event.preventDefault()
+    const descricaoCriterio = document.getElementById('descricaoCriterio2')
+    const valorCritico = document.getElementById('critico2')
+    const observacaoNota = document.getElementById('observacaoNota2')
+
+    let valorCriticoStatus;
+    let observacaoNotaStatus;
+
+    if(valorCritico.checked){
+        valorCriticoStatus = true
+    }else{
+        valorCriticoStatus = false
+    }
+
+    if(observacaoNota.checked){
+        observacaoNotaStatus = true
+    }else{
+        observacaoNotaStatus = false
+    }
+    
+    const criterio = {
+        "descricao": `${descricaoCriterio.value}`,
+        "observacao": observacaoNotaStatus,
+        "tipo_critico": valorCriticoStatus,
+        "id_tarefa": parseIntId
+    }
+    console.log(criterio);
+    const idCriterio = localStorage.getItem('idCriterio')
+    const idFormatado = parseInt(idCriterio)
+    console.log(idFormatado);
+    updateCriterio(idFormatado, criterio)
 })
