@@ -39,21 +39,25 @@ const criarListaAlunos = (card) => {
         window.localStorage.setItem('id_aluno_editar', card.id_matricula)
        
         const dadosAntigosAluno = await pegarAlunoPorIdApi(card.id_matricula)
-        console.log(dadosAntigosAluno.aluno[0].nome_aluno)
+        console.log(dadosAntigosAluno)
+
+       
         
-        const nomeInput = document.getElementById('myInputNome')
+        const nomeInput = document.getElementById('myInputNomeValor')
         // const matriculaInput = document.getElementById('myInputMatricula')
-        const dataNascimentoInput = document.getElementById('myInputDataNascimento')
+        const dataNascimentoInput = document.getElementById('myInputDataNascimentoValor')
         // const emailPessoalInput = document.getElementById('myInputEmailPessoal')
-        const emailInstitucionalInput = document.getElementById('myInputEmailInstitucional')
+        const emailInstitucionalInput = document.getElementById('myInputEmailInstitucionalValor')
         // const senhaInput = document.getElementById('myInputSenha')
 
+        const data = formatarDataNascimento(dadosAntigosAluno.aluno[0].data_nascimento)
+
         nomeInput.value = dadosAntigosAluno.aluno[0].nome_aluno
-        // matriculaInput.value = dadosAntigosAluno.aluno[0]
-        dataNascimentoInput.value = dadosAntigosAluno.aluno[0].data_nascimento
-        // emailPessoalInput.value = dadosAntigosAluno.aluno[0]
+      
+        dataNascimentoInput.value = data
+      
         emailInstitucionalInput.value = dadosAntigosAluno.aluno[0].email_aluno
-        // senhaInput.value = dadosAntigosAluno.aluno[0]
+        
         
     })
 
@@ -70,6 +74,7 @@ const criarListaAlunos = (card) => {
     iconDeletar.classList.add('fas')
     iconDeletar.classList.add('fa-trash')
     iconDeletar.href = "#modal__deletar"
+    
     
     itemApagar.append (
         iconDeletar
@@ -99,6 +104,22 @@ const carregarItems = () => {
     const gerarItems = matricula.map(criarListaAlunos)
 
     container.replaceChildren(...gerarItems)
+
+}
+
+const formatarDataNascimento = (data) => {
+
+    const dataOriginal = data.toString()
+
+    const arrayData = dataOriginal.split("/")
+
+    const dia = arrayData[0]
+    const mes = arrayData[1]
+    const ano = arrayData[2]
+
+    const dataFormatada = `${ano.toString()}-${mes.toString()}-${dia.toString()}`
+
+    return dataFormatada
 
 }
 
