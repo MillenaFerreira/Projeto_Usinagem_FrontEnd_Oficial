@@ -56,11 +56,15 @@ export const updateAlunoApi = async (aluno) => {
     });
 }
 
-export const deleteAlunoApi = async (id) => {
-    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/aluno/dados/${id}`
+export const updateStatusAlunoPorIdApi = async (aluno) => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/aluno/dados/status/${aluno.id}`
     const options = {
-        method: 'DELETE'
-    }
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(aluno)
+    };
 
     fetch(url, options)
     .then(response => {
