@@ -1,0 +1,109 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 75px 1fr;
+    font-family: 'Montserrat';
+}
+
+#root_professor {
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 5vw 8vh;
+    background-color: #eeeeee;
+}
+
+.container_topo {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.container_topo p {
+    color: #074A71;
+}
+
+.nome_buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.adicionar_editar_deletar a {
+    color: white;
+    background-color: #3084B4;
+    padding: 10px;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.linha {
+    background-color: #3084B4;
+    width: 100%;
+    height: 2px;
+}
+
+/* ALUNOS */
+
+th {
+    font-size: 1rem;
+    color: #074A71;
+    line-height: 1;
+    padding: 0 10px 7px 0;
+}
+
+tr{
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.tabela{
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+.tabela__matricula{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: end;
+}
+
+.tabelaLinha{
+    height: 1px;
+    background: #bebebe;
+}
+.linha4{
+    width: 100%;
+    height: 1px;
+    background: #074A71;
+}
+
+.linha-dados:hover{
+    background-color: #bbbbbb;
+}
+
+.tamanho{
+    width: 100vw;
+}
+
+.table__alunos{
+    padding-top: 40px;
+}
+
+@media (max-width: 999px) {
+
+    .tabela__matricula{
+        text-align: center;
+    }
+
+}

@@ -14,7 +14,6 @@ nav {
 }
 
 
-
 .busca {
     height: 100%;
     width: 50%;
@@ -677,7 +676,7 @@ label {
 }
 
 
-/* ALUNOS */
+/* ALUNOS
 
 th {
     font-size: 1rem;
@@ -706,9 +705,14 @@ tr{
     background: #074A71;
 }
 
-.hover:hover{
+.linha-dados:hover{
     background-color: #bbbbbb;
 }
+
+.tamanho{
+    width: 100vw;
+} */
+
 
 
 
