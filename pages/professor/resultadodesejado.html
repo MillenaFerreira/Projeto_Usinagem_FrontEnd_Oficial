@@ -53,31 +53,11 @@
                 <div class="linha"></div>
             </div>  
             <div id="container-desejado">
-                <table>
+                <table id="tabela">
                     <tr>
                         <th>RESULTADOS DESEJADOS</th>
-                        <th>MARGENS DE ERRO +</th>
-                        <th>MARGENS DE ERRO - </th>
-                    </tr>
-                    <tr class="resultadoDados">
-                        <td>Resultado 1</td>
-                        <td>Margem de Erro 1</td>
-                        <td>Margem de Erro 2</td>
-                    </tr>
-                    <tr class="resultadoDados">
-                        <td>Resultado 1</td>
-                        <td>Margem de Erro 1</td>
-                        <td>Margem de Erro 2</td>
-                    </tr>
-                    <tr class="resultadoDados">
-                        <td>Resultado 1</td>
-                        <td>Margem de Erro 1</td>
-                        <td>Margem de Erro 2</td>
-                    </tr>
-                    <tr class="resultadoDados">
-                        <td>Resultado 1</td>
-                        <td>Margem de Erro 1</td>
-                        <td>Margem de Erro 2</td>
+                        <th>MÍNIMO</th>
+                        <th>MÁXIMO</th>
                     </tr>
                 </table>
                 </div>
@@ -94,13 +74,26 @@
             </div>
             <div class="inputsTarefa d-flex flex-column">
                 <input type="number" placeholder="Digite o resultado desejado" id="desejado">
+                <!-- <input type="number" placeholder="Digite a margem de erro para mais" id="margemMais">
+                <input type="number" placeholder="Digite a margem de erro para menos" id="margemMenos"> -->
+                </div>
+                <button id="sendTarefa">Send</button>
+            </div>
+    <div id="modal__adicionar__margem" class="modal__adicionar__margem d-none">
+
+        <form id="adcTarefa2">
+            <button id="sair2">Sair</button>
+            <div class="titleForm d-flex font-family-Montserrat">
+                <h3>Adicione as margens de erro necessárias:</h3>
+            </div>
+            <div class="inputsTarefa d-flex flex-column">
                 <input type="number" placeholder="Digite a margem de erro para mais" id="margemMais">
                 <input type="number" placeholder="Digite a margem de erro para menos" id="margemMenos">
                 </div>
                 <button id="sendTarefa">Send</button>
+            </form>
             </div>
 
-        </form>
 
     </div>
 
