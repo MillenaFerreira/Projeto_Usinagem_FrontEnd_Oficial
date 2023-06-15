@@ -2,6 +2,12 @@
 const buttonAdicionar = document.getElementById('adicionar')
 const modalCriterioAdc = document.getElementById('modal__adicionar__criterio')
 
+const idDoCriterio = localStorage.getItem('idCriterio')
+
+const titleCriterio = document.querySelector('.titleCriterio')
+
+titleCriterio.textContent = 'Resultado desejado do critério: ' + idDoCriterio
+
 buttonAdicionar.addEventListener('click', (event) => {
     event.preventDefault()
     modalCriterioAdc.classList.add('d-flex2')
