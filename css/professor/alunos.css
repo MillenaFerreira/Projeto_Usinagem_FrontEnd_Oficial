@@ -55,6 +55,14 @@ body {
 
 /* ALUNOS */
 
+.criarTarefa{
+    display: flex;
+    justify-content: end;
+    font-size: 1.5rem;
+    gap: 5px;
+    align-items: center;
+}
+
 th {
     font-size: 1rem;
     color: #074A71;
