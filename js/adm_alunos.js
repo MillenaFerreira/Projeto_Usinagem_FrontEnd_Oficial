@@ -70,33 +70,65 @@ const criarListaAlunos = (card) => {
     )
 
     //
-    const itemApagar = document.createElement('td')
-    itemApagar.classList.add('IconEditar')
-    itemApagar.addEventListener('click', () => {
-        window.localStorage.setItem('id_aluno_apagar', card.id_matricula)
-    })
-
-
-    const iconDeletar = document.createElement('a')
-    iconDeletar.classList.add('fas')
-    iconDeletar.classList.add('fa-trash')
-    iconDeletar.href = "#modal__deletar"
-
+    if(card.status_matricula == "Inativo") {
+        const itemReAdicionar = document.createElement('td')
+        itemReAdicionar.classList.add('IconEditar')
+        itemReAdicionar.addEventListener('click', () => {
+            window.localStorage.setItem('id_aluno_reativar', card.id_matricula)
+        })
     
-    itemApagar.append (
-        iconDeletar
-    )
+    
+        const iconReAdicionar = document.createElement('a')
+        iconReAdicionar.classList.add('fas')
+        iconReAdicionar.classList.add('fa-unlock')
+        iconReAdicionar.href = "#modal__reativar"
+    
+        
+        itemReAdicionar.append (
+            iconReAdicionar
+        )
+
+        itemLista.append (
+            dadosListaNome,
+            dadosEmail,
+            dadosRegistro,
+            itemEditar,
+            itemReAdicionar
+        )
+    
+        return itemLista
+    } else {
+        const itemApagar = document.createElement('td')
+        itemApagar.classList.add('IconEditar')
+        itemApagar.addEventListener('click', () => {
+            window.localStorage.setItem('id_aluno_apagar', card.id_matricula)
+        })
+    
+    
+        const iconDeletar = document.createElement('a')
+        iconDeletar.classList.add('fas')
+        iconDeletar.classList.add('fa-trash')
+        iconDeletar.href = "#modal__deletar"
+    
+        
+        itemApagar.append (
+            iconDeletar
+        )
+
+        itemLista.append (
+            dadosListaNome,
+            dadosEmail,
+            dadosRegistro,
+            itemEditar,
+            itemApagar
+        )
+    
+        return itemLista
+    }
+   
 
 
-    itemLista.append (
-        dadosListaNome,
-        dadosEmail,
-        dadosRegistro,
-        itemEditar,
-        itemApagar
-    )
-
-    return itemLista
+   
 }
 
 const carregarItems = () => {

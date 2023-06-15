@@ -79,6 +79,29 @@ export const updateStatusAlunoPorIdApi = async (aluno) => {
     })
 }
 
+export const updateStatusAtivoAlunoPorIdApi = async (aluno) => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/aluno/dados/${aluno.id}`
+    const options = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(aluno)
+    };
+
+    fetch(url, options)
+    .then(response => {
+        if (response.ok) {
+            location.reload();
+        } else {
+            console.log('Erro ao reativar o aluno.')
+        }
+    })
+    .catch (error => {
+        console.log('Erro na requisição: ', error)
+    })
+}
+
 export const pegarAlunoPorIdApi = async (id) => {
     const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/aluno/${id}`
     const response = await fetch(url)
