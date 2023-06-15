@@ -51,6 +51,7 @@ const showCriterioPeloIdTarefa = async () => {
         cardCriterio.addEventListener('click', () => {
 
             localStorage.setItem('idCriterio', criterio.id_criterio)
+            // localStorage.setItem('nomeCriterio', criterio.descricao_criterio)
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
