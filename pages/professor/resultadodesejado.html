@@ -22,6 +22,7 @@
     <!-- COMPONENTS -->
     <script src="/components/header.js" defer type="module"></script>
     <script src="/components/nav.js" defer type="module"></script>
+    <script src="/js/desejadoProfessor.js" defer type="module"></script>
 
 
     <title>Document</title>
@@ -55,23 +56,28 @@
                 <table>
                     <tr>
                         <th>RESULTADOS DESEJADOS</th>
-                        <th>MARGENS DE ERRO</th>
+                        <th>MARGENS DE ERRO +</th>
+                        <th>MARGENS DE ERRO - </th>
                     </tr>
                     <tr class="resultadoDados">
                         <td>Resultado 1</td>
                         <td>Margem de Erro 1</td>
+                        <td>Margem de Erro 2</td>
                     </tr>
                     <tr class="resultadoDados">
                         <td>Resultado 1</td>
                         <td>Margem de Erro 1</td>
+                        <td>Margem de Erro 2</td>
                     </tr>
                     <tr class="resultadoDados">
                         <td>Resultado 1</td>
                         <td>Margem de Erro 1</td>
+                        <td>Margem de Erro 2</td>
                     </tr>
                     <tr class="resultadoDados">
                         <td>Resultado 1</td>
                         <td>Margem de Erro 1</td>
+                        <td>Margem de Erro 2</td>
                     </tr>
                 </table>
                 </div>
@@ -79,6 +85,24 @@
         </div>
        
     </main>
+    <div id="modal__adicionar__criterio" class="modal__adicionar__tarefa d-none">
+
+        <form id="adcTarefa">
+            <button id="sair">Sair</button>
+            <div class="titleForm d-flex font-family-Montserrat">
+                <h3>Adicione um resultado desejado</h3>
+            </div>
+            <div class="inputsTarefa d-flex flex-column">
+                <input type="number" placeholder="Digite o resultado desejado" id="nomeTarefa">
+                <input type="number" placeholder="Digite a margem de erro para mais" id="nomeTarefa">
+                <input type="number" placeholder="Digite a margem de erro para menos" id="nomeTarefa">
+                </div>
+                <button id="sendTarefa">Send</button>
+            </div>
+
+        </form>
+
+    </div>
 
 </body>
 

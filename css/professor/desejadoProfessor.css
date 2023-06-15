@@ -4,6 +4,7 @@
     display: grid;
     place-content: center;
     place-self: center;
+    font-family: 'Montserrat', sans-serif;
 }
 #container-desejado table{
   height: 40vh;
@@ -12,4 +13,54 @@
 
 table tr th{
     text-align: start;
+}
+
+.d-flex{
+  display:flex;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.titleForm{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+#adcTarefa{
+  gap: 4vh;
+}
+
+@media  (max-width: 600px) {
+
+  /* table, thead, tbody, th, td, tr {
+      display: block;} */
+
+      #container-desejado{
+        place-content: start;
+      }
+
+  table tr{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2vh;
+  }
+  
+  th {
+      text-align: center;
+  }
+  
+  td {
+      text-align: left;
+      border-bottom: none;
+  }
+  
+  td:before {
+      content: attr(data-label);
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 4px;
+      display: block;
+  }
 }
