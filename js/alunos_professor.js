@@ -8,27 +8,28 @@ console.log(idTurma);
 
 const alunos = await getAlunosProfessor(idTurma)
 
+console.log(alunos);
 
-const criarTable = (alunos) => {
 
+const criarTable = (aluno) => {
     const tr_principal = document.createElement('tr')
     tr_principal.classList.add('hover')
 
-    const td_nome = document.createElement('tr')
+    const td_nome = document.createElement('td')
     td_nome.classList.add('tabela')
-    td_nome.textContent = alunos.nome
+    td_nome.textContent = aluno.nome_aluno
 
     const td_email = document.createElement('td')
     td_email.classList.add('tabela')
-    td_email.textContent = alunos.email
+    td_email.textContent = aluno.email_pessoal
 
     const td_data_nascimento = document.createElement('td')
     td_data_nascimento.classList.add('tabela')
-    td_data_nascimento.textContent = alunos.data_nascimento
+    td_data_nascimento.textContent = aluno.data_nascimento_aluno
 
     const td_matricula = document.createElement('td')
     td_matricula.classList.add('tabela')
-    td_matricula.textContent = alunos.matricula
+    td_matricula.textContent = aluno.numero_matricula
 
     const segurar_linha = document.createElement('tr')
 
@@ -40,6 +41,7 @@ const criarTable = (alunos) => {
     tr_principal.append(td_nome, td_email, td_data_nascimento, td_matricula, segurar_linha)
     segurar_linha.append(td_linha)
 
+    return tr_principal
 }
 
 export const carregarTableAlunos = () => {
