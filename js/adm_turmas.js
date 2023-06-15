@@ -21,13 +21,13 @@ const criarTable = (turmas) => {
     const td_data_inicio = document.createElement('td')
     td_data_inicio.classList.add('dataInicio')
     td_data_inicio.dataset.title = 'Inicio'
-    td_data_inicio.textContent = turmas.data_inicio
+    td_data_inicio.textContent = turmas.data_inicio_formatada
 
     const td_data_conclusao = document.createElement('td')
     td_data_conclusao.classList.add('dataConclusao')
     td_data_conclusao.dataset.title = 'Conclusao'
-    td_data_conclusao.textContent = turmas.data_conclusao
-    
+    td_data_conclusao.textContent = turmas.data_conclusao_formatada
+
     const td_semestre = document.createElement('td')
     td_semestre.classList.add('dataSemestre')
     td_semestre.dataset.title = 'Semestre'
@@ -42,14 +42,16 @@ const criarTable = (turmas) => {
     iconEditar.classList.add('fa-edit')
     iconEditar.href = '#modal__editar'
     iconEditar.addEventListener('click', function () {
-        localStorage.setItem('id_update', turmas.id)
 
-        // document.getElementById("myInputNomeValor").value = turmas.nome;
-        // document.getElementById("myInputCargaHorariaValor").value = turmas.carga_horaria;
-        // document.getElementById("myInputDescricaoValor").value = turmas.descricao;
-        // document.getElementById("myInputSiglaValor").value = turmas.sigla;
-        // document.getElementById("myInputUrlValor").value = turmas.foto;
-        
+        localStorage.setItem('id_update_turma', turmas.id_turma)
+
+        document.getElementById("myInputNomeValor").value = turmas.nome;
+        document.getElementById("myInputDataInicioValor").value = turmas.data_inicio_formatada;
+        document.getElementById("myInputDataConclusaoValor").value = turmas.data_conclusao_formatada;
+        document.getElementById("myInputDescricaoValor").value = turmas.descricao;
+        document.querySelector('#editarRadio myRadioValor').checked = turmas.semestre
+
+        console.log(myInputDataConclusaoValor);
     })
 
     const td_icon_deletar = document.createElement('td')
@@ -61,9 +63,9 @@ const criarTable = (turmas) => {
     iconDeletar.classList.add('fa-trash')
     iconDeletar.href = "#modal__deletar"
     iconDeletar.addEventListener('click', function () {
-        localStorage.setItem('id', turmas.id)
+        localStorage.setItem('id2', turmas.id)
     })
-    
+
 
     tr.append(td_nome, td_data_inicio, td_data_conclusao, td_semestre, td_icon_editar, td_icon_deletar)
     td_icon_editar.append(iconEditar)
@@ -101,7 +103,7 @@ const criarListaCursosNoSelect = async () => {
         inputElement.classList.add('checkbox')
 
         inputElement.addEventListener('click', () => {
-            if(inputElement.checked){
+            if (inputElement.checked) {
                 localStorage.setItem('idCursoParaTurma', inputElement.id)
             }
         })
