@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-    
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
     <!-- Link do FontAwesome -->
     <script src="https://kit.fontawesome.com/30058942d9.js" crossorigin="anonymous"></script>
 
@@ -25,6 +25,8 @@
     <script src="/components/header.js" defer type="module"></script>
     <script src="/components/nav.js" defer type="module"></script>
 
+    <script src="../../js/alunos_professor.js" defer type="module"></script>
+
     <title>ALUNOS</title>
 </head>
 
@@ -32,11 +34,9 @@
     <header-padrao color_top="#3084B4" color_button="#DA251C" text_button="VOLTAR"
         link_button="../index.html"></header-padrao>
     <!-- NAV PRINCIPAL -->
-    <nav-professor 
-        nome1="Cursos" link1="/pages/professor/cursos.html"
-        nome2="Turmas" link2="/pages/professor/turmas.html"
-        nome3="Disciplinas" link3="/pages/professor/disciplinas.htm"
-        nome4="Alunos" link4="/pages/professor/alunos.html">
+    <nav-professor nome1="Cursos" link1="/pages/professor/cursos.html" nome2="Turmas"
+        link2="/pages/professor/turmas.html" nome3="Disciplinas" link3="/pages/professor/disciplinas.htm" nome4="Alunos"
+        link4="/pages/professor/alunos.html">
     </nav-professor>
 
     <main id="root_aluno">
@@ -44,10 +44,62 @@
             <div class="container_topo">
                 <p>ALUNOS</p>
                 <div class="linha"></div>
-            </div>  
-            <div class="cards_turma_professor">
-        
-            </div>  
+            </div>
+            <div class="tabelas_alunos">
+                <tbody id="tabelaAlunos" class="tabelaAlunos">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+                        <tbody>
+                            <tr>
+                                <th width="40%" align="left">
+                                    NOME
+                                </th>
+                                <th align="left">
+                                    EMAIL INSTITUCIONAL
+                                </th>
+                                <th align="center">
+                                    DATA DE NASCIMENTO
+                                </th>
+                                <th align="right">
+                                    MATRÍCULA
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="tabelaLinha" colspan="4"></td>
+                            </tr>
+                            <tr>
+                                <td height="10" colspan="4"></td>
+                            </tr>
+                            <tr id="listaAlunos">
+                                <!-- <tr class="hover">
+                                    <td class="tabela">
+                                        Millena Ferreira de Sousa
+                                    </td>
+                                    <td class="tabela">
+                                        millena.ferreira@senaisp.edu.br
+                                    </td>
+                                    <td align="center" class="tabela">29/10/2003</td>
+                                    <td align="right" class="tabela">22282227</td>
+                                </tr>
+                                <tr>
+                                    <td class="linha4" colspan="4"></td>
+                                </tr> -->
+                            </tr>
+                            
+
+
+                            <!-- <tr class="hover">
+                                <td class="tabela">Caroline Portela</td>
+                                <td class="tabela">carol.portela@senaisp.edu.br</td>
+                                <td align="center" class="tabela">24/08/2003</td>
+                                <td align="right" class="tabela">22282179</td>
+                            </tr>
+                            <tr>
+                                <td class="linha4" colspan="4"></td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </tbody>
+            </div>
         </div>
     </main>
 </body>

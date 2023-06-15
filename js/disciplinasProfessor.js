@@ -4,7 +4,7 @@ import { getDisciplinaProfessor } from "../js/apiTurmaCursoMateriaProfessor.js"
 
 const idProfessor = localStorage.getItem('idProfessor')
 var idProf = parseInt(idProfessor)
-console.log(idProf)
+//console.log(idProf)
 
 //const disciplina = await getTurmaProfessor(idProf, idCurso)
 //console.log(disciplina);
@@ -12,7 +12,7 @@ console.log(idProf)
 
 //import { pesquisarMateriasPeloIdDoProfessorTurma } from "../js/apiMateria.js"
 var idTurma = localStorage.getItem('id_turma')
-console.log(idTurma);
+//console.log(idTurma);
 
 const pegarMateriaPeloIdProfessorMateria = async () => {
 
@@ -22,7 +22,7 @@ const pegarMateriaPeloIdProfessorMateria = async () => {
     const container = document.querySelector('.cards_discipinas_professor')
 
     materias.forEach((materia) => {
-        console.log(materia);
+        //console.log(materia);
 
         const linkCardDisciplina = document.createElement('a')
         linkCardDisciplina.classList.add('card_disciplina')
@@ -50,7 +50,7 @@ const pegarMateriaPeloIdProfessorMateria = async () => {
         linkCardDisciplina.addEventListener('click', () => {
             //console.log(materia.id);
             localStorage.setItem('idMateria', materia.id)
-            linkCardDisciplina.href = "./tarefas.html"
+            linkCardDisciplina.href = "./alunos.html"
         })
 
     });

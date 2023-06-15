@@ -1,3 +1,7 @@
+*{
+    font-family: 'Montserrat';
+}
+
 body {
     width: 100%;
     min-height: 100vh;
@@ -226,13 +230,14 @@ nav {
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
-   width: 90vw;
+    width: 90vw;
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: .4s ease-in-out;
     padding: 20px 10px;
     border-bottom: 2px solid rgba(48, 132, 180, 0.5);
 }
+
 .dados2 {
     display: flex;
     font-family: 'Montserrat';
@@ -240,7 +245,7 @@ nav {
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
-   width: 91vw;
+    width: 91vw;
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: .4s ease-in-out;
@@ -314,7 +319,8 @@ label {
     font-size: clamp(0.8125rem, -0.0469rem + 2.75vw, 1.5rem);
 }
 
-.dados, .dados2 {
+.dados,
+.dados2 {
     display: flex;
     justify-content: space-between;
     font-size: clamp(1.125rem, -0.0469rem + 2.75vw, 1.5rem);
@@ -323,7 +329,8 @@ label {
 /* .time_input_termino, .time_input_desconto{
     margin-right: 20px;
 } */
-.dados:hover, .dados2:hover {
+.dados:hover,
+.dados2:hover {
     background-color: #ffff;
 }
 
@@ -669,6 +676,41 @@ label {
     font-size: clamp(0.9rem, -0.225rem + 3.6vw, 1.8rem);
 }
 
+
+/* ALUNOS */
+th {
+    font-size: 1rem;
+    color: #074A71;
+    line-height: 1;
+    padding: 0 10px 7px 0;
+}
+
+tr{
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.tabela{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.tabelaLinha{
+    height: 1px;
+    background: #bebebe;
+}
+.linha4{
+    width: 100%;
+    height: 1px;
+    background: #074A71;
+}
+
+.hover:hover{
+    background-color: #bbbbbb;
+}
+
+
+
 @media (max-width: 999px) {
 
     /* AREA DO ALUNO */
@@ -708,7 +750,7 @@ body::-webkit-scrollbar-thumb:hover {
     background-color: #ffff;
     float: top;
     border: 5px double #074A71;
-    padding:   20px;
+    padding: 20px;
     align-items: center;
     gap: 5vh;
     flex-direction: column;
@@ -717,9 +759,9 @@ body::-webkit-scrollbar-thumb:hover {
     height: 60vh;
 }
 
-.modal_mensagem p{
-   display: grid;
-   place-self: center;
+.modal_mensagem p {
+    display: grid;
+    place-self: center;
 }
 
 .botoes {
@@ -748,10 +790,12 @@ body::-webkit-scrollbar-thumb:hover {
     scale: 0.9;
 
 }
-.dados{
+
+.dados {
     width: 90vw;
 }
-.container_relatorio_dadosBotao{
+
+.container_relatorio_dadosBotao {
     width: 90vw;
     height: auto;
     border: none;
@@ -821,5 +865,13 @@ body::-webkit-scrollbar-thumb:hover {
 
     .textDesc {
         padding: 2%;
+    }
+
+    /* ALUNO */
+    th{
+        font-size: 0.75rem;
+    }
+    tr {
+        font-size: 0.75rem;
     }
 }

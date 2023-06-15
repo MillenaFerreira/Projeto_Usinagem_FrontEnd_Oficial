@@ -1,5 +1,3 @@
-
-
 export const getCursoProfessor = async (idProfessor) => {
     console.log(idProfessor);
     
@@ -26,5 +24,14 @@ export const getDisciplinaProfessor = async (idProfessor, idTurma) => {
 
     return data.dados
 }
+
+export const getAlunosProfessor = async (idTurma) => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/turma-matricula?idTurma=${idTurma}`
+    const response = await fetch(url)
+    const data = await response.json()
+
+    return data.matriculas
+}
+
 
 //https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/turma-curso-materia-prof/cursos-professor/1id
