@@ -1,10 +1,10 @@
 'use strict'
 
-import { pesquisarDesejadoPeloIdCriterio, createDesejado, createMargemErro } from './apiCriterios.js';
+import { pesquisarDesejadoPeloIdCriterio, createDesejado, createMargemErro, pesquisarMargemErro } from './apiCriterios.js';
 
 
-const pegarValorIdDesejado = localStorage.getItem('idDesejado')
-console.log('id desejado: ',pegarValorIdDesejado);
+// const pegarValorIdDesejado = localStorage.getItem('idDesejado')
+// console.log('id desejado: ', pegarValorIdDesejado);
 
 console.log();
 
@@ -18,7 +18,12 @@ const titleCriterio = document.querySelector('.titleCriterio')
 titleCriterio.textContent = 'Resultado desejado do critério: ' + idDoCriterio
 
 const criterioDados = await pesquisarDesejadoPeloIdCriterio(idDoCriterio);
-console.log(criterioDados);
+
+const margemErros = await pesquisarMargemErro();
+
+
+
+//console.log(margemErros);
 
 
 buttonAdicionar.addEventListener('click', (event) => {
@@ -65,6 +70,8 @@ const createTableDesejado = () => {
 
     criterioDados.forEach((criterio) => {
 
+
+
         const resultadoDados = document.createElement('tr')
         resultadoDados.classList.add('resultadoDados')
 
@@ -74,38 +81,77 @@ const createTableDesejado = () => {
         const margem1 = document.createElement('td')
         const margem2 = document.createElement('td')
 
-        if (criterio.margem_erro) {
+        let hasButtonsCreated = false;
 
-            criterio.margem_erro.forEach((margemErro) => {
+        margemErros.forEach((margemErro) => {
+            if (margemErro.id_resultado_desejado == criterio.id_resultado_desejado) {
+                console.log('possuem mesmos ids');
+                margem1.textContent = margemErro.minimo;
+                margem2.textContent = margemErro.maximo;
+            } else {
+                if (!hasButtonsCreated && margem1.textContent === '' && margem2.textContent === '') {
+                    function abrirModalMargemErro(event) {
+                        localStorage.setItem('id_resultado_desejado', criterio.id_resultado_desejado);
+                        event.preventDefault();
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                        const modal__adicionar__margem = document.getElementById('modal__adicionar__margem');
+                        modal__adicionar__margem.classList.add('d-flex2');
+                        modal__adicionar__margem.classList.remove('d-none');
+                    }
 
-                if (margemErro.minimo) {
-                    margem1.textContent = margemErro.minimo
+                    const buttonMargemErro1 = document.createElement('button');
+                    buttonMargemErro1.classList.add('buttonMargemErro');
+                    buttonMargemErro1.title = "Abre modal margem de erro";
+                    buttonMargemErro1.addEventListener('click', abrirModalMargemErro);
+
+                    const buttonMargemErro2 = document.createElement('button');
+                    buttonMargemErro2.classList.add('buttonMargemErro');
+                    buttonMargemErro2.title = "Abre modal margem de erro";
+                    buttonMargemErro2.addEventListener('click', abrirModalMargemErro);
+
+                    margem1.append(buttonMargemErro1);
+                    margem2.append(buttonMargemErro2);
+                    hasButtonsCreated = true;
                 }
-
-                if (margemErro.maximo) {
-                    margem2.textContent = margemErro.maximo
-                }
-
-            })
-
-        }else{
-
-            const buttonMargemErro = document.createElement('button')
-            buttonMargemErro.classList.add('buttonMargemErro')
-            buttonMargemErro.title = "Abre modal margem de erro"
-
-            const buttonMargemErro1 = document.createElement('button')
-            buttonMargemErro1.classList.add('buttonMargemErro')
-            buttonMargemErro1.title = "Abre modal margem de erro"
-
-            margem1.append(buttonMargemErro1)
-            margem2.append(buttonMargemErro)
-        }
+            }
+        });
 
         containerTable.append(resultadoDados)
         resultadoDados.append(valorResultado, margem1, margem2)
 
     })
 }
+
+
+const createMargemErroFunction = () => {
+
+    const idDoResultadoDesejado = localStorage.getItem('id_resultado_desejado')
+    const idDoResultadoDesejadoFormatado = parseInt(idDoResultadoDesejado)
+
+    const margemMais = document.getElementById('margemMais').value
+    const margemMenos = document.getElementById('margemMenos').value
+
+    const margemErro = {
+        "minimo": margemMenos,
+        "maximo": margemMais,
+        "id_resultado_desejado": idDoResultadoDesejadoFormatado
+    }
+
+    console.log(margemErro);
+    createMargemErro(margemErro)
+
+}
+
+const sendmargem = document.querySelector('.editEnviar')
+console.log(sendmargem);
+
+sendmargem.addEventListener('click', (event) => {
+    event.preventDefault()
+    createMargemErroFunction()
+
+})
 
 createTableDesejado()

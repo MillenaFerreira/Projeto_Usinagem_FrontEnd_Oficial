@@ -6,6 +6,12 @@ export const pesquisarCriterios = async () => {
     const data = await response.json();
     return data.criterios;
   }
+export const pesquisarMargemErro = async () => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/margem-erro`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.margem_erro;
+  }
 
 export const pesquisarDesejadoPeloIdCriterio = async (idCriterio) => {
     const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/resultado-desejado?idCriterio=${idCriterio}`;
