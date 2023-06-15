@@ -1,0 +1,15 @@
+#container-desejado{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    place-self: center;
+}
+#container-desejado table{
+  height: 40vh;
+  width: 60vw;
+}
+
+table tr th{
+    text-align: start;
+}

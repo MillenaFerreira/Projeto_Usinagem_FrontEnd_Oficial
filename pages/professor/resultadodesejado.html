@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Link do FontAwesome -->
+    <script src="https://kit.fontawesome.com/30058942d9.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/aluno/reset.css">
+    <link rel="stylesheet" href="/css/aluno/aluno.css">
+    <link rel="stylesheet" href="/css/professor/tarefas.css">
+    <link rel="stylesheet" href="/css/professor/criterio.css">
+    <link rel="stylesheet" href="/css/professor/desejadoProfessor.css">
+    <!-- <link rel="stylesheet" href="/css/professor/tarefas.css"> -->
+
+
+    <!-- COMPONENTS -->
+    <script src="/components/header.js" defer type="module"></script>
+    <script src="/components/nav.js" defer type="module"></script>
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header-padrao color_top="#3084B4" color_button="#DA251C" text_button="VOLTAR"
+        link_button="../index.html"></header-padrao>
+    <!-- NAV PRINCIPAL -->
+    <nav-professor 
+        nome1="Cursos" link1="/pages/professor/cursos.html"
+        nome2="Turmas" link2="/pages/professor/turmas.html"
+        nome3="Disciplinas" link3="/pages/professor/disciplinas.html"
+        nome4="Alunos" link4="/pages/professor/alunos.html">
+    </nav-professor>
+
+    <main id="root_aluno">
+        <div class="container container-areaAluno" id="container-areaAluno">
+            <div class="container_topo">
+                <div class="nomeAdicionar d-flex">
+                    <p class="titleCriterio">Resultado desejado
+                    </p>
+                    <div class="adicionar_editar_deletar">
+                        <button class="fas fa-plus" id="adicionar"></button>
+                    </div>
+                </div>
+               
+                <div class="linha"></div>
+            </div>  
+            <div id="container-desejado">
+                <table>
+                    <tr>
+                        <th>RESULTADOS DESEJADOS</th>
+                        <th>MARGENS DE ERRO</th>
+                    </tr>
+                    <tr class="resultadoDados">
+                        <td>Resultado 1</td>
+                        <td>Margem de Erro 1</td>
+                    </tr>
+                    <tr class="resultadoDados">
+                        <td>Resultado 1</td>
+                        <td>Margem de Erro 1</td>
+                    </tr>
+                    <tr class="resultadoDados">
+                        <td>Resultado 1</td>
+                        <td>Margem de Erro 1</td>
+                    </tr>
+                    <tr class="resultadoDados">
+                        <td>Resultado 1</td>
+                        <td>Margem de Erro 1</td>
+                    </tr>
+                </table>
+                </div>
+            </div>  
+        </div>
+       
+    </main>
+
+</body>
+
+</html>
