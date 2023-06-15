@@ -8,8 +8,13 @@ const alunos = await getAlunosProfessor(idTurma)
 
 
 const criarTable = (aluno) => {
-    const tr_principal = document.createElement('tr')
-    tr_principal.classList.add('hover')
+    const tr_principal = document.createElement('tr')   
+    tr_principal.classList.add('linha-dados')
+    tr_principal.addEventListener('click', () =>{
+        localStorage.setItem('idTurmaAluno', aluno.id_turma)
+        localStorage.setItem('idAluno', aluno.id_matricula)
+        window.location.href = '../../pages/professor/aluno.html'
+    })
 
     console.log(aluno)
     tr_principal.addEventListener('click', () => {
@@ -26,10 +31,11 @@ const criarTable = (aluno) => {
 
     const td_data_nascimento = document.createElement('td')
     td_data_nascimento.classList.add('tabela')
+    td_data_nascimento.style.textAlign = 'center'
     td_data_nascimento.textContent = aluno.data_nascimento_aluno
 
     const td_matricula = document.createElement('td')
-    td_matricula.classList.add('tabela')
+    td_matricula.classList.add('tabela__matricula')
     td_matricula.textContent = aluno.numero_matricula
 
     const segurar_linha = document.createElement('tr')
