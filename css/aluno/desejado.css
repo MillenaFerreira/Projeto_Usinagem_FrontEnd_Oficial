@@ -1,0 +1,18 @@
+#adcTarefa{
+    display: grid;
+    place-content: center;
+}
+
+#sair{
+    display: grid;
+    place-self: start;
+    margin-left: 0;
+}
+
+
+
+@media (max-width:650px) {
+    .obtido{
+        margin-left: 10%;
+    }
+}
