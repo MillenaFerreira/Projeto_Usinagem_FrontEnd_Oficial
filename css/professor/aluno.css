@@ -37,15 +37,15 @@ body {
     justify-content: space-between;
 }
 
-.adicionar_editar_deletar a {
-    color: white;
-    background-color: #3084B4;
-    padding: 10px;
-    border-radius: 50%;
-    border: 0;
+.criarTarefa{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.5rem;
     cursor: pointer;
-    font-size: 25px;
 }
+
 
 .linha {
     background-color: #3084B4;
