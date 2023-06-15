@@ -1,6 +1,6 @@
 'use strict'
 
-import { createCriterio , pesquisarCriteriosPeloIdTarefa, updateCriterio} from './apiCriterios.js'
+import { createCriterio , pesquisarCriteriosPeloIdTarefa, updateCriterio, deleteCriterio} from './apiCriterios.js'
 
 const tarefaNome = localStorage.getItem('tarefaNome')
 const tarefaId = localStorage.getItem('tarefaId')
@@ -174,4 +174,22 @@ sendCriterioEditado.addEventListener('click', (event)  => {
     const idFormatado = parseInt(idCriterio)
     console.log(idFormatado);
     updateCriterio(idFormatado, criterio)
+})
+
+const excluirTarefaButton2 = document.getElementById('excluirTarefaButton2')
+excluirTarefaButton2.addEventListener('click', (event) => {
+    event.preventDefault()
+    const idCriterio = localStorage.getItem('idCriterio')
+    const idFormatado = parseInt(idCriterio)
+    deleteCriterio(idFormatado)
+})
+
+const naoExcluir = document.querySelector('.naoExcluir')
+naoExcluir.addEventListener('click', (event) => {
+    event.preventDefault()
+
+    const modal_excluir = document.querySelector('.modal_excluir')
+    modal_excluir.classList.remove('d-grid-center')
+    modal_excluir.classList.add('d-none')
+    
 })

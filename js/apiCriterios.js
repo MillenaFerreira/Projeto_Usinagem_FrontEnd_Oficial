@@ -30,13 +30,33 @@ export const pesquisarCriteriosPeloIdTarefa = async (idTarefa) => {
         location.reload();
   
       } else {
-        console.log('Erro ao criar a tarefa.');
+        console.log('Erro ao atualizar critério.');
       }
     })
     .catch(error => {
       console.log('Ocorreu um erro na requisição:', error);
     });
   
+  }
+
+  export const deleteCriterio = async (idCriterio) => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/criterio/${idCriterio}`;
+    const options = {
+      method: 'DELETE'
+    };
+  
+    fetch(url, options)
+    .then(response => {
+      if (response.ok) {
+        location.reload();
+  
+      } else {
+        console.log('Erro ao deletar critério.');
+      }
+    })
+    .catch(error => {
+      console.log('Ocorreu um erro na requisição:', error);
+    });
   }
 
 export const createCriterio = async (idTarefa, criterio) => {
@@ -54,7 +74,7 @@ export const createCriterio = async (idTarefa, criterio) => {
       location.reload();
 
     } else {
-      console.log('Erro ao criar a tarefa.');
+      console.log('Erro ao criar o critério.');
     }
   })
   .catch(error => {
