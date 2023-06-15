@@ -103,7 +103,7 @@ main {
     transform: scaleX(1);
 }
 
-.containerAlunos {
+.containerTurma {
     height: 80vh;
     width: 100%;
     display: flex;
@@ -113,7 +113,7 @@ main {
     gap: 15px;
 }
 
-.containerAlunos__menuSuperior {
+.containerTurmas__menuSuperior {
     display: flex;
     justify-content: space-between;
     padding-top: 2%;
@@ -121,7 +121,7 @@ main {
     width: 90%;
 }
 
-.menuSuperior__tituloAlunos {
+.menuSuperior__tituloTurmas {
     color: #3084B4;
 }
 
@@ -187,7 +187,7 @@ main {
     height: 50px;
 }
 
-.containerAlunos__tabelaFormulario {
+.containerTurmas__tabelaFormulario {
     width: 90%;
     height: 30%;
     border: 1px solid #074A71;
@@ -226,11 +226,20 @@ main {
     width: 350px;
 }
 
-#myInputEmail {
-    width: 300px;
+#myInputDescricao {
+    width: 700px;
+    border-radius: 10px;
 }
 
-.containerAlunos__listasConteudo {
+#myInputDataInicio {
+    width: 200px;
+}
+
+#myInputDataConclusao {
+    width: 200px;
+}
+
+.containerTurmas__listasConteudo {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -238,35 +247,34 @@ main {
     height: 70%;
 }
 
-/*  TAREFAS  */
+/*  PROFESSORES  */
 
-.listasConteudo__listaTarefas {
+.listasConteudo__listaProfessor {
     background-color: #E0E0E0;
-    width: 50%;
+    width: 30%;
     height: 100%;
     max-height: 42vh;
     border: 1px solid #074A71;
     border-radius: 10px;
 }
 
-.listasConteudo__listaTarefas--displayFlex {
+.listasConteudo__listaProfessor--displayFlex {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.listaTarefas__cardTarefas {
+.listaProfessor__cardProfessor {
     width: 100%;
     height: 70%;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    place-items: center;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     align-items: center;
     overflow: auto;
 }
 
-.cardTarefas__linkTarefas {
+.cardProfessor__linkProfessor {
     background-color: #D6E6F0;
     width: 80%;
     height: 70px;
@@ -276,41 +284,37 @@ main {
     transition: all 200ms;
 }
 
-.cardTarefas__linkTarefas:hover {
+.cardProfessor__linkProfessor:hover {
     transform: scaleX(1.1);
     background-color: #bedbec;
 }
 
-.cardTarefas__linkTarefas--displayFlex {
+.cardProfessor__linkProfessor--displayFlex {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.linkTaferas__imgTarefa {
-    height: 50px;
 
-}
+/* ALUNOS */
 
-/* TURMAS */
-
-.listasConteudo__listaTurmas {
+.listasConteudo__listaAluno {
     background-color: #E0E0E0;
-    width: 20%;
-    height: 60%;
+    width: 30%;
+    height: 100%;
     max-height: 42vh;
     border: 1px solid #074A71;
     border-radius: 10px;
 }
 
-.listasConteudo__listaTurmas--displayFlex {
+.listasConteudo__listaAluno--displayFlex {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.listaTurmas__cardTurmas {
+.listaAluno__cardAluno {
     width: 100%;
     height: 30vh;
     display: flex;
@@ -320,11 +324,11 @@ main {
     overflow: auto;
 }
 
-.cardTurmas__linkTurmas {
+.cardAluno__linkAluno {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #D9D9D9;
+    background-color: #D6E6F0;
     width: 80%;
     height: 150px;
     text-align: center;
@@ -334,54 +338,21 @@ main {
     align-items: center;
 }
 
-.cardTurmas__linkTurmas:hover {
+.cardAluno__linkAluno:hover {
     transform: scaleX(1.1);
-    background-color: #c7c7c7;
+    background-color: #bedbec;
 }
 
-.linkTurmas__siglaClasse {
-    font-weight: 600;
-    font-size: 2.5rem;
-    padding: 10%;
-    text-align: center;
-}
-
-.linkTurmas__semestre {
-    font-weight: bold;
-    font-size: 1.2rem;
-    height: fit-content;
-}
-
-.linkTurmas__data {
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-.linkTurmas__containerSemestre {
+.cardAluno__linkAluno--displayFlex {
     display: flex;
-    flex-direction: column;
-    width: 60%;
-    
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-/* MATERIAS */
-
-.listasConteudo__listaMaterias {
-    background-color: #E0E0E0;
-    width: 25%;
-    height: 100%;
-    border: 1px solid #074A71;
-    border-radius: 10px;
-}
-
-.listasConteudo__listaMaterias--displayFlex {
-    display: flex;
-    flex-direction: column;
-}
 
 /* TITULOS */
 
-.listaTarefas__titulo {
+.listaProfessor__titulo {
     width: 100%;
     text-align: center;
 }
@@ -402,6 +373,3 @@ main {
     font-weight: 600;
     padding-top: 10px;
 }
-
-
-
