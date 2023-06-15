@@ -1,6 +1,6 @@
 'use strict'
 
-import { pesquisarCriterios } from './apiCriterios.js'
+import { pesquisarCriterios, pesquisarCriteriosPeloIdTarefa } from './apiCriterios.js'
 import { updateCriterio } from './apiCriterios.js'
 
 const criterioForEach = async () => {
@@ -22,14 +22,18 @@ const criterioForEach = async () => {
 
 
         const container_dados = document.createElement('div')
+
         container_dados.classList.add('dados2')
         container_dados.classList.add('criteriosDados')
         container_dados.id = 'dados'
 
+        const containers = document.createElement('div')
+        containers.classList.add('containerCheck')
+
         const descricaoCriterio = document.createElement('i');
         descricaoCriterio.classList.add('descricaoCriterio');
         if (criterio.descricao_criterio && criterio.descricao_criterio !== "") {
-            descricaoCriterio.textContent = criterio.descricao_criterio.slice(0,32);
+            descricaoCriterio.textContent = criterio.descricao_criterio.slice(0,10);
         } else {
             descricaoCriterio.textContent = 'Este critério não possui uma descrição. Caso possua alguma dúvida, solicite ajuda ao seu professor'.slice(0, 9) + "...";
         }
@@ -48,6 +52,20 @@ const criterioForEach = async () => {
         if (criterio.tipo_critico == 1) {
             checkbox.checked = true;
         }
+        const container2 = document.createElement('div')
+        container2.classList.add('containerInput')
+
+        const checkbox2 = document.createElement('input');
+        checkbox2.type = 'checkbox';
+        checkbox2.classList.add('my-checkbox');
+        checkbox2.disabled = true;
+
+        const spanCheck2 = document.createElement('span')
+        spanCheck2.classList.add('checkmark')
+
+        if (criterio.observacao_nota_criterio == 1) {
+            checkbox2.checked = true;
+        }
 
         const divButtonEdit = document.createElement('div')
         divButtonEdit.classList.add('adicionar_editar_deletar')
@@ -59,9 +77,11 @@ const criterioForEach = async () => {
 
 
         container_relatorio.append(botaoDados)
-        container_dados.append(descricaoCriterio, container, divButtonEdit)
+        container_dados.append(descricaoCriterio, containers, divButtonEdit)
         botaoDados.append(container_dados)
+        containers.append(container, container2)
         container.append(checkbox, spanCheck)
+        container2.append(checkbox2, spanCheck2)
 
 
             botaoDados.addEventListener('click', (event) => {

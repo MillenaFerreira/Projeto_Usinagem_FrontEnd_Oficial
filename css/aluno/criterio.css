@@ -68,6 +68,24 @@ td {
     padding: 10px;
 }
 
+.containerCheck{
+    display:flex;
+    width: 30vw;
+    gap: 10vw;
+    justify-content: space-between;
+    
+    
+}
+
+.containerInput{
+    width: 15vw;
+    margin-left: 1vw;
+}
+
+.checklabels{
+    width: 30vw;
+    justify-content: space-between;
+}
 
 @media  (max-width: 600px) {
 
