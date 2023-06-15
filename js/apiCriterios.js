@@ -27,6 +27,28 @@ export const pesquisarDesejadoPeloIdCriterio = async (idCriterio) => {
     fetch(url, options)
     .then(response => {
       if (response.ok) {
+         location.reload()
+      } else {
+        console.log('Erro ao criar o desejado.');
+      }
+    })
+    .catch(error => {
+      console.log('Ocorreu um erro na requisição:', error);
+    });
+  }
+
+  export const createMargemErro = async (margemErro) => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/margem-erro`;
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(margemErro)
+    };
+    fetch(url, options)
+    .then(response => {
+      if (response.ok) {
         location.reload();
   
       } else {

@@ -32,6 +32,14 @@ table tr th{
   gap: 4vh;
 }
 
+.buttonMargemErro{
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+
+
 @media  (max-width: 600px) {
 
   /* table, thead, tbody, th, td, tr {

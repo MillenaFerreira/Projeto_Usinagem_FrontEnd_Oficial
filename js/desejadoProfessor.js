@@ -1,7 +1,12 @@
 'use strict'
 
-import { pesquisarDesejadoPeloIdCriterio, createDesejado } from './apiCriterios.js';
+import { pesquisarDesejadoPeloIdCriterio, createDesejado, createMargemErro } from './apiCriterios.js';
 
+
+const pegarValorIdDesejado = localStorage.getItem('idDesejado')
+console.log('id desejado: ',pegarValorIdDesejado);
+
+console.log();
 
 const buttonAdicionar = document.getElementById('adicionar')
 const modalCriterioAdc = document.getElementById('modal__adicionar__criterio')
@@ -34,7 +39,6 @@ const createDesejadoFuncao = async () => {
     const margemMais = document.getElementById('margemMais')
     const margemMenos = document.getElementById('margemMenos')
 
-    console.log(desejado.value);
     console.log(margemMais.value);
     console.log(margemMenos.value);
 
@@ -61,7 +65,6 @@ const createTableDesejado = () => {
 
     criterioDados.forEach((criterio) => {
 
-
         const resultadoDados = document.createElement('tr')
         resultadoDados.classList.add('resultadoDados')
 
@@ -85,8 +88,18 @@ const createTableDesejado = () => {
 
             })
 
+        }else{
 
+            const buttonMargemErro = document.createElement('button')
+            buttonMargemErro.classList.add('buttonMargemErro')
+            buttonMargemErro.title = "Abre modal margem de erro"
 
+            const buttonMargemErro1 = document.createElement('button')
+            buttonMargemErro1.classList.add('buttonMargemErro')
+            buttonMargemErro1.title = "Abre modal margem de erro"
+
+            margem1.append(buttonMargemErro1)
+            margem2.append(buttonMargemErro)
         }
 
         containerTable.append(resultadoDados)
