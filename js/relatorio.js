@@ -1,6 +1,6 @@
 'use strict'
 
-import { pesquisarCriterios, pesquisarCriteriosPeloIdTarefa } from './apiCriterios.js'
+import { pesquisarCriterios, pesquisarCriteriosPeloIdTarefa , pesquisarDesejadoPeloIdCriterio} from './apiCriterios.js'
 import { updateCriterio } from './apiCriterios.js'
 
 const idTarefa = localStorage.getItem('idTarefaParaAluno')
@@ -13,7 +13,7 @@ const criterioForEach = async () => {
 
     const criterios = await pesquisarCriterios();
     const pesquisarCriteriosId = await pesquisarCriteriosPeloIdTarefa(idTarefaFormat);
-    console.log(pesquisarCriteriosId);
+    //console.log(pesquisarCriteriosId);
 
 
     //const modal_mensagem = document.getElementById('modal__adicionar__criterio')
@@ -21,7 +21,9 @@ const criterioForEach = async () => {
     const registroCriterios = pesquisarCriteriosId;
 
 
-    registroCriterios.forEach((criterio) => {
+    registroCriterios.forEach((criterio)  =>  {
+
+
 
         const tableContainer = document.querySelector('table')
         const trContainer = document.createElement('tr')
@@ -62,6 +64,23 @@ const criterioForEach = async () => {
             inputCheckbox.checked = true
         }
 
+        
+      
+        const valoresDesejadosForEach = async () => {
+            const desejados = await pesquisarDesejadoPeloIdCriterio(criterio.id_criterio);
+            const valores = []; 
+          
+            desejados.forEach((valor) => {
+              console.log(valor.valor);
+              valores.push(valor.valor); 
+            });
+          
+            tdValores.textContent = valores.join(", "); 
+          };
+          
+
+        valoresDesejadosForEach()
+        
         tableContainer.append(trContainer)
         trContainer.append(tdDescricao, tdValores, tdInputAluno, tdContainerSelect, tdCheckBox)
         tdInputAluno.append(inputAluno)
