@@ -76,14 +76,27 @@ const createTableDesejado = () => {
         margem1.textContent = margemErro.minimo;
         margem2.textContent = margemErro.maximo;
         margem1.addEventListener('click', () => {
+
+          localStorage.setItem('id_margem_erro', margemErro.id)
+          console.log(margemErro.id)
           window.location.href = "#modal__editar--margem__erro"
           document.getElementById("myInputNomeValor--MargemMais").value = margemErro.maximo
           document.getElementById("myInputNomeValor--MargemMenos").value = margemErro.minimo
+        
+        })
+        margem2.addEventListener('click', () => {
+
+          localStorage.setItem('id_margem_erro', margemErro.id)
+          console.log(margemErro.id)
+          window.location.href = "#modal__editar--margem__erro"
+          document.getElementById("myInputNomeValor--MargemMais").value = margemErro.maximo
+          document.getElementById("myInputNomeValor--MargemMenos").value = margemErro.minimo
+        
         })
       } else {
         if (!hasButtonsCreated && margem1.textContent === '' && margem2.textContent === '') {
           function abrirModalMargemErro(event) {
-            // localStorage.setItem('id_resultado_desejado', criterio.id_resultado_desejado);
+            localStorage.setItem('id_resultado_desejado', criterio.id_resultado_desejado);
             event.preventDefault();
             window.scrollTo({
               top: 0,
