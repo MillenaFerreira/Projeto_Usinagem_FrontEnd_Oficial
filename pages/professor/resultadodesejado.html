@@ -32,10 +32,8 @@
     <header-padrao color_top="#3084B4" color_button="#DA251C" text_button="VOLTAR"
         link_button="../index.html"></header-padrao>
     <!-- NAV PRINCIPAL -->
-    <nav-professor 
-        nome1="Cursos" link1="/pages/professor/cursos.html"
-        nome2="Turmas" link2="/pages/professor/turmas.html"
-        nome3="Disciplinas" link3="/pages/professor/disciplinas.html"
+    <nav-professor nome1="Cursos" link1="/pages/professor/cursos.html" nome2="Turmas"
+        link2="/pages/professor/turmas.html" nome3="Disciplinas" link3="/pages/professor/disciplinas.html"
         nome4="Alunos" link4="/pages/professor/alunos.html">
     </nav-professor>
 
@@ -49,9 +47,9 @@
                         <button class="fas fa-plus" id="adicionar"></button>
                     </div>
                 </div>
-               
+
                 <div class="linha"></div>
-            </div>  
+            </div>
             <div id="container-desejado">
                 <table id="tabela">
                     <tr>
@@ -61,10 +59,10 @@
                         <th>MÁXIMO</th>
                     </tr>
                 </table>
-                </div>
-            </div>  
+            </div>
         </div>
-       
+        </div>
+
     </main>
     <div id="modal__adicionar__criterio" class="modal__adicionar__tarefa d-none">
 
@@ -77,9 +75,9 @@
                 <input type="number" placeholder="Digite o resultado desejado" id="desejado">
                 <!-- <input type="number" placeholder="Digite a margem de erro para mais" id="margemMais">
                 <input type="number" placeholder="Digite a margem de erro para menos" id="margemMenos"> -->
-                </div>
-                <button id="sendTarefa">Send</button>
             </div>
+            <button id="sendTarefa">Send</button>
+    </div>
     <div id="modal__adicionar__margem" class="modal__adicionar__margem d-none">
 
         <form id="adcTarefa2">
@@ -90,11 +88,104 @@
             <div class="inputsTarefa d-flex flex-column">
                 <input type="number" placeholder="Digite a margem de erro para mais" id="margemMais">
                 <input type="number" placeholder="Digite a margem de erro para menos" id="margemMenos">
-                </div>
-                <button id="sendTarefa" class="editEnviar">Send</button>
-            </form>
             </div>
+            <button id="sendTarefa" class="editEnviar">Send</button>
+        </form>
+    </div>
 
+    <!-- MODAL EDITAR RESULTADO DESEJADO -->
+    <div id="modal__editar--resultado__desejado" class="modal__editar">
+        <form class="modal__editar--content" id="modal__editar--content">
+          <p class="nome__modal">Editar um Resultado Desejado</p>
+          <div class="input__nome--valor">
+            <label for="">Valor do Resultado Desejado:</label>
+            <input type="text" name="nome" id="myInputNomeValor" maxlength="100" style="width: 100%;" required>
+          </div>
+          <!-- <div class='input__file--valor'>
+            <label for="">URL da Imagem do Curso:</label>
+            <input type="url" name="url" id="myInputUrlValor" maxlength="2000" style="width: 100%;" required>
+          </div>
+          <div class="sigla__carga--horaria">
+            <div class="input__sigla--valor">
+                <label for="">Sigla:</label>
+                <input type="text" name="sigla" id="myInputSiglaValor" maxlength="5" required>
+            </div>
+            <div class="input__carga--horaria--valor">
+                <label for="">Carga Horaria:</label>
+                <input type="number" name="carga_horaria" id="myInputCargaHorariaValor" min="0" required>
+            </div>
+        </div>
+          <div class="input__descricao--valor">
+            <label for="">Descrição do Curso:</label>
+            <textarea tabindex="5" id="myInputDescricaoValor" required></textarea>
+          </div> -->
+          <div class="modal__editar--footer">
+            <a type="submit" id="editar">Salvar</a>
+          </div>
+          <a href="#" class="modal__editar--close">&times;</a>
+        </form>
+      </div>
+
+      <!-- MODAL EDITAR MARGEM DE ERRO -->
+    <div id="modal__editar--margem__erro" class="modal__editar">
+        <form class="modal__editar--content" id="modal__editar--content">
+          <p class="nome__modal">Editar uma Margem de Erro</p>
+          <div class="input__nome--valor">
+            <label for="">Valor para mais:</label>
+            <input type="text" name="nome" id="myInputNomeValor--MargemMais" maxlength="100" style="width: 100%;" required>
+          </div>
+          <div class="input__nome--valor">
+            <label for="">Valor para menos:</label>
+            <input type="text" name="nome" id="myInputNomeValor--MargemMenos" maxlength="100" style="width: 100%;" required>
+          </div>
+          <!-- <div class='input__file--valor'>
+            <label for="">URL da Imagem do Curso:</label>
+            <input type="url" name="url" id="myInputUrlValor" maxlength="2000" style="width: 100%;" required>
+          </div>
+          <div class="sigla__carga--horaria">
+            <div class="input__sigla--valor">
+                <label for="">Sigla:</label>
+                <input type="text" name="sigla" id="myInputSiglaValor" maxlength="5" required>
+            </div>
+            <div class="input__carga--horaria--valor">
+                <label for="">Carga Horaria:</label>
+                <input type="number" name="carga_horaria" id="myInputCargaHorariaValor" min="0" required>
+            </div>
+        </div>
+          <div class="input__descricao--valor">
+            <label for="">Descrição do Curso:</label>
+            <textarea tabindex="5" id="myInputDescricaoValor" required></textarea>
+          </div> -->
+          <div class="modal__editar--footer">
+            <a type="submit" id="editarMargem">Salvar</a>
+          </div>
+          <a href="#" class="modal__editar--close">&times;</a>
+        </form>
+      </div>
+
+      <!-- MODAL DELETAR RESULTADO DESEJADO -->
+      <div class="modal__deletar" id="modal__deletar">
+        <div class="modal__deletar--content" id="modal__deletar--content">
+          <p class="nome__modal--deletar">Deseja mesmo Deletar?</p>
+          <div class="modal__deletar--footer">
+            <a type="submit" id="naoDeletar" href="#">Não</a>
+            <a type="submit" id="Deletar" href="#">Sim</a>
+          </div>
+          <a href="#" class="modal__deletar--close" id="sair">&times;</a>
+        </div>
+      </div>
+
+      <!-- MODAL DELETAR MARGEM DE ERRO -->
+      <div class="modal__deletar" id="modal__deletar">
+        <div class="modal__deletar--content" id="modal__deletar--content">
+          <p class="nome__modal--deletar">Deseja mesmo Deletar?</p>
+          <div class="modal__deletar--footer">
+            <a type="submit" id="naoDeletar" href="#">Não</a>
+            <a type="submit" id="DeletarValor" href="#">Sim</a>
+          </div>
+          <a href="#" class="modal__deletar--close" id="sair">&times;</a>
+        </div>
+      </div>
 
     </div>
 
