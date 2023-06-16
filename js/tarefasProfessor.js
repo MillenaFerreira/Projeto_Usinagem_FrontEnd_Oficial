@@ -124,7 +124,7 @@ const criarDadosTarefa = async () => {
                         "id_tipo_tarefa": parseInt(tipo_atividade2.value)
                     }
                     console.log(tarefaUpdate);
-    
+                    
                     updateTarefa(tarefa.id, tarefaUpdate)
     
     
