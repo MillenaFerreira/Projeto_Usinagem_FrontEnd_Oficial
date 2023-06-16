@@ -32,14 +32,14 @@ main {
 }
 
 .ancoraAlunos {
-  background-color: #074A71;
-  width: 10vw;
-  height: 8vh;
-  text-align: center;
-  display: grid;
-  align-content: center;
-  color: white;
-  transition: all .200s;
+    background-color: #074A71;
+    width: 10vw;
+    height: 8vh;
+    text-align: center;
+    display: grid;
+    align-content: center;
+    color: white;
+    transition: all .200s;
 }
 
 .ancoraAlunos:hover {
@@ -53,7 +53,7 @@ main {
     height: 100%;
     width: 30%;
 }
- 
+
 .containerDadosAluno--displayFlex {
     display: flex;
     flex-direction: column;
@@ -81,7 +81,7 @@ main {
 
 .containerDadosAluno__nomeAluno--displayFlex {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .containerDadosAluno__emailAluno--displayFlex {
@@ -193,23 +193,57 @@ main {
 .containerTarefasAluno {
     width: 40%;
     max-height: 70vh;
-    background-color: #053450;
+    background-color: #CFCFCF;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 2px;
 
 }
 
 .containerTarefasAluno__filtroTarefas {
     height: 10%;
     width: 100%;
-    background-color: aquamarine;
+    background-color: #EEEEEE;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
+}
+
+.cardTarefas{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.legenda {
+    display: flex;
+}
+
+.quadrado1 {
+    width: 20px;
+    height: 20px;
+    background-color: #8FE481;
+}
+
+.quadrado2 {
+    width: 20px;
+    height: 20px;
+    background-color: #E73D3D;
+}
+
+.bolinha{
+    width: 15px;
+    height: 15px;
+    background-color: #E73D3D;
+    border-radius: 50%;
 }
 
 .containerTarefasAluno__listaTarefas {
     width: 100%;
     height: 100%;
-    background-color: azure;
+    background-color: #EEEEEE;
     padding: 10px;
     overflow: auto;
 
@@ -218,8 +252,19 @@ main {
 .listaTarefas__cardTarefas {
     height: 10vh;
     width: 100%;
-    background-color: cadetblue;
+    background-color: #D6E6F0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
     cursor: pointer;
+    margin-top: 5px;
+    box-shadow: 0px 4px 4px #00000040;
+    border-radius: 10px;
+}
+
+.listaTarefas__cardTarefas:hover{
+    background-color: #bcdcf0;
 }
 
 .cardTarefas__imagemTarefa {
