@@ -10,9 +10,26 @@
 }
 
 
+.buttonEnviarResultados{
+    width: 10vw;
+    height: 5vh;
+    cursor: pointer;
+    margin-top: 2vh;
+    background-color: #3084B4;
+    color: #ffff;
+}
+
+.d-block{
+    display: block;
+}
 
 @media (max-width:650px) {
     .obtido{
         margin-left: 10%;
     }
+    .buttonEnviarResultados{
+        width: 50vw;
+        margin-left: 23vw;
+    }
+    
 }
