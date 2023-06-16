@@ -1,6 +1,6 @@
 'use strict'
 
-import { pesquisarCriterios, pesquisarCriteriosPeloIdTarefa , pesquisarDesejadoPeloIdCriterio} from './apiCriterios.js'
+import { pesquisarCriterios, pesquisarCriteriosPeloIdTarefa, pesquisarDesejadoPeloIdCriterio } from './apiCriterios.js'
 import { updateCriterio } from './apiCriterios.js'
 
 const idTarefa = localStorage.getItem('idTarefaParaAluno')
@@ -21,9 +21,7 @@ const criterioForEach = async () => {
     const registroCriterios = pesquisarCriteriosId;
 
 
-    registroCriterios.forEach((criterio)  =>  {
-
-
+    registroCriterios.forEach((criterio) => {
 
         const tableContainer = document.querySelector('table')
         const trContainer = document.createElement('tr')
@@ -51,6 +49,10 @@ const criterioForEach = async () => {
         optionTrue.value = "true"
         optionTrue.textContent = "SIM"
 
+        const optionVazia = document.createElement('option')
+        optionVazia.value = "branco"
+        optionVazia.textContent = " "
+
         const optionFalse = document.createElement('option')
         optionFalse.value = "false"
         optionFalse.textContent = "NÃO"
@@ -60,33 +62,61 @@ const criterioForEach = async () => {
         inputCheckbox.type = 'checkbox'
         inputCheckbox.classList.add('checkbox')
 
-        if(criterio.observacao_nota_criterio == true){
+        const buttonEnviar = document.createElement('button')
+        buttonEnviar.classList.add('buttonEnviarResultados')
+        buttonEnviar.textContent = "enviar"
+        buttonEnviar.classList.add('d-none')
+
+        if (criterio.observacao_nota_criterio == true) {
             inputCheckbox.checked = true
         }
 
-        
-      
         const valoresDesejadosForEach = async () => {
             const desejados = await pesquisarDesejadoPeloIdCriterio(criterio.id_criterio);
-            const valores = []; 
-          
+            const valores = [];
+
             desejados.forEach((valor) => {
-              console.log(valor.valor);
-              valores.push(valor.valor); 
+                valores.push(valor.valor);
             });
-          
-            tdValores.textContent = valores.join(", "); 
-          };
-          
+
+            tdValores.textContent = valores.join(", ");
+        };
+
 
         valoresDesejadosForEach()
-        
+
+        function verificarAlteracoes() {
+            const valorSelect = selectNotaObtida.value;
+            const valorInput = inputAluno.value;
+
+            if (valorSelect !== "branco" && valorInput !== '') {
+                
+                console.log(valorSelect);
+                console.log(valorInput);
+
+                buttonEnviar.classList.remove('d-none');
+                buttonEnviar.classList.add('d-block');
+            }
+        }
+
+
+        selectNotaObtida.addEventListener('change', verificarAlteracoes);
+        inputAluno.addEventListener('change', verificarAlteracoes);
+
+        buttonEnviar.addEventListener('click', (event) => {
+            event.preventDefault()
+            buttonEnviar.classList.remove('d-block')
+            buttonEnviar.classList.add('d-none')
+            console.log('id criterio:', criterio.id_criterio, 'valorDoInput:', inputAluno.value);
+            console.log('id criterio:', criterio.id_criterio, 'valorDoSelect:', selectNotaObtida.value);
+        })
+
         tableContainer.append(trContainer)
-        trContainer.append(tdDescricao, tdValores, tdInputAluno, tdContainerSelect, tdCheckBox)
+        trContainer.append(tdDescricao, tdValores, tdInputAluno, tdContainerSelect, tdCheckBox, buttonEnviar)
         tdInputAluno.append(inputAluno)
         tdCheckBox.append(inputCheckbox)
         tdContainerSelect.append(selectNotaObtida)
-        selectNotaObtida.append(optionTrue, optionFalse)
+        selectNotaObtida.append(optionVazia, optionTrue, optionFalse)
     });
 
 
