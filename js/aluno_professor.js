@@ -57,7 +57,7 @@ const gerarDadosAluno = () => {
 
     nomeAluno.value = listaTarefasTurma.dados[0].nome_aluno
     emailAluno.value = listaTarefasTurma.dados[0].email_institucional
-    dataNascimentoAluno.value 
+    dataNascimentoAluno.value = listaTarefasTurma.dados[0].data_nascimento
     matriculaAluno.value = listaTarefasTurma.dados[0].numero_matricula
 }
 

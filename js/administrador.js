@@ -12,18 +12,30 @@ const criarLista = (card) => {
     const dadosListaNome = document.createElement('td')
     dadosListaNome.classList.add('dataName')
     dadosListaNome.textContent = card.nome
+    dadosListaNome.addEventListener('click', () => {
+        window.location = `/pages/adm/editar/editarAdministrador.html`
+    })
 
     const dadosListaRegistro = document.createElement('td')
     dadosListaRegistro.classList.add('dataRegistro')
     dadosListaRegistro.textContent = card.nif
+    dadosListaRegistro.addEventListener('click', () => {
+        window.location = `/pages/adm/editar/editarAdministrador.html`
+    })
 
     const dadosListaUsuario = document.createElement('td')
     dadosListaUsuario.classList.add('dataUsuario')
     dadosListaUsuario.textContent = card.email_usuario
+    dadosListaUsuario.addEventListener('click', () => {
+        window.location = `/pages/adm/editar/editarAdministrador.html`
+    })
 
     const dadosListaTelefone = document.createElement('td')
     dadosListaTelefone.classList.add('dataTelefone')
     dadosListaTelefone.textContent = card.telefone
+    dadosListaUsuario.addEventListener('click', () => {
+        window.location = `/pages/adm/editar/editarAdministrador.html`
+    })
 
    
     //
@@ -54,13 +66,8 @@ const criarLista = (card) => {
     )
 
 
-
-   
-
-
     itemEditar.addEventListener('click', () => {
         window.localStorage.setItem('dadosProfessor', (card.id).toString())
-        window.location = `./editar/editarAdministrador.html`
     })
 
     itemLista.append (

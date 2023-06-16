@@ -23,14 +23,23 @@ const criarListaAlunos = (card) => {
     const dadosListaNome = document.createElement('td')
     dadosListaNome.classList.add('dataName')
     dadosListaNome.textContent = card.nome_aluno
+    dadosListaNome.addEventListener('click', () => {
+        window.location = `/pages/adm/editar/editarAlunos.html`
+    })
 
     const dadosEmail = document.createElement('td')
     dadosEmail.classList.add('dataEmail')
     dadosEmail.textContent = card.email_institucional
+    dadosEmail.addEventListener('click', () => {
+        window.location = `/pages/adm/editar/editarAlunos.html`
+    })
 
     const dadosRegistro = document.createElement('td')
     dadosRegistro.classList.add('dataRegistro')
     dadosRegistro.textContent = card.numero_matricula
+    dadosRegistro.addEventListener('click', () => {
+        window.location = `/pages/adm/editar/editarAlunos.html`
+    })
 
 
     //
