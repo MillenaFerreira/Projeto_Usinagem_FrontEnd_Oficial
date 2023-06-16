@@ -1,0 +1,16 @@
+body{
+    flex-direction: column;
+    background-color: var(--background-color);
+    height: 100vh;
+}
+
+header{
+    background-color: var(--primary-color);
+    height: 15vh;
+    flex-direction: column;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+main{
+    height:85vh;
+}
