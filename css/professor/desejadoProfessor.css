@@ -99,4 +99,18 @@ table tr th{
       display: block;
   }
 
+  .colunaPaiBotoesInicial, .colunaPaiBotoesFinais{
+    display: block;
+    margin-right: 0vw;
+   }
+
+   .resultadoDados{
+    margin-bottom: 8vh;
+   }
+
+   .buttonAtualizar, .buttonExcluir{
+    padding: 5px 20px;
+  }
+  
+
 }
