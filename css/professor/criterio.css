@@ -178,6 +178,14 @@
     scale: 0.9;
 }
 
+.linkEnviar{
+    background-color: #3084B4;
+    width: auto;
+    padding: 10px 20px;
+    margin-left: 2vw;
+    color: #ffff;
+}
+
 @media (max-width:600px) {
     #sairCriterioModal, #sendCriterio, #sairCriterioModalEditar, #sendCriterioEditado{
         width: 25vw;

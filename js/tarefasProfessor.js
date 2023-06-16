@@ -5,8 +5,14 @@ import { pesquisarTarefas } from './apiTarefas.js';
 
 var idMateria = localStorage.getItem('idMateria')
 var nomeMateriaParaProfessor = localStorage.getItem('nomeMateriaParaProfessor')
-console.log(idMateria);
+
+console.log('Id matéria: ', idMateria);
 console.log(nomeMateriaParaProfessor);
+
+const idProfessor = localStorage.getItem('idProfessor')
+var idProf = parseInt(idProfessor)
+console.log('Id professor:',idProf);
+
 
 const nomeTurma = document.getElementById('nomeTurma')
 nomeTurma.textContent = 'Tarefas da matéria ' + nomeMateriaParaProfessor
