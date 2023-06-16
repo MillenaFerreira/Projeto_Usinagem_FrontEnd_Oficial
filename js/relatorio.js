@@ -19,13 +19,10 @@ const criterioForEach = async () => {
    
 
     registroCriterios.forEach((criterio) => {
-
         const container_relatorio = document.getElementById('container-relatorio')
-
         
         const botaoDados = document.createElement('button')
         botaoDados.classList.add('container_relatorio_dadosBotao')
-
 
         const container_dados = document.createElement('div')
 
@@ -88,8 +85,6 @@ const criterioForEach = async () => {
         containers.append(container, container2)
         container.append(checkbox, spanCheck)
         container2.append(checkbox2, spanCheck2)
-
-
             botaoDados.addEventListener('click', (event) => {
             event.preventDefault();
             modal_mensagem.classList.add('d-grid')

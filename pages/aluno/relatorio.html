@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- LINK DO GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,8 @@
     <!-- Link do FontAwesome -->
     <script src="https://kit.fontawesome.com/30058942d9.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
     <!-- CSS -->
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/aluno/aluno.css">
@@ -24,6 +26,7 @@
     <link rel="stylesheet" href="/css/professor/tarefas.css">
     <link rel="stylesheet" href="/css/professor/criterio.css">
     <link rel="stylesheet" href="/css/aluno/desejado.css">
+    <link rel="stylesheet" href="../../css/aluno/luiz.css">
 
 
     <!-- COMPONENTS -->
@@ -56,7 +59,7 @@
         </ul>
     </nav>
     <main id="root_aluno">
-        <div class="container container-relatorio" id="container-relatorio">
+        <!-- <div class="container container-relatorio" id="container-relatorio">
             <div class="container_topo">
                 <a href="/pages/aluno/horario.html" class="linkHorario">Horário</a>
                 <div class="nome_buttons">
@@ -65,11 +68,12 @@
                 <div class="linha"></div>
                 <div class="criterios">
                     <li>Descrição do critério</li>
+                    <li>Desejado</li>
+                    <li>Obtido</li>
                     <div class="checklabels d-flex">
                         <li>Observação</li>
                         <li>Tipo crítico</li>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -82,10 +86,60 @@
                 <h3>Adicione informações obtidas nesse critério</h3>
             </div>
             <div class="inputsTarefa d-flex flex-column">
+                <label for="avaliacao_aluno">Resposta:</label>
+                <select name="avaliacao_aluno">
+                    <option value="true">SIM</option>
+                    <option value="false">NÃO</option>
+                </select>
                 <input type="number" placeholder="Digite o resultado obtido" id="desejado" class="obtido">
-                </div>
-                <button id="sendTarefa">Send</button>
             </div>
+            <button id="sendTarefa">Send</button>
+    </div> -->
+
+    <main>
+        <div class="container_topo container__topo-luiz">
+            <a href="/pages/aluno/horario.html" class="linkHorario">Horário</a>
+            <div class="nome_buttons">
+                <p>Relatório</p>
+            </div>
+            <div class="linha"></div>
+            <div class="criterios">
+                <table class="table is-striped is-fullwidth is-hoverable">
+                    <thead>
+                        <tr>
+                          <th class="colums__avaliacao">Descrição Critério</th>
+                          <th class="colums__avaliacao">Resultado Desejado</th>
+                          <th class="colums__avaliacao">Valor Obtido</th>
+                          <th class="colums__avaliacao">
+                            <label for="avaliacao_aluno">Resposta:</label>
+                          </th>
+                          
+                          <th>Observação</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Descrição 1</td>
+                          <td>Valor 1, Valor 2</td>
+                          <td>
+                            <input class="input input__obtido" type="text">
+                          </td>
+                          <td>
+                            <select name="avaliacao_aluno" class="input__avaliacao">
+                                <option value="true">SIM</option>
+                                <option value="false">NÃO</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input class="checkbox" type="checkbox">
+                          </td>
+                        </tr>
+                        <!-- Adicione mais linhas conforme necessário -->
+                      </tbody>
+                    </table>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
