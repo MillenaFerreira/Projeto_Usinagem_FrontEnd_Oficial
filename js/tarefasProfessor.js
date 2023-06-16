@@ -4,8 +4,12 @@ import { createTarefa, deleteTarefa, updateTarefa } from './apiTarefas.js'
 import { pesquisarTarefas } from './apiTarefas.js';
 
 var idMateria = localStorage.getItem('idMateria')
+var nomeMateriaParaProfessor = localStorage.getItem('nomeMateriaParaProfessor')
 console.log(idMateria);
+console.log(nomeMateriaParaProfessor);
 
+const nomeTurma = document.getElementById('nomeTurma')
+nomeTurma.textContent = 'Tarefas da matéria ' + nomeMateriaParaProfessor
 
 //import "./router.js"
 

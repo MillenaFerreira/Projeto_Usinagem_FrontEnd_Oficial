@@ -7,6 +7,13 @@ export const pesquisarHorario = async () => {
     return data.registro_tempos;
   }
 
+export const pesquisarHorarioPeloIdTarefa = async (idTarefa) => {
+    const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/registro-tempo/tarefa/${idTarefa}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.registroTempo;
+  }
+
   export const createHorario = async (horario) => {
     const url = `https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/registro-tempo`;
     const options = {
