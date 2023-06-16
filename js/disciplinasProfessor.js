@@ -50,6 +50,9 @@ const pegarMateriaPeloIdProfessorMateria = async () => {
         linkCardDisciplina.addEventListener('click', () => {
             //console.log(materia.id);
             localStorage.setItem('idMateria', materia.id)
+            localStorage.setItem('nomeMateriaParaProfessor', materia.sigla_materia)
+            console.log( materia.sigla_materia);
+            
             linkCardDisciplina.href = "./alunos.html"
         })
 
