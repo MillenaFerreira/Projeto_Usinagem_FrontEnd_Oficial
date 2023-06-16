@@ -108,18 +108,22 @@ const createTableDesejado = () => {
       const colunaAtualizar = document.createElement('td');
       const colunaExcluir = document.createElement('td');
   
-      const buttonAtualizar = document.createElement('button');
+      const buttonAtualizar = document.createElement('a');
       buttonAtualizar.classList.add('buttonAtualizar');
+      buttonAtualizar.classList.add('far');
+      buttonAtualizar.classList.add('fa-edit');
       buttonAtualizar.textContent = "Atualizar"
-      buttonAtualizar.title = 'Atualizar resultado desejado';
+      buttonAtualizar.title = 'Atualizar margem de erro';
 
       buttonAtualizar.addEventListener('click', () => {
         
         console.log('Atualizar resultado desejado:', criterio.id_resultado_desejado);
       });
   
-      const buttonExcluir = document.createElement('button');
+      const buttonExcluir = document.createElement('a');
       buttonExcluir.classList.add('buttonExcluir');
+      buttonExcluir.classList.add('fas');
+      buttonExcluir.classList.add('fa-trash');
       buttonExcluir.textContent = "Excluir"
       buttonExcluir.title = 'Excluir resultado desejado';
       buttonExcluir.addEventListener('click', () => {
