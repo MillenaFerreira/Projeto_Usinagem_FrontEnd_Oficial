@@ -17,13 +17,13 @@ const validarUsuario = async () => {
         const senhaHash = inputSenha.value
         
         const usuario = await pegarUsuarioPerLogin(login, senhaHash)
-        console.log(await pegarUsuarioPerLogin(login, senhaHash));
+        //console.log(await pegarUsuarioPerLogin(login, senhaHash));
 
         if (usuario.status == 200 && usuario.usuarios[0].nivel == 'Administrador') {
             window.location = '/pages/adm/administrador.html'
-            //localStorage.setItem('idProfessor', usuario.professor.id)    
         } else if (usuario.status == 200 && usuario.usuarios[0].nivel == 'Aluno') {
-            localStorage.setItem('idAluno', usuario.aluno.id)  
+            localStorage.setItem('idAlunoMatricula', usuario.aluno.id_matricula)
+            console.log(usuario.aluno.id_matricula);  
             window.location = '/pages/aluno/materia.html'
         } else if (usuario.status == 200 && usuario.usuarios[0].nivel == 'Professor') {
             localStorage.setItem('idProfessor', usuario.professor.id_professor)  
@@ -31,9 +31,7 @@ const validarUsuario = async () => {
         } else {
             informativoSenhaIncorreta()
         }
-
     })
-
 }
 
 await validarUsuario()

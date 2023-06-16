@@ -33,5 +33,12 @@ export const getAlunosProfessor = async (idTurma) => {
     return data.matriculas
 }
 
+export const getMatriculaAluno = async (idMatricula) => {
+    const url = `https://usinagem-senai-api.cyclic.app//v1/projeto-usinagem/turma-curso-materia-prof/materias-matricula/${idMatricula}`
+    const response = await fetch(url)
+    const data = await response.json()
 
-//https://usinagem-senai-api.cyclic.app/v1/projeto-usinagem/turma-curso-materia-prof/cursos-professor/1id
+    return data.dados
+}
+
+///v1/projeto-usinagem/turma-curso-materia-prof/materias-matricula/1
