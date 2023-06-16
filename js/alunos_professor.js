@@ -12,7 +12,7 @@ const criarTable = (aluno) => {
     tr_principal.classList.add('linha-dados')
     tr_principal.addEventListener('click', () =>{
         localStorage.setItem('idTurmaAluno', aluno.id_turma)
-        localStorage.setItem('idAluno', aluno.id_matricula)
+        localStorage.setItem('idMatricula', aluno.id_matricula)
         window.location.href = '../../pages/professor/aluno.html'
     })
 
