@@ -8,7 +8,7 @@
 }
 #container-desejado table{
   height: 40vh;
-  width: 60vw;
+  width: 80vw;
 }
 
 table tr th{
@@ -39,10 +39,11 @@ table tr th{
 }
 
 .buttonAtualizar, .buttonExcluir{
-  width: 6vw;
-  height: 20px;
+  width: auto;
+  height: auto;
   cursor: pointer;
   border: none;
+  padding: 5px 10px;
 }
 
 .buttonAtualizar{
@@ -51,6 +52,19 @@ table tr th{
 
 .buttonExcluir{
   background-color: red;
+}
+
+ .colunaPaiBotoesFinais{
+  display: flex;
+  justify-content: flex-start;
+  gap: 2vw;
+}
+
+.colunaPaiBotoesInicial{
+ display: flex;
+ justify-content: flex-end;
+ gap: 2vw;
+ margin-right: 1vw;
 }
 
 @media  (max-width: 600px) {
@@ -84,4 +98,5 @@ table tr th{
       margin-bottom: 4px;
       display: block;
   }
+
 }
