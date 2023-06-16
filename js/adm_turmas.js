@@ -17,21 +17,33 @@ const criarTable = (turmas) => {
     td_nome.classList.add('dataTurma')
     td_nome.dataset.title = 'Name'
     td_nome.textContent = turmas.nome
+    td_nome.addEventListener('click', () => {
+        window.location = `/pages/adm/editar/editarTurmas.html`
+    })
 
     const td_data_inicio = document.createElement('td')
     td_data_inicio.classList.add('dataInicio')
     td_data_inicio.dataset.title = 'Inicio'
     td_data_inicio.textContent = turmas.data_inicio_formatada
+    td_data_inicio.addEventListener('click', () => {
+        window.location = `/pages/adm/editar/editarTurmas.html`
+    })
 
     const td_data_conclusao = document.createElement('td')
     td_data_conclusao.classList.add('dataConclusao')
     td_data_conclusao.dataset.title = 'Conclusao'
     td_data_conclusao.textContent = turmas.data_conclusao_formatada
+    td_data_conclusao.addEventListener('click', () => {
+        window.location = `/pages/adm/editar/editarTurmas.html`
+    })
 
     const td_semestre = document.createElement('td')
     td_semestre.classList.add('dataSemestre')
     td_semestre.dataset.title = 'Semestre'
     td_semestre.textContent = turmas.semestre + 'ºSemestre'
+    td_semestre.addEventListener('click', () => {
+        window.location = `/pages/adm/editar/editarTurmas.html`
+    })
 
     const td_icon_editar = document.createElement('td')
     td_icon_editar.classList.add('IconEditar')
