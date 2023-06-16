@@ -1,16 +1,23 @@
 'use strict'
-import { pesquisarHorario } from './apiHorario.js';
+import { pesquisarHorario, pesquisarHorarioPeloIdTarefa } from './apiHorario.js';
 import { createHorario } from './apiHorario.js';
 import { deleteHorario } from './apiHorario.js';
 import { updateHorario } from './apiHorario.js';
+
+const idTarefa = localStorage.getItem('idTarefaParaAluno')
+console.log(idTarefa);
 
 
 const fetchAPI = async () => {
     const horarios = await pesquisarHorario();
     const registroTempos = horarios.reverse();
-    console.log(registroTempos.length);
 
-    registroTempos.forEach((tempo) => {
+    const horariosIdtarefa = await pesquisarHorarioPeloIdTarefa(idTarefa);
+    const registroTempos2 = horariosIdtarefa;
+
+    console.log('sss',registroTempos2.length);
+
+    registroTempos2.forEach((tempo) => {
 
 
         const container_horario = document.getElementById('teste')
